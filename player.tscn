@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxhr71yb8loxs"]
+
+[ext_resource type="Script" uid="uid://bksq8rxk02koi" path="res://player.gd" id="1_4flbx"]
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_4flbx")
+metadata/_edit_group_ = true
