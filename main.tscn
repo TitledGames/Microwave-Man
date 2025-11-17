@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdfo2ktxggpi6"]
+[gd_scene load_steps=3 format=3 uid="uid://bdfo2ktxggpi6"]
 
 [ext_resource type="PackedScene" uid="uid://bxhr71yb8loxs" path="res://player.tscn" id="1_ig7tw"]
+
+[sub_resource type="Curve2D" id="Curve2D_ig7tw"]
 
 [node name="Main" type="Node"]
 
@@ -16,3 +18,6 @@ wait_time = 2.0
 one_shot = true
 
 [node name="StartPosition" type="Marker2D" parent="."]
+
+[node name="MobPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_ig7tw")
