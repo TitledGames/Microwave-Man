@@ -1,9 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxhr71yb8loxs"]
+[gd_scene load_steps=5 format=3 uid="uid://bxhr71yb8loxs"]
 
 [ext_resource type="Script" uid="uid://bksq8rxk02koi" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://hcg7eaqk7vj2" path="res://assets/player.png" id="2_onrkg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i3pqv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_onrkg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
+size = Vector2(32, 32)
 
 [node name="Player" type="Area2D"]
 script = ExtResource("1_4flbx")
 metadata/_edit_group_ = true
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i3pqv")
+
 [node name="PlayerHitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hqtel")
