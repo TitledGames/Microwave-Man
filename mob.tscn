@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmimipimkb5ua"]
+
+[ext_resource type="Texture2D" uid="uid://dt3q6ci8uj16i" path="res://assets/enemy.png" id="1_dy6sc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nokgg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dy6sc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Mob" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(12, -5)
+sprite_frames = SubResource("SpriteFrames_nokgg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(12, -34)
+rect = Rect2(-10, 10, 20, 34)
