@@ -15,6 +15,14 @@ point_count = 6
 script = ExtResource("1_0xm2m")
 mob_scene = ExtResource("2_h2yge")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.906954, 0.9045192, 0.48659497, 1)
+
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 
 [node name="MobTimer" type="Timer" parent="."]
