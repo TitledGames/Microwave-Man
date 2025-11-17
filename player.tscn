@@ -26,3 +26,5 @@ sprite_frames = SubResource("SpriteFrames_i3pqv")
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hqtel")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
