@@ -33,3 +33,5 @@ shape = SubResource("RectangleShape2D_dy6sc")
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
 position = Vector2(-6, -27)
 rect = Rect2(-10, 12, 32, 32)
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
