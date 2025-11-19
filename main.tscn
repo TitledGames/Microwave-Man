@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdfo2ktxggpi6"]
+[gd_scene load_steps=8 format=3 uid="uid://bdfo2ktxggpi6"]
 
 [ext_resource type="Script" uid="uid://d37db3lg3je53" path="res://main.gd" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://bxhr71yb8loxs" path="res://player.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://cmimipimkb5ua" path="res://mob.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" path="res://mob.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dqrnqy70uj08i" path="res://hud.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bvnhqnq2rqv0q" path="res://player_2.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://d4dindiawl2rv" path="res://ground.tscn" id="6_7mycd"]
 
 [sub_resource type="Curve2D" id="Curve2D_ig7tw"]
 _data = {
@@ -47,6 +48,8 @@ rotation = 0.0071427356
 [node name="HUD" parent="." instance=ExtResource("4_1bvp3")]
 
 [node name="Player2" parent="." instance=ExtResource("5_lquwl")]
+
+[node name="Ground" parent="." instance=ExtResource("6_7mycd")]
 
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
