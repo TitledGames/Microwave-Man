@@ -6,6 +6,7 @@
 
 [node name="Player2" type="CharacterBody2D"]
 slide_on_ceiling = false
+floor_constant_speed = true
 script = ExtResource("1_wkcja")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
