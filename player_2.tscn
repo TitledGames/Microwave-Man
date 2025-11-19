@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://hcg7eaqk7vj2" path="res://assets/player.png" id="2_8xjnt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wkcja"]
+size = Vector2(32, 30)
 
 [node name="Player2" type="CharacterBody2D"]
 slide_on_ceiling = false
