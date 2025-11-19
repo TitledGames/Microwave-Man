@@ -9,7 +9,7 @@ slide_on_ceiling = false
 floor_constant_speed = true
 script = ExtResource("1_wkcja")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="PlayerHitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_wkcja")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
