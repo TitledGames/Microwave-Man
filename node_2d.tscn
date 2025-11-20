@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0s6k3qcbdy3j"]
+
+[ext_resource type="Texture2D" uid="uid://co18ekf81noiy" path="res://assets/IMG_0208.jpeg" id="1_wtcfe"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jn6hk"]
+texture = ExtResource("1_wtcfe")
+71:40/size_in_atlas = Vector2i(16, 16)
+71:40/0 = 0
+71:40/0/physics_layer_0/polygon_0/points = PackedVector2Array(-130.34999, 129.25, -128.15, -128.15, 128.70001, -127.05, 128.70001, 127.600006)
+51:40/size_in_atlas = Vector2i(15, 16)
+51:40/0 = 0
+51:40/0/physics_layer_0/polygon_0/points = PackedVector2Array(-130.34999, 129.25, -128.15, -128.15, 128.70001, -127.05, 128.70001, 127.600006)
+30:40/size_in_atlas = Vector2i(16, 16)
+30:40/0 = 0
+30:40/0/physics_layer_0/polygon_0/points = PackedVector2Array(-130.34999, 129.25, -128.15, -128.15, 128.70001, -127.05, 128.70001, 127.600006)
+31:18/size_in_atlas = Vector2i(15, 15)
+31:18/0 = 0
+31:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-119.900024, 112.20001, -121, -111.1, 119.899994, -110.55, 120.99997, 110.55)
+51:18/size_in_atlas = Vector2i(15, 15)
+51:18/0 = 0
+51:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-119.900024, 112.20001, -121, -111.1, 119.899994, -110.55, 120.99997, 110.55)
+72:18/size_in_atlas = Vector2i(15, 15)
+72:18/0 = 0
+72:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-119.900024, 112.20001, -121, -111.1, 119.899994, -110.55, 120.99997, 110.55)
+92:18/size_in_atlas = Vector2i(15, 7)
+92:18/0 = 0
+92:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-119, -55, 119, -55, 119, 55, -119, 55)
+92:40/size_in_atlas = Vector2i(15, 8)
+92:40/0 = 0
+92:40/0/physics_layer_0/polygon_0/points = PackedVector2Array(-119, -55, 119, -55, 119, 55, -119, 55)
+
+[sub_resource type="TileSet" id="TileSet_0e48y"]
+tile_size = Vector2i(238, 110)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_jn6hk")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_0e48y")
+format = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="TileMap"]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 4, 0, 0, 0, 31, 0, 18, 0, 0, 0, 1, 0, 4, 0, 0, 0, 31, 0, 18, 0, 0, 0, 2, 0, 4, 0, 0, 0, 31, 0, 18, 0, 0, 0)
+tile_set = SubResource("TileSet_0e48y")
