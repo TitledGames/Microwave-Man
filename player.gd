@@ -28,4 +28,8 @@ func start(pos):
 	position = pos
 	show()
 	$PlayerHitbox.disabled = false
+
+func hide_player():
+	hide()
+	$PlayerHitbox.disabled = true
 	
