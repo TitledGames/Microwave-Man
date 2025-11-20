@@ -1,59 +1,35 @@
-extends Area2D
-
-signal hit
-
-@export var speed = 400 # player speed
-var screen_size # windows size
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	
-	screen_size = get_viewport_rect().size
-	
-	hide()
-	
-	pass # function body.
+extends CharacterBody2D
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	
-	var velocity = Vector2.ZERO 
-	
-	if Input.is_action_pressed("move_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("move_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("move_down"):
-		velocity.y += 1
-	if Input.is_action_pressed("move_up"):
-		velocity.y -= 1
-	
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play()
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis("move_left", "move_right")
+	if direction:
+		velocity.x = direction * SPEED
 	else:
-		$AnimatedSprite2D.stop()
-	
-	
-	
-	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
-	
-	pass
+		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-
-func _on_body_entered(body: Node2D) -> void:
-	
-	hide() # Player is hidden
-	hit.emit()
-	
-	$PlayerHitbox.set_deferred("disabled", true)
-	
-	pass # Replace with function body.
+	move_and_slide()
 
 func start(pos):
 	position = pos
 	show()
 	$PlayerHitbox.disabled = false
+
+func hide_player():
+	hide()
+	$PlayerHitbox.disabled = true
 	
