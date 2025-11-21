@@ -2,15 +2,16 @@ extends CharacterBody2D
 
 
 const SPEED = 900.0
-
 const JUMP_VELOCITY = -700.0
+const GRAVITY = 980
+
 @onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
 
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity.y += GRAVITY * delta * 2
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
