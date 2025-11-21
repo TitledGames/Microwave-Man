@@ -26,19 +26,16 @@ color = Color(0.5, 0.7, 1, 1)
 wait_time = 2.0
 one_shot = true
 
-[node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(338.41058, 157.07874)
-
 [node name="HUD" parent="." instance=ExtResource("4_1bvp3")]
 
 [node name="Node2D" parent="." instance=ExtResource("7_272bh")]
 position = Vector2(128, 21)
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(1027, 673)
+position = Vector2(1043, 886)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, 1)
+position = Vector2(5, -29)
 zoom = Vector2(0.5, 0.5)
 
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
