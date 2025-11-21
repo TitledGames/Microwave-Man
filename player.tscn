@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://b8t1ohm482x12" path="res://player.gd" id="1_wkcja"]
 [ext_resource type="Texture2D" uid="uid://hcg7eaqk7vj2" path="res://assets/player.png" id="2_8xjnt"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkcja"]
-size = Vector2(32, 30)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
+radius = 127.0
+height = 282.0
 
 [node name="Player" type="CharacterBody2D"]
 slide_on_ceiling = false
@@ -12,7 +13,9 @@ floor_constant_speed = true
 script = ExtResource("1_wkcja")
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_wkcja")
+shape = SubResource("CapsuleShape2D_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7.6293945e-06, 1)
+scale = Vector2(8.09375, 8.9375)
 texture = ExtResource("2_8xjnt")
