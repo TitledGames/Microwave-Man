@@ -6,11 +6,21 @@
 [node name="main menu" type="Node2D"]
 script = ExtResource("1_7vrkn")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -126.0
+offset_top = -257.0
+offset_right = 1247.0
+offset_bottom = 811.0
+color = Color(0.8342518, 0.9400711, 0.835331, 1)
+
 [node name="playgame" type="Button" parent="."]
+top_level = true
 offset_left = 458.0
 offset_top = 245.0
 offset_right = 622.0
 offset_bottom = 301.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 32
 theme_override_fonts/font = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 25
 text = "Play Game"
@@ -20,9 +30,11 @@ offset_left = 461.0
 offset_top = 318.0
 offset_right = 625.0
 offset_bottom = 374.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 25
-text = "Extras
+text = "About
 "
 
 [node name="quit" type="Button" parent="."]
@@ -30,7 +42,7 @@ offset_left = 460.0
 offset_top = 400.0
 offset_right = 624.0
 offset_bottom = 456.0
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 25
 text = "Quit"
@@ -40,6 +52,11 @@ offset_left = 311.0
 offset_top = 146.0
 offset_right = 787.0
 offset_bottom = 190.0
+theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 36
 text = "[Enter Game Name Here]"
+
+[connection signal="pressed" from="playgame" to="." method="_on_playgame_pressed"]
+[connection signal="pressed" from="extras" to="." method="_on_extras_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
