@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbp8q3co8hcfr"]
+
+[ext_resource type="FontFile" uid="uid://y8i37mbuxiro" path="res://assets/fonts/Xolonium-Regular.ttf" id="1_4q2eq"]
+
+[node name="Extras" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -125.0
+offset_top = -227.0
+offset_right = 1248.0
+offset_bottom = 841.0
+color = Color(0.8342518, 0.9400711, 0.835331, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 54.0
+offset_top = 163.0
+offset_right = 1091.0
+offset_bottom = 476.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("1_4q2eq")
+theme_override_font_sizes/font_size = 45
+text = "      Made  for Game Off 2025 Game Jam
+
+        Created by Titled Games Team:
+Evan Castillo   Ben Fleming   Nico Ezzie"
