@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d37db3lg3je53" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bkc7x625ufmje" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dqrnqy70uj08i" path="res://hud.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://c0s6k3qcbdy3j" path="res://node_2d.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://c0s6k3qcbdy3j" path="res://Tile map.tscn" id="7_272bh"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0xm2m")
@@ -27,15 +27,15 @@ wait_time = 2.0
 one_shot = true
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(345, 160)
+position = Vector2(338.41058, 157.07874)
 
 [node name="HUD" parent="." instance=ExtResource("4_1bvp3")]
 
 [node name="Node2D" parent="." instance=ExtResource("7_272bh")]
-position = Vector2(0, 1)
+position = Vector2(128, 21)
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(868, 198)
+position = Vector2(1027, 673)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, 1)
