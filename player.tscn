@@ -8,7 +8,7 @@
 radius = 127.0
 height = 282.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 slide_on_ceiling = false
 floor_constant_speed = true
 script = ExtResource("1_wkcja")
