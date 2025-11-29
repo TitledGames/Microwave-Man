@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ldtlmewixafp"]
+[gd_scene load_steps=5 format=3 uid="uid://ldtlmewixafp"]
 
+[ext_resource type="Script" uid="uid://bjko32lmrsjug" path="res://coin.gd" id="1_0t63x"]
 [ext_resource type="Texture2D" uid="uid://drbyvdwxeew01" path="res://assets/coin.png" id="1_d5gmh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6qpsl"]
@@ -17,6 +18,7 @@ animations = [{
 radius = 16.0
 
 [node name="Coin" type="Area2D"]
+script = ExtResource("1_0t63x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6qpsl")
@@ -25,3 +27,5 @@ sprite_frames = SubResource("SpriteFrames_6qpsl")
 shape = SubResource("CircleShape2D_d5gmh")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

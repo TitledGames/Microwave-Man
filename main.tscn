@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdfo2ktxggpi6"]
+[gd_scene load_steps=6 format=3 uid="uid://bdfo2ktxggpi6"]
 
 [ext_resource type="Script" uid="uid://d37db3lg3je53" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bkc7x625ufmje" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dqrnqy70uj08i" path="res://hud.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://ldtlmewixafp" path="res://coin.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://c0s6k3qcbdy3j" path="res://tilemap.tscn" id="7_272bh"]
 
 [node name="Main" type="Node"]
@@ -37,6 +38,9 @@ position = Vector2(1043, 886)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(5, -29)
 zoom = Vector2(0.5, 0.5)
+
+[node name="Coin" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(1667, 929)
 
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
