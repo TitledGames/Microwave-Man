@@ -42,6 +42,9 @@ zoom = Vector2(0.5, 0.5)
 [node name="Coin" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(1667, 929)
 
+[node name="Coin2" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(1729, 929)
+
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]
