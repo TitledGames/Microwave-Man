@@ -24,6 +24,7 @@ theme_override_constants/outline_size = 32
 theme_override_fonts/font = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 25
 text = "Play Game"
+flat = true
 
 [node name="extras" type="Button" parent="."]
 offset_left = 461.0
@@ -36,6 +37,7 @@ theme_override_fonts/font = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 25
 text = "About
 "
+flat = true
 
 [node name="quit" type="Button" parent="."]
 offset_left = 460.0
@@ -46,6 +48,7 @@ theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 25
 text = "Quit"
+flat = true
 
 [node name="title" type="Label" parent="."]
 offset_left = 311.0
