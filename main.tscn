@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdfo2ktxggpi6"]
+[gd_scene load_steps=8 format=3 uid="uid://bdfo2ktxggpi6"]
 
 [ext_resource type="Script" uid="uid://d37db3lg3je53" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bkc7x625ufmje" path="res://player.tscn" id="1_ig7tw"]
@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://y8i37mbuxiro" path="res://assets/fonts/Xolonium-Regular.ttf" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://ldtlmewixafp" path="res://coin.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://c0s6k3qcbdy3j" path="res://tilemap.tscn" id="7_272bh"]
-[ext_resource type="PackedScene" uid="uid://c7v4w7v4w7v4" path="res://enemy.tscn" id="8_abcde"]
+[ext_resource type="PackedScene" uid="uid://cx0t1ok0lv362" path="res://enemy.tscn" id="8_abcde"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0xm2m")
@@ -77,12 +77,12 @@ text = "--->                           --->                         --->        
 position = Vector2(-602, 395)
 scale = Vector2(0.05, 0.05)
 
-[node name="Enemy" parent="." instance=ExtResource("8_abcde")]
-position = Vector2(500, 500)
-
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(3.8146973e-06, -1019.9999)
 zoom = Vector2(3, 3)
+
+[node name="Enemy" parent="." instance=ExtResource("8_abcde")]
+position = Vector2(-1278, -209)
 
 [node name="Coin" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(-298, 363)
