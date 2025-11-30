@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://btc7acnn0whr0"]
+
+[ext_resource type="AudioStream" uid="uid://c3unwfs6l0mk0" path="res://assets/sounds/coin.ogg" id="1_54jsu"]
+
+[node name="coin_sfx" type="Node"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_54jsu")
+autoplay = true

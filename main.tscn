@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdfo2ktxggpi6"]
+[gd_scene load_steps=7 format=3 uid="uid://bdfo2ktxggpi6"]
 
 [ext_resource type="Script" uid="uid://d37db3lg3je53" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bkc7x625ufmje" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dqrnqy70uj08i" path="res://hud.tscn" id="4_1bvp3"]
+[ext_resource type="FontFile" uid="uid://y8i37mbuxiro" path="res://assets/fonts/Xolonium-Regular.ttf" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://ldtlmewixafp" path="res://coin.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://c0s6k3qcbdy3j" path="res://tilemap.tscn" id="7_272bh"]
 
@@ -13,10 +14,10 @@ script = ExtResource("1_0xm2m")
 anchors_preset = -1
 anchor_right = 1.8390001
 anchor_bottom = 1.424
-offset_left = -576.0
-offset_top = -2957.0
-offset_right = 9489.472
-offset_bottom = 1127.248
+offset_left = -1251.0
+offset_top = -2824.0
+offset_right = 8814.472
+offset_bottom = 1260.248
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.5, 0.7, 1, 1)
@@ -30,20 +31,60 @@ one_shot = true
 [node name="HUD" parent="." instance=ExtResource("4_1bvp3")]
 
 [node name="Node2D" parent="." instance=ExtResource("7_272bh")]
-position = Vector2(128, 21)
+position = Vector2(-620, 19)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -695.0
+offset_top = 315.0
+offset_right = -511.0
+offset_bottom = 342.0
+theme_override_fonts/font = ExtResource("4_lquwl")
+theme_override_font_sizes/font_size = 9
+text = "Use [WASD] or Arrow keys to move. 
+Use [Space] to jump."
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -288.0
+offset_top = 325.0
+offset_right = -154.0
+offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("4_lquwl")
+theme_override_font_sizes/font_size = 9
+text = "This door seems locked.. 
+Try to fins another way."
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -804.0
+offset_top = 382.0
+offset_right = -381.0
+offset_bottom = 409.0
+theme_override_fonts/font = ExtResource("4_lquwl")
+theme_override_font_sizes/font_size = 16
+text = "--->                   --->                   --->                   --->                   --->"
+
+[node name="Label2" type="Label" parent="Label2"]
+layout_mode = 0
+offset_left = -72.0
+offset_top = -254.0
+offset_right = 624.0
+offset_bottom = -227.0
+theme_override_fonts/font = ExtResource("4_lquwl")
+theme_override_font_sizes/font_size = 16
+text = "--->                           --->                         --->                           --->                         --->"
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(1043, 886)
+position = Vector2(-602, 395)
+scale = Vector2(0.05, 0.05)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(5, -29)
-zoom = Vector2(0.5, 0.5)
+position = Vector2(3.8146973e-06, -1019.9999)
+zoom = Vector2(3, 3)
 
 [node name="Coin" parent="." instance=ExtResource("5_lquwl")]
-position = Vector2(1667, 929)
+position = Vector2(-298, 363)
 
 [node name="Coin2" parent="." instance=ExtResource("5_lquwl")]
-position = Vector2(1729, 929)
+position = Vector2(-408, 368)
 
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
