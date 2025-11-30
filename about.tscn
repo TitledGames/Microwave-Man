@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbp8q3co8hcfr"]
+[gd_scene load_steps=3 format=3 uid="uid://cbp8q3co8hcfr"]
 
 [ext_resource type="FontFile" uid="uid://y8i37mbuxiro" path="res://assets/fonts/Xolonium-Regular.ttf" id="1_4q2eq"]
+[ext_resource type="Script" uid="uid://okq42uj7a1is" path="res://about.gd" id="1_pp48r"]
 
 [node name="Extras" type="Node2D"]
+script = ExtResource("1_pp48r")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -125.0
@@ -23,3 +25,17 @@ text = "      Made  for Game Off 2025 Game Jam
 
         Created by Titled Games Team:
 Evan Castillo   Ben Fleming   Nico Ezzie"
+
+[node name="Button" type="Button" parent="."]
+top_level = true
+offset_left = 40.0
+offset_top = 24.0
+offset_right = 204.0
+offset_bottom = 105.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("1_4q2eq")
+theme_override_font_sizes/font_size = 42
+text = "Back"
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
