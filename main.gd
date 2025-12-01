@@ -2,7 +2,8 @@ extends Node
 
 var score
 
-
+func _ready():
+	GameState.restart_game.connect(new_game)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -17,6 +18,10 @@ func game_over() -> void:
 func new_game():
 	score = 0
 	
+	var player = get_node("Player")
+	if player:
+		player.start(Vector2(-589, 471.99997))
+
 	$StartTimer.start()
 	$HUD.update_score(score)
 	$HUD.show_message("Get Ready")
