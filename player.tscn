@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bkc7x625ufmje"]
 
 [ext_resource type="Script" uid="uid://b8t1ohm482x12" path="res://player.gd" id="1_wkcja"]
-[ext_resource type="Texture2D" uid="uid://hcg7eaqk7vj2" path="res://assets/player.png" id="2_8xjnt"]
+[ext_resource type="Texture2D" uid="uid://cvrryijrsmoxj" path="res://assets/PlayerFrame1.png" id="2_i3pqv"]
 [ext_resource type="AudioStream" uid="uid://cpr0rd0jjsgqe" path="res://assets/sounds/jump.ogg" id="3_i3pqv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
@@ -17,9 +17,9 @@ script = ExtResource("1_wkcja")
 shape = SubResource("CapsuleShape2D_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(7.6293945e-06, 1)
-scale = Vector2(8.09375, 8.9375)
-texture = ExtResource("2_8xjnt")
+position = Vector2(444, -83)
+scale = Vector2(20.774807, 22.940521)
+texture = ExtResource("2_i3pqv")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_i3pqv")
