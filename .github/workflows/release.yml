@@ -6,7 +6,7 @@ on:
 
 env:
   GODOT_VERSION: 4.5
-  EXPORT_NAME: GameOff2025
+  EXPORT_NAME: Microwave-Man!
   PROJECT_PATH: .
 
 # Permissions required to create a release
