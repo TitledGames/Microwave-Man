@@ -58,7 +58,7 @@ offset_bottom = 190.0
 theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 36
-text = "[Enter Game Name Here]"
+text = "Microwave-Man!"
 
 [connection signal="pressed" from="playgame" to="." method="_on_playgame_pressed"]
 [connection signal="pressed" from="extras" to="." method="_on_extras_pressed"]
