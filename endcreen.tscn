@@ -1,3 +1,59 @@
-[gd_scene format=3 uid="uid://l52iri7r63oq"]
+[gd_scene load_steps=4 format=3 uid="uid://l52iri7r63oq"]
+
+[ext_resource type="Script" uid="uid://du6xb37mqo0oh" path="res://endcreen.gd" id="1_53urq"]
+[ext_resource type="Texture2D" uid="uid://ctqd07ry8i37o" path="res://assets/icon.png" id="2_fjcxv"]
+[ext_resource type="FontFile" uid="uid://y8i37mbuxiro" path="res://assets/fonts/Xolonium-Regular.ttf" id="3_nqmyh"]
 
 [node name="endcreen" type="Node2D"]
+script = ExtResource("1_53urq")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(553.00006, 383)
+scale = Vector2(49.437496, 49.437496)
+texture = ExtResource("2_fjcxv")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 280.0
+offset_top = 19.0
+offset_right = 739.0
+offset_bottom = 136.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("3_nqmyh")
+theme_override_font_sizes/font_size = 30
+text = "               You Win!!!
+
+Thanks for playing our game!"
+
+[node name="play again" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 185.0
+offset_right = 322.0
+offset_bottom = 230.0
+theme_override_fonts/font = ExtResource("3_nqmyh")
+theme_override_font_sizes/font_size = 31
+text = "Play again"
+
+[node name="back to main menu" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 245.0
+offset_right = 337.0
+offset_bottom = 291.0
+theme_override_fonts/font = ExtResource("3_nqmyh")
+theme_override_font_sizes/font_size = 31
+text = "Main Menu"
+
+[node name="quit" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 299.0
+offset_right = 337.0
+offset_bottom = 345.0
+theme_override_fonts/font = ExtResource("3_nqmyh")
+theme_override_font_sizes/font_size = 31
+text = "Quit"
+
+[connection signal="pressed" from="Label/play again" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="Label/back to main menu" to="." method="_on_back_to_main_menu_pressed"]
+[connection signal="pressed" from="Label/quit" to="." method="_on_quit_pressed"]
