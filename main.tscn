@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdfo2ktxggpi6"]
+[gd_scene load_steps=8 format=3 uid="uid://bdfo2ktxggpi6"]
 
 [ext_resource type="Script" uid="uid://d37db3lg3je53" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bkc7x625ufmje" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dqrnqy70uj08i" path="res://hud.tscn" id="4_1bvp3"]
 [ext_resource type="FontFile" uid="uid://y8i37mbuxiro" path="res://assets/fonts/Xolonium-Regular.ttf" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://ldtlmewixafp" path="res://coin.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://dmxjnwyy4j0us" path="res://end.tscn" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://c0s6k3qcbdy3j" path="res://tilemap.tscn" id="7_272bh"]
 
 [node name="Main" type="Node"]
@@ -54,6 +55,9 @@ offset_right = -161.0
 offset_bottom = 445.0
 theme_override_fonts/font = ExtResource("4_lquwl")
 text = "Grab all the coins , and get to the top!"
+
+[node name="end" parent="." instance=ExtResource("7_5vw27")]
+position = Vector2(-287, -764)
 
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
