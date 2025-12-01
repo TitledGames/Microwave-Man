@@ -12,4 +12,11 @@ script = ExtResource("1_n735c")
 position = Vector2(68.5, 42.5)
 shape = SubResource("RectangleShape2D_egc6y")
 
+[node name="Label" type="Label" parent="."]
+offset_left = 14.0
+offset_top = 8.0
+offset_right = 81.0
+offset_bottom = 31.0
+text = "The End!"
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

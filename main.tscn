@@ -40,13 +40,25 @@ position = Vector2(-383, 460)
 [node name="Coin2" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(-468, 460)
 
+[node name="Coin6" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(-1045, 459)
+
+[node name="Coin3" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(-130, 106)
+
+[node name="Coin4" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(-171, -168)
+
+[node name="Coin5" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(-268, -68)
+
 [node name="Label" type="Label" parent="."]
 offset_left = -675.0
 offset_top = 412.0
 offset_right = -161.0
 offset_bottom = 445.0
 theme_override_fonts/font = ExtResource("4_lquwl")
-text = "Grab all the coins , and get to the top!"
+text = "Microwave the coins , and get to the top!"
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(-589, 471.99997)
