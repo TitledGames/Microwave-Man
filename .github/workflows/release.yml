@@ -133,7 +133,7 @@ jobs:
     needs: [export-windows, export-linux, export-web, export-mac]
     steps:
       - name: Download All Artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           path: release_files
           merge-multiple: true # Flattens files into the release_files folder
