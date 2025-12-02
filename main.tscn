@@ -58,7 +58,7 @@ offset_top = 412.0
 offset_right = -161.0
 offset_bottom = 445.0
 theme_override_fonts/font = ExtResource("4_lquwl")
-text = "Microwave the coins , and get to the top!"
+text = "Microwave the coins, and get to the top!"
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(-589, 471.99997)
