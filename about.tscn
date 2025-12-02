@@ -20,14 +20,14 @@ offset_bottom = 593.0
 theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("1_4q2eq")
 theme_override_font_sizes/font_size = 35
-text = "      Made  for the Github Game Off 2025
+text = "      Made for the Github Game Off 2025
 
         Created by the Titled Games Team:
 project516  That0nehistoryguy   Goiber_litgan
 
 This was our first Game Jam, and our first
 time using  Godot Engine, so this was a learning
-expirience for us. In the future, we aspire to 
+experience for us. In the future, we aspire to 
 create better higher quality games, and we 
 hope to join more game jams!"
 
