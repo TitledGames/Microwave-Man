@@ -2,8 +2,8 @@
 <component type="desktop-application">
   <id>dev.project516.titledgames.microwave-man</id>
   
-  <name>Microwave Man</name>
-  <summary>A platformer game about Microwave Man.</summary>
+  <name>Microwave Man!</name>
+  <summary>A platformer game staring Microwave Man!</summary>
   
   <developer id="dev.project516">
     <name>Titled Games</name>
@@ -11,7 +11,7 @@
   
   <description>
     <p>
-      This is a platformer game about Microwave Man ascending the map to reach the top while collecting items to microwave.
+      This is a platformer game staring Microwave Man, as he ascends the map to reach the top while collecting items to microwave.
     </p>
   </description>
   
