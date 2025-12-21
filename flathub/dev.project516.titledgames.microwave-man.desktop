@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=Microwave Man!
-Comment=Play as a microwave!
+Name=Microwave Man
+Comment=Play as an appliance.
 Categories=Game;
 Icon=dev.project516.titledgames.microwave-man
 Exec=godot-runner
