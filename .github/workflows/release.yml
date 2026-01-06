@@ -35,7 +35,7 @@ jobs:
           mkdir -v -p build/windows
           EXPORT_DIR="$(readlink -f build)"
           cd $PROJECT_PATH
-          godot --headless --verbose --export-release "Windows Desktop" "$EXPORT_DIR/windows/$EXPORT_NAME.exe"
+          godot --headless --verbose --export-release "Windows Desktop" "$EXPORT_DIR/windows/Microwave-Man-Windows.exe"
       - name: Upload Artifact
         uses: actions/upload-artifact@v6
         with:
@@ -61,7 +61,7 @@ jobs:
           mkdir -v -p build/linux
           EXPORT_DIR="$(readlink -f build)"
           cd $PROJECT_PATH
-          godot --headless --verbose --export-release "Linux/X11" "$EXPORT_DIR/linux/$EXPORT_NAME.x86_64"
+          godot --headless --verbose --export-release "Linux/X11" "$EXPORT_DIR/linux/Microwave-Man-Linux.x86_64"
       - name: Upload Artifact
         uses: actions/upload-artifact@v6
         with:
@@ -92,14 +92,14 @@ jobs:
         run: |
           apt-get update && apt-get install -y zip
           cd build/web
-          # Zips the contents of the web folder into web.zip
-          zip -r ../web.zip .
+          # Zips the contents of the web folder
+          zip -r ../Microwave-Man-Web.zip .
       - name: Upload Artifact
         uses: actions/upload-artifact@v6
         with:
           name: web-artifact
           # Upload the zip file specifically
-          path: build/web.zip
+          path: build/Microwave-Man-Web.zip
 
   export-mac:
     name: Mac Export
@@ -120,7 +120,7 @@ jobs:
           mkdir -v -p build/mac
           EXPORT_DIR="$(readlink -f build)"
           cd $PROJECT_PATH
-          godot --headless --verbose --export-release "macOS" "$EXPORT_DIR/mac/$EXPORT_NAME.zip"
+          godot --headless --verbose --export-release "macOS" "$EXPORT_DIR/mac/Microwave-Man-MacOS.zip"
       - name: Upload Artifact
         uses: actions/upload-artifact@v6
         with:
@@ -147,7 +147,7 @@ jobs:
           EXPORT_DIR="$(readlink -f build)"
           cd $PROJECT_PATH
           # Using --export-pack instead of --export-release to generate standalone .pck file
-          godot --headless --verbose --export-pack "Linux/X11" "$EXPORT_DIR/pck/$EXPORT_NAME.pck"
+          godot --headless --verbose --export-pack "Linux/X11" "$EXPORT_DIR/pck/Microwave-Man.pck"
       - name: Upload Artifact
         uses: actions/upload-artifact@v6
         with:
