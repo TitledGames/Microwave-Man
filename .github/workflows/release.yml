@@ -127,10 +127,36 @@ jobs:
           name: mac-artifact
           path: build/mac
 
+  export-pck:
+    name: PCK Export
+    runs-on: ubuntu-24.04
+    container:
+      image: barichello/godot-ci:4.5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          lfs: true
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/export_templates/
+          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+      - name: PCK Build
+        run: |
+          mkdir -v -p build/pck
+          EXPORT_DIR="$(readlink -f build)"
+          cd $PROJECT_PATH
+          godot --headless --verbose --export-pack "Linux/X11" "$EXPORT_DIR/pck/$EXPORT_NAME.pck"
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: pck-artifact
+          path: build/pck
+
   publish-release:
     name: Publish Release
     runs-on: ubuntu-latest
-    needs: [export-windows, export-linux, export-web, export-mac]
+    needs: [export-windows, export-linux, export-web, export-mac, export-pck]
     steps:
       - name: Download All Artifacts
         uses: actions/download-artifact@v7
