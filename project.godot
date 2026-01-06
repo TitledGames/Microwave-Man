@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 GameState="*res://game_state.gd"
 
+[display]
+
+window/size/resizable=false
+
 [global_group]
 
 player=""
