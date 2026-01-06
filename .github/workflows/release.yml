@@ -146,6 +146,7 @@ jobs:
           mkdir -v -p build/pck
           EXPORT_DIR="$(readlink -f build)"
           cd $PROJECT_PATH
+          # Using --export-pack instead of --export-release to generate standalone .pck file
           godot --headless --verbose --export-pack "Linux/X11" "$EXPORT_DIR/pck/$EXPORT_NAME.pck"
       - name: Upload Artifact
         uses: actions/upload-artifact@v6
