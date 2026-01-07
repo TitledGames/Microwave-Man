@@ -232,7 +232,16 @@ jobs:
           # If deploying to root, clean it (but keep beta directory if it exists)
           if [ "$DEPLOY_DIR" = "." ]; then
             # Remove all files in root except beta directory and .nojekyll
-            find . -maxdepth 1 -not -name '.' -not -name '..' -not -name '.git' -not -name 'beta' -not -name '.nojekyll' -exec rm -rf {} +
+            # First, save the beta directory if it exists
+            if [ -d "beta" ]; then
+              mv beta /tmp/beta-backup
+            fi
+            # Remove everything
+            rm -rf * .nojekyll
+            # Restore beta directory
+            if [ -d "/tmp/beta-backup" ]; then
+              mv /tmp/beta-backup beta
+            fi
           else
             # If deploying to beta, clean only the beta directory
             rm -rf beta
@@ -254,6 +263,12 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Deploy ${GITHUB_REF#refs/tags/} to $DEPLOY_DIR"
+            # Create a more descriptive commit message
+            if [ "$DEPLOY_DIR" = "." ]; then
+              DEPLOY_LOCATION="root"
+            else
+              DEPLOY_LOCATION="$DEPLOY_DIR"
+            fi
+            git commit -m "Deploy ${GITHUB_REF#refs/tags/} to $DEPLOY_LOCATION"
             git push origin gh-pages
           fi
