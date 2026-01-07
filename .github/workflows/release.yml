@@ -231,8 +231,8 @@ jobs:
           
           # If deploying to root, clean it (but keep beta directory if it exists)
           if [ "$DEPLOY_DIR" = "." ]; then
-            # Remove all files in root except beta directory
-            find . -maxdepth 1 -not -name '.' -not -name '..' -not -name '.git' -not -name 'beta' -exec rm -rf {} +
+            # Remove all files in root except beta directory and .nojekyll
+            find . -maxdepth 1 -not -name '.' -not -name '..' -not -name '.git' -not -name 'beta' -not -name '.nojekyll' -exec rm -rf {} +
           else
             # If deploying to beta, clean only the beta directory
             rm -rf beta
@@ -245,6 +245,9 @@ jobs:
           else
             cp -r extracted/* beta/
           fi
+          
+          # Add .nojekyll file to prevent Jekyll processing
+          touch .nojekyll
           
           # Commit and push
           git add .
