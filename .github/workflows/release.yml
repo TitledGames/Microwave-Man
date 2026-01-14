@@ -202,7 +202,7 @@ jobs:
         id: deploy-dir
         run: |
           # Check if this is a prerelease by looking at the tag
-          # Prereleases have format like 1.1.0.202560106.1 (extra dot-separated components after version)
+          # Prereleases have format like 1.1.0.20260106.1 (extra dot-separated components after version)
           # Stable releases have format like 1.1.0 (standard semver)
           TAG_NAME="${GITHUB_REF#refs/tags/}"
           echo "Tag name: $TAG_NAME"
