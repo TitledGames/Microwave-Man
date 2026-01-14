@@ -199,15 +199,19 @@ jobs:
         id: deploy-dir
         run: |
           # Check if this is a prerelease by looking at the tag
-          # Prereleases typically have -alpha, -beta, -rc, etc. in the tag name
+          # Prereleases have format like 1.1.0.202560106.1 (extra dot-separated components after version)
+          # Stable releases have format like 1.1.0 (standard semver)
           TAG_NAME="${GITHUB_REF#refs/tags/}"
           echo "Tag name: $TAG_NAME"
           
-          if [[ "$TAG_NAME" =~ (alpha|beta|rc|pre) ]]; then
-            echo "This is a prerelease"
+          # Count dots in tag name - more than 2 dots means prerelease
+          DOT_COUNT=$(echo "$TAG_NAME" | tr -cd '.' | wc -c)
+          
+          if [ "$DOT_COUNT" -gt 2 ]; then
+            echo "This is a prerelease (dot count: $DOT_COUNT)"
             echo "dir=beta" >> $GITHUB_OUTPUT
           else
-            echo "This is a stable release"
+            echo "This is a stable release (dot count: $DOT_COUNT)"
             echo "dir=." >> $GITHUB_OUTPUT
           fi
           
@@ -220,39 +224,55 @@ jobs:
           DEPLOY_DIR="${{ steps.deploy-dir.outputs.dir }}"
           
           # Check if gh-pages branch exists
+          FIRST_DEPLOY=false
           if git ls-remote --heads origin gh-pages | grep -q gh-pages; then
             echo "gh-pages branch exists, checking it out"
             git checkout gh-pages
           else
-            echo "gh-pages branch does not exist, creating it"
+            echo "gh-pages branch does not exist, creating it (first deployment)"
             git checkout --orphan gh-pages
             git rm -rf .
+            FIRST_DEPLOY=true
           fi
           
-          # If deploying to root, clean it (but keep beta directory if it exists)
-          if [ "$DEPLOY_DIR" = "." ]; then
-            # Remove all files in root except beta directory and .nojekyll
-            # First, save the beta directory if it exists
-            if [ -d "beta" ]; then
-              mv beta /tmp/beta-backup
-            fi
-            # Remove everything
+          # On first deploy, populate both directories for testing
+          if [ "$FIRST_DEPLOY" = true ]; then
+            echo "First deployment: populating both root and beta directories"
             rm -rf * .nojekyll
-            # Restore beta directory
-            if [ -d "/tmp/beta-backup" ]; then
-              mv /tmp/beta-backup beta
-            fi
-          else
-            # If deploying to beta, clean only the beta directory
-            rm -rf beta
-            mkdir -p beta
-          fi
-          
-          # Copy the extracted files to the appropriate directory
-          if [ "$DEPLOY_DIR" = "." ]; then
+            
+            # Deploy to root
             cp -r extracted/* .
-          else
+            
+            # Also deploy to beta
+            mkdir -p beta
             cp -r extracted/* beta/
+          else
+            # Regular deployment: only update the target directory
+            # If deploying to root, clean it (but keep beta directory if it exists)
+            if [ "$DEPLOY_DIR" = "." ]; then
+              # Remove all files in root except beta directory and .nojekyll
+              # First, save the beta directory if it exists
+              if [ -d "beta" ]; then
+                mv beta /tmp/beta-backup
+              fi
+              # Remove everything
+              rm -rf * .nojekyll
+              # Restore beta directory
+              if [ -d "/tmp/beta-backup" ]; then
+                mv /tmp/beta-backup beta
+              fi
+            else
+              # If deploying to beta, clean only the beta directory
+              rm -rf beta
+              mkdir -p beta
+            fi
+            
+            # Copy the extracted files to the appropriate directory
+            if [ "$DEPLOY_DIR" = "." ]; then
+              cp -r extracted/* .
+            else
+              cp -r extracted/* beta/
+            fi
           fi
           
           # Add .nojekyll file to prevent Jekyll processing
@@ -264,11 +284,15 @@ jobs:
             echo "No changes to commit"
           else
             # Create a more descriptive commit message
-            if [ "$DEPLOY_DIR" = "." ]; then
-              DEPLOY_LOCATION="root"
+            if [ "$FIRST_DEPLOY" = true ]; then
+              git commit -m "Initial deployment: Deploy ${GITHUB_REF#refs/tags/} to both root and beta"
             else
-              DEPLOY_LOCATION="$DEPLOY_DIR"
+              if [ "$DEPLOY_DIR" = "." ]; then
+                DEPLOY_LOCATION="root"
+              else
+                DEPLOY_LOCATION="$DEPLOY_DIR"
+              fi
+              git commit -m "Deploy ${GITHUB_REF#refs/tags/} to $DEPLOY_LOCATION"
             fi
-            git commit -m "Deploy ${GITHUB_REF#refs/tags/} to $DEPLOY_LOCATION"
             git push origin gh-pages
           fi
