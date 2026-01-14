@@ -253,6 +253,7 @@ jobs:
             if [ "$DEPLOY_DIR" = "." ]; then
               # Remove all files in root except beta directory
               # First, save the beta directory if it exists
+              BACKUP_DIR=""
               if [ -d "beta" ]; then
                 BACKUP_DIR="/tmp/beta-backup-$$-${RANDOM}"
                 mv beta "$BACKUP_DIR"
