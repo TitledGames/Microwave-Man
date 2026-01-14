@@ -1,5 +1,7 @@
 # Microwave-Man!
 
-Titled Games' submission for the [Game Off 2025](https://itch.io/jam/game-off-2025).
+Titled Games' submission for the [Game Off 2025](https://itch.io/jam/game-off-2025). You can view the submission's git tree [here](https://github.com/TitledGames/Microwave-Man/tree/1.0.0).
+
+This game is available on [Flathub](https://flathub.org) [here](https://flathub.org/en/apps/dev.project516.titledgames.microwave-man). The Flathub manifest file is available [here](https://github.com/flathub/dev.project516.titledgames.microwave-man).
 
 This is a Godot project: [Godot Docs](https://docs.godotengine.org/en/stable/)
