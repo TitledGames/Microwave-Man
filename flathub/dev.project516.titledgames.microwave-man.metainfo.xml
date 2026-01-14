@@ -43,13 +43,13 @@
   <content_rating type="oars-1.1" />
 
   <releases>
-  	<release version="1.1.0" date="2026-01-14">
-   		<description>
-      		<ul>
+	<release version="1.1.0" date="2026-01-14">
+		<description>
+			<ul>
 				<li>Improve player sprites.</li>
-        		<li>Fix ground tile map.</li>
-        		<li>Fix bugs in the web port.</li>
-      		</ul>
+				<li>Fix ground tile map.</li>
+				<li>Fix bugs in the web port.</li>
+			</ul>
 		</description>
 	</release>
   <release version="1.0.0" date="2025-12-01" />
