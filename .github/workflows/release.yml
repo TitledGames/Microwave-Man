@@ -194,6 +194,8 @@ jobs:
           mkdir -p /tmp/web-build
           cd /tmp/web-build
           unzip $GITHUB_WORKSPACE/web-artifact/Microwave-Man-Web.zip
+          # Clean up the web-artifact directory to prevent it from being committed to gh-pages
+          rm -rf $GITHUB_WORKSPACE/web-artifact
           ls -la
           
       - name: Determine Deployment Directory
