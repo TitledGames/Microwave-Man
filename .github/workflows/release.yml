@@ -238,7 +238,8 @@ jobs:
           # On first deploy, populate both directories for testing
           if [ "$FIRST_DEPLOY" = true ]; then
             echo "First deployment: populating both root and beta directories"
-            rm -rf * .nojekyll
+            # Clean everything (this is a fresh orphan branch)
+            rm -rf *
             
             # Deploy to root
             cp -r extracted/* .
@@ -250,16 +251,17 @@ jobs:
             # Regular deployment: only update the target directory
             # If deploying to root, clean it (but keep beta directory if it exists)
             if [ "$DEPLOY_DIR" = "." ]; then
-              # Remove all files in root except beta directory and .nojekyll
+              # Remove all files in root except beta directory
               # First, save the beta directory if it exists
               if [ -d "beta" ]; then
-                mv beta /tmp/beta-backup
+                BACKUP_DIR="/tmp/beta-backup-$$-${RANDOM}"
+                mv beta "$BACKUP_DIR"
               fi
               # Remove everything
-              rm -rf * .nojekyll
+              rm -rf *
               # Restore beta directory
-              if [ -d "/tmp/beta-backup" ]; then
-                mv /tmp/beta-backup beta
+              if [ -n "$BACKUP_DIR" ] && [ -d "$BACKUP_DIR" ]; then
+                mv "$BACKUP_DIR" beta
               fi
             else
               # If deploying to beta, clean only the beta directory
