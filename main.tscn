@@ -15,10 +15,10 @@ script = ExtResource("1_0xm2m")
 anchors_preset = -1
 anchor_right = 1.8390001
 anchor_bottom = 1.424
-offset_left = -1231.0
+offset_left = -2148.0
 offset_top = -3006.0
 offset_right = 8834.472
-offset_bottom = 1078.248
+offset_bottom = 1117.248
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.5, 0.7, 1, 1)
@@ -58,7 +58,7 @@ offset_top = 412.0
 offset_right = -161.0
 offset_bottom = 445.0
 theme_override_fonts/font = ExtResource("4_lquwl")
-text = "Microwave the coins , and get to the top!"
+text = "Microwave the coins, and get to the top!"
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(-589, 471.99997)

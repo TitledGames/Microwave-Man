@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt3q6ci8uj16i"
-path="res://.godot/imported/enemy.png-63f114c7bb3f2105c232c34f647cbc2d.ctex"
+uid="uid://dw2gebhlnjyjl"
+path="res://.godot/imported/dev.project516.titledgames.microwave-man.png-96020c94e3e0f52358764afad6d1932b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemy.png"
-dest_files=["res://.godot/imported/enemy.png-63f114c7bb3f2105c232c34f647cbc2d.ctex"]
+source_file="res://flathub/dev.project516.titledgames.microwave-man.png"
+dest_files=["res://.godot/imported/dev.project516.titledgames.microwave-man.png-96020c94e3e0f52358764afad6d1932b.ctex"]
 
 [params]
 
