@@ -190,9 +190,10 @@ jobs:
           
       - name: Extract Web Build
         run: |
-          mkdir -p extracted
-          cd extracted
-          unzip ../web-artifact/Microwave-Man-Web.zip
+          # Extract to /tmp to avoid it being deleted by git rm
+          mkdir -p /tmp/web-build
+          cd /tmp/web-build
+          unzip $GITHUB_WORKSPACE/web-artifact/Microwave-Man-Web.zip
           ls -la
           
       - name: Determine Deployment Directory
@@ -242,11 +243,11 @@ jobs:
             rm -rf *
             
             # Deploy to root
-            cp -r extracted/* .
+            cp -r /tmp/web-build/* .
             
             # Also deploy to beta
             mkdir -p beta
-            cp -r extracted/* beta/
+            cp -r /tmp/web-build/* beta/
           else
             # Regular deployment: only update the target directory
             # If deploying to root, clean it (but keep beta directory if it exists)
@@ -272,9 +273,9 @@ jobs:
             
             # Copy the extracted files to the appropriate directory
             if [ "$DEPLOY_DIR" = "." ]; then
-              cp -r extracted/* .
+              cp -r /tmp/web-build/* .
             else
-              cp -r extracted/* beta/
+              cp -r /tmp/web-build/* beta/
             fi
           fi
           
