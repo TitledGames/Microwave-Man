@@ -43,6 +43,13 @@
   <content_rating type="oars-1.1" />
 
   <releases>
+	<release version="1.1.1" date="2026-01-19">
+		<description>
+			<ul>
+				<li>Fix some minor bugs in tile map.</li>
+			</ul>
+		</description>
+	</release>
 	<release version="1.1.0" date="2026-01-14">
 		<description>
 			<ul>

@@ -22,4 +22,3 @@ func _on_body_entered(body):
 		
 		# This deletes the coin from the world
 		queue_free()
-		
