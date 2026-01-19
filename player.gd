@@ -26,10 +26,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	move_and_slide()
-	
-	# --- SPRITE FLIP LOGIC ---
-	# Note: This assumes your default sprite art faces RIGHT.
-	# If your art faces LEFT, swap the true/false below.
+
 	if direction > 0:
 		sprite.flip_h = false 
 	elif direction < 0:
