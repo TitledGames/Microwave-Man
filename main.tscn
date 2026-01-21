@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ldtlmewixafp" path="res://coin.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dmxjnwyy4j0us" path="res://end.tscn" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://c0s6k3qcbdy3j" path="res://tilemap.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://cx0t1ok0lv362" path="res://enemy.tscn" id="8_abcde"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0xm2m")
@@ -70,6 +71,9 @@ zoom = Vector2(3, 3)
 
 [node name="end" parent="." instance=ExtResource("7_5vw27")]
 position = Vector2(-267, -745)
+
+[node name="Enemy" parent="." instance=ExtResource("8_abcde")]
+position = Vector2(-1278, -209)
 
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
