@@ -10,10 +10,18 @@ config_version=5
 
 [application]
 
-config/name="GameOff2025"
+config/name="Microwave-Man!"
 run/main_scene="uid://r4ytomf7hl16"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameState="*res://game_state.gd"
+
+[display]
+
+window/size/resizable=false
 
 [global_group]
 
@@ -58,6 +66,7 @@ jump={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true

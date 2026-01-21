@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dqrnqy70uj08i" path="res://hud.tscn" id="4_1bvp3"]
 [ext_resource type="FontFile" uid="uid://y8i37mbuxiro" path="res://assets/fonts/Xolonium-Regular.ttf" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://ldtlmewixafp" path="res://coin.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://dmxjnwyy4j0us" path="res://end.tscn" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://c0s6k3qcbdy3j" path="res://tilemap.tscn" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://cx0t1ok0lv362" path="res://enemy.tscn" id="8_abcde"]
 
@@ -15,10 +16,10 @@ script = ExtResource("1_0xm2m")
 anchors_preset = -1
 anchor_right = 1.8390001
 anchor_bottom = 1.424
-offset_left = -1251.0
-offset_top = -2824.0
-offset_right = 8814.472
-offset_bottom = 1260.248
+offset_left = -2148.0
+offset_top = -3006.0
+offset_right = 8834.472
+offset_bottom = 1117.248
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.5, 0.7, 1, 1)
@@ -34,61 +35,45 @@ one_shot = true
 [node name="Node2D" parent="." instance=ExtResource("7_272bh")]
 position = Vector2(-620, 19)
 
+[node name="Coin" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(-383, 460)
+
+[node name="Coin2" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(-468, 460)
+
+[node name="Coin6" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(-1045, 459)
+
+[node name="Coin3" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(-130, 106)
+
+[node name="Coin4" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(-171, -168)
+
+[node name="Coin5" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(-268, -68)
+
 [node name="Label" type="Label" parent="."]
-offset_left = -695.0
-offset_top = 315.0
-offset_right = -511.0
-offset_bottom = 342.0
+offset_left = -675.0
+offset_top = 412.0
+offset_right = -161.0
+offset_bottom = 445.0
 theme_override_fonts/font = ExtResource("4_lquwl")
-theme_override_font_sizes/font_size = 9
-text = "Use [WASD] or Arrow keys to move. 
-Use [Space] to jump."
-
-[node name="Label3" type="Label" parent="."]
-offset_left = -288.0
-offset_top = 325.0
-offset_right = -154.0
-offset_bottom = 352.0
-theme_override_fonts/font = ExtResource("4_lquwl")
-theme_override_font_sizes/font_size = 9
-text = "This door seems locked.. 
-Try to fins another way."
-
-[node name="Label2" type="Label" parent="."]
-offset_left = -804.0
-offset_top = 382.0
-offset_right = -381.0
-offset_bottom = 409.0
-theme_override_fonts/font = ExtResource("4_lquwl")
-theme_override_font_sizes/font_size = 16
-text = "--->                   --->                   --->                   --->                   --->"
-
-[node name="Label2" type="Label" parent="Label2"]
-layout_mode = 0
-offset_left = -72.0
-offset_top = -254.0
-offset_right = 624.0
-offset_bottom = -227.0
-theme_override_fonts/font = ExtResource("4_lquwl")
-theme_override_font_sizes/font_size = 16
-text = "--->                           --->                         --->                           --->                         --->"
+text = "Microwave the coins, and get to the top!"
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(-602, 395)
+position = Vector2(-589, 471.99997)
 scale = Vector2(0.05, 0.05)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(3.8146973e-06, -1019.9999)
 zoom = Vector2(3, 3)
 
+[node name="end" parent="." instance=ExtResource("7_5vw27")]
+position = Vector2(-267, -745)
+
 [node name="Enemy" parent="." instance=ExtResource("8_abcde")]
 position = Vector2(-1278, -209)
-
-[node name="Coin" parent="." instance=ExtResource("5_lquwl")]
-position = Vector2(-298, 363)
-
-[node name="Coin2" parent="." instance=ExtResource("5_lquwl")]
-position = Vector2(-408, 368)
 
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

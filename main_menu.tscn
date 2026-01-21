@@ -1,17 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://r4ytomf7hl16"]
+[gd_scene load_steps=4 format=3 uid="uid://r4ytomf7hl16"]
 
 [ext_resource type="FontFile" uid="uid://y8i37mbuxiro" path="res://assets/fonts/Xolonium-Regular.ttf" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://ckxckman8wf65" path="res://main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://ctqd07ry8i37o" path="res://assets/icon.png" id="2_fu7sn"]
 
 [node name="main menu" type="Node2D"]
 script = ExtResource("1_7vrkn")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -126.0
-offset_top = -257.0
-offset_right = 1247.0
-offset_bottom = 811.0
-color = Color(0.8342518, 0.9400711, 0.835331, 1)
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(553.00006, 383)
+scale = Vector2(49.437496, 49.437496)
+texture = ExtResource("2_fu7sn")
 
 [node name="playgame" type="Button" parent="."]
 top_level = true
@@ -51,14 +50,15 @@ text = "Quit"
 flat = true
 
 [node name="title" type="Label" parent="."]
-offset_left = 311.0
+offset_left = 312.0
 offset_top = 146.0
-offset_right = 787.0
+offset_right = 788.0
 offset_bottom = 190.0
 theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 36
-text = "[Enter Game Name Here]"
+text = "Microwave-Man!"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="playgame" to="." method="_on_playgame_pressed"]
 [connection signal="pressed" from="extras" to="." method="_on_extras_pressed"]
