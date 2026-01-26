@@ -21,13 +21,13 @@ Credits
 Supported OpenType features
 
 	case  Provides case sensitive placement of punctuation,
-	      brackets, and math symbols for uppercase text.
+		  brackets, and math symbols for uppercase text.
 	frac  Replaces number/number sequences with diagonal fractions.
-	      Numbers that touch a slash should not exceed 10 digits.
+		  Numbers that touch a slash should not exceed 10 digits.
 	kern  Provides kerning for Latin, Greek, and Cyrillic scripts.
 	locl  Dutch: Replaces j with a stressed version if it follows í.
-	      Sami: Replaces n-form Eng with the preferred N-form version.
-	      Romanian and Moldovan: Replaces ŞşŢţ with the preferred ȘșȚț.
+		  Sami: Replaces n-form Eng with the preferred N-form version.
+		  Romanian and Moldovan: Replaces ŞşŢţ with the preferred ȘșȚț.
 	pnum  Replaces monospaced digits with proportional versions.
 	sinf  Replaces digits with scientific inferiors below the baseline.
 	subs  Replaces digits with subscript versions on the baseline.
