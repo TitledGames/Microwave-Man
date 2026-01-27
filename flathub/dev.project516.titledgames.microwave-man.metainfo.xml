@@ -28,15 +28,15 @@
   
   <screenshots>
 	<screenshot type="default">
-	  <image type="source">https://raw.githubusercontent.com/TitledGames/Microwave-Man/1c6248724bac1777204c221b5778ccc955637a8b/screenshots/level.png</image>
+	  <image type="source">https://raw.githubusercontent.com/TitledGames/Microwave-Man/6262f44d45977a7d5b196055fd56659a511c646e/screenshots/level.png</image>
 	  <caption>Microwave-Man must make it to the top!</caption>
 	</screenshot>
 	<screenshot>
-	  <image type="source">https://raw.githubusercontent.com/TitledGames/Microwave-Man/1c6248724bac1777204c221b5778ccc955637a8b/screenshots/ground.png</image>
+	  <image type="source">https://raw.githubusercontent.com/TitledGames/Microwave-Man/6262f44d45977a7d5b196055fd56659a511c646e/screenshots/ground.png</image>
 	  <caption>The player must climb from the bottom</caption>
 	</screenshot>
 	<screenshot>
-	  <image type="source">https://raw.githubusercontent.com/TitledGames/Microwave-Man/1c6248724bac1777204c221b5778ccc955637a8b/screenshots/titlescreen.png</image>
+	  <image type="source">https://raw.githubusercontent.com/TitledGames/Microwave-Man/6262f44d45977a7d5b196055fd56659a511c646e/screenshots/titlescreen.png</image>
 	  <caption>Title Screen</caption>
 	</screenshot>
   </screenshots>
@@ -44,23 +44,37 @@
   <content_rating type="oars-1.1" />
 
   <releases>
+	<release version="1.2.0" date="2026-01-27">
+		<description>
+			<ul>
+				<li>Add Discord RPC</li>
+				<li>Update to Godot 4.6</li>
+			</ul>
+		</description>
+	</release>
 	<release version="1.1.1" date="2026-01-19">
 		<description>
 			<ul>
-				<li>Fix some minor bugs in tile map.</li>
+				<li>Fix some minor bugs in tile map</li>
 			</ul>
 		</description>
 	</release>
 	<release version="1.1.0" date="2026-01-14">
 		<description>
 			<ul>
-				<li>Improve player sprites.</li>
-				<li>Fix ground tile map.</li>
-				<li>Fix bugs in the web port.</li>
+				<li>Improve player sprites</li>
+				<li>Fix ground tile map</li>
+				<li>Fix bugs in the web port</li>
 			</ul>
 		</description>
 	</release>
-  <release version="1.0.0" date="2025-12-01" />
+	<release version="1.0.0" date="2025-12-01">
+		<description>
+			<ul>
+				<li>Inital release</li>
+			</ul>
+		</description>
+	</release>
 </releases>
   
   <launchable type="desktop-id">dev.project516.titledgames.microwave-man.desktop</launchable>
