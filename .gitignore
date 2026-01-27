@@ -1,3 +1,10 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Codespace
+build/
+
+# Mac OS
+export/
+.DS_Store

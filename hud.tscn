@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqrnqy70uj08i"]
+
+[ext_resource type="Script" uid="uid://cfxjr6wc488j8" path="res://hud.gd" id="1_64ctp"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_64ctp")
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
