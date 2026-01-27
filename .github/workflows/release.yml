@@ -36,11 +36,16 @@ jobs:
           EXPORT_DIR="$(readlink -f build)"
           cd $PROJECT_PATH
           godot --headless --verbose --export-release "Windows Desktop" "$EXPORT_DIR/windows/Microwave-Man-Windows.exe"
+      - name: Zip Windows Export
+        run: |
+          apt-get update && apt-get install -y zip
+          cd build/windows
+          zip -r ../Microwave-Man-Windows.zip .
       - name: Upload Artifact
         uses: actions/upload-artifact@v6
         with:
           name: windows-artifact
-          path: build/windows
+          path: build/Microwave-Man-Windows.zip
 
   export-linux:
     name: Linux Export
@@ -62,11 +67,16 @@ jobs:
           EXPORT_DIR="$(readlink -f build)"
           cd $PROJECT_PATH
           godot --headless --verbose --export-release "Linux/X11" "$EXPORT_DIR/linux/Microwave-Man-Linux.x86_64"
+      - name: Zip Linux Export
+        run: |
+          apt-get update && apt-get install -y zip
+          cd build/linux
+          zip -r ../Microwave-Man-Linux.zip .
       - name: Upload Artifact
         uses: actions/upload-artifact@v6
         with:
           name: linux-artifact
-          path: build/linux
+          path: build/Microwave-Man-Linux.zip
 
   export-web:
     name: Web Export
