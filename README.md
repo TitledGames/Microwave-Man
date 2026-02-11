@@ -4,8 +4,6 @@ Titled Games' submission for the [Game Off 2025](https://itch.io/jam/game-off-20
 
 This game is available on [Flathub](https://flathub.org) [here](https://flathub.org/en/apps/dev.project516.titledgames.microwave-man). The Flathub manifest file is available [here](https://github.com/flathub/dev.project516.titledgames.microwave-man).
 
-This is a Godot project: [Godot Docs](https://docs.godotengine.org/en/stable/)
-
 ## Playing the Game
 
 The easiest way to play is to download the pre-built game from the [Releases](https://github.com/TitledGames/Microwave-Man/releases) page. 
