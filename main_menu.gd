@@ -2,7 +2,6 @@ extends Node2D
 
 func _ready() -> void:
 	if not OS.has_feature("web"):
-		# Look for the Autoload dynamically so the web parser doesn't crash
 		var discord = get_node_or_null("/root/DiscordRPC")
 		
 		if discord != null:
