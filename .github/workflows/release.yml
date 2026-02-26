@@ -210,8 +210,6 @@ jobs:
         id: deploy-dir
         run: |
           # Check if this is a prerelease by looking at the tag
-          # Prereleases have format like 1.1.0.20260106.1 (extra dot-separated components after version)
-          # Stable releases have format like 1.1.0 (standard semver)
           TAG_NAME="${GITHUB_REF#refs/tags/}"
           echo "Tag name: $TAG_NAME"
           
@@ -249,34 +247,25 @@ jobs:
           # On first deploy, populate both directories for testing
           if [ "$FIRST_DEPLOY" = true ]; then
             echo "First deployment: populating both root and beta directories"
-            # Clean everything (this is a fresh orphan branch)
             rm -rf *
             
-            # Deploy to root
             cp -r /tmp/web-build/* .
             
-            # Also deploy to beta
             mkdir -p beta
             cp -r /tmp/web-build/* beta/
           else
             # Regular deployment: only update the target directory
-            # If deploying to root, clean it (but keep beta directory if it exists)
             if [ "$DEPLOY_DIR" = "." ]; then
-              # Remove all files in root except beta directory
-              # First, save the beta directory if it exists
               BACKUP_DIR=""
               if [ -d "beta" ]; then
-                BACKUP_DIR="/tmp/beta-backup-$$-${RANDOM}"
+                BACKUP_DIR="/tmp/beta-backup-$$-$RANDOM"
                 mv beta "$BACKUP_DIR"
               fi
-              # Remove everything
               rm -rf *
-              # Restore beta directory
               if [ -n "$BACKUP_DIR" ] && [ -d "$BACKUP_DIR" ]; then
                 mv "$BACKUP_DIR" beta
               fi
             else
-              # If deploying to beta, clean only the beta directory
               rm -rf beta
               mkdir -p beta
             fi
@@ -292,11 +281,27 @@ jobs:
           # Add .nojekyll file to prevent Jekyll processing
           touch .nojekyll
           
-          # Commit and push
+          # Stage all files
           git add .
-          if git diff --staged --quiet; then
+          
+          # Safely check for changes (handles first-deployment missing HEAD)
+          HAS_CHANGES=false
+          if git rev-parse --verify HEAD >/dev/null 2>&1; then
+            if ! git diff --staged --quiet; then
+              HAS_CHANGES=true
+            fi
+          else
+            # If HEAD doesn't exist (first run), we definitely have changes
+            HAS_CHANGES=true
+          fi
+          
+          if [ "$HAS_CHANGES" = false ]; then
             echo "No changes to commit"
           else
+            # Switch to a fresh orphan branch to wipe commit history
+            git checkout --orphan temp-gh-pages
+            git add .
+            
             # Create a more descriptive commit message
             if [ "$FIRST_DEPLOY" = true ]; then
               git commit -m "Initial deployment: Deploy ${GITHUB_REF#refs/tags/} to both root and beta"
@@ -308,5 +313,7 @@ jobs:
               fi
               git commit -m "Deploy ${GITHUB_REF#refs/tags/} to $DEPLOY_LOCATION"
             fi
-            git push origin gh-pages
+            
+            # Force push the temporary branch over the existing remote gh-pages
+            git push --force origin temp-gh-pages:gh-pages
           fi
