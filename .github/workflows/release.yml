@@ -170,7 +170,7 @@ jobs:
     needs: [export-windows, export-linux, export-web, export-mac, export-pck]
     steps:
       - name: Download All Artifacts
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           path: release_files
           merge-multiple: true # Flattens files into the release_files folder
@@ -191,7 +191,7 @@ jobs:
           fetch-depth: 0  # Fetch all history to check for gh-pages branch
           
       - name: Download Web Artifact
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: web-artifact
           path: web-artifact
