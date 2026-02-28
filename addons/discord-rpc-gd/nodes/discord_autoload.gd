@@ -10,4 +10,5 @@ func _ready() -> void:
 	pass
 
 func  _process(_delta) -> void:
-	DiscordRPC.run_callbacks()
+	if ClassDB.class_exists("DiscordRPC"):
+		DiscordRPC.run_callbacks()
