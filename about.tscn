@@ -43,4 +43,13 @@ theme_override_font_sizes/font_size = 36
 text = "Back"
 flat = true
 
+[node name="BuildLabel" type="Label" parent="."]
+offset_left = 900.0
+offset_top = 720.0
+offset_right = 1090.0
+offset_bottom = 760.0
+theme_override_fonts/font = ExtResource("1_4q2eq")
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 2
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
