@@ -42,7 +42,7 @@ jobs:
           cd build/windows
           zip -r ../Microwave-Man-Windows.zip .
       - name: Upload Artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: windows-artifact
           path: build/Microwave-Man-Windows.zip
@@ -73,7 +73,7 @@ jobs:
           cd build/linux
           zip -r ../Microwave-Man-Linux.zip .
       - name: Upload Artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: linux-artifact
           path: build/Microwave-Man-Linux.zip
@@ -105,7 +105,7 @@ jobs:
           # Zips the contents of the web folder
           zip -r ../Microwave-Man-Web.zip .
       - name: Upload Artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: web-artifact
           # Upload the zip file specifically
@@ -132,7 +132,7 @@ jobs:
           cd $PROJECT_PATH
           godot --headless --verbose --export-release "macOS" "$EXPORT_DIR/mac/Microwave-Man-MacOS.zip"
       - name: Upload Artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: mac-artifact
           path: build/mac
@@ -159,7 +159,7 @@ jobs:
           # Using --export-pack instead of --export-release to generate standalone .pck file
           godot --headless --verbose --export-pack "Linux/X11" "$EXPORT_DIR/pck/Microwave-Man.pck"
       - name: Upload Artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: pck-artifact
           path: build/pck
