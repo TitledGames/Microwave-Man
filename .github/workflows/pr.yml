@@ -1,17 +1,19 @@
 name: PR assignment
 
 on:
-    pull_request:
-        types: [opened]
+  pull_request:
+    types: [opened]
+
+permissions:
+  pull-requests: write
+  issues: write
 
 jobs:
-    auto-assign:
-        runs-on: ubuntu-latest
-        permissions:
-            pull-requests: write
-        steps:
-            - name: 'Auto-assign PR'
-              uses: pozil/auto-assign-issue@v2
-              with:
-                  repo-token: ${{ secrets.MY_PERSONAL_ACCESS_TOKEN }}
-                  assignees: project516
+  auto-assign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Auto-assign PR'
+        uses: pozil/auto-assign-issue@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          assignees: project516
