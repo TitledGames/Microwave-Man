@@ -17,8 +17,9 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            github.rest.issues.addAssignees({
+            await github.rest.issues.addAssignees({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
               assignees: ['project516']
+            });
