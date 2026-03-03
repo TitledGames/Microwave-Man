@@ -1,16 +1,17 @@
 extends Node2D
 
 func _ready() -> void:
-	if not OS.has_feature("web") and ClassDB.class_exists("DiscordRPC"):
-		DiscordRPC.app_id = 1465471267183263922
-		DiscordRPC.details = "Play as a microwave!"
-		DiscordRPC.state = "Playing the game!"
-		DiscordRPC.large_image = "ground"
-		DiscordRPC.large_image_text = "Play now!"
-		DiscordRPC.small_image = "level"
-		DiscordRPC.small_image_text = "Playing Microwave-Man!"
-		DiscordRPC.start_timestamp = int(Time.get_unix_time_from_system())
-		DiscordRPC.refresh()
+	if not OS.has_feature("web") and Engine.has_singleton("DiscordRPC"):
+		var discord_rpc = Engine.get_singleton("DiscordRPC")
+		discord_rpc.set("app_id", 1465471267183263922)
+		discord_rpc.set("details", "Play as a microwave!")
+		discord_rpc.set("state", "Playing the game!")
+		discord_rpc.set("large_image", "ground")
+		discord_rpc.set("large_image_text", "Play now!")
+		discord_rpc.set("small_image", "level")
+		discord_rpc.set("small_image_text", "Playing Microwave-Man!")
+		discord_rpc.set("start_timestamp", int(Time.get_unix_time_from_system()))
+		discord_rpc.call("refresh")
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
