@@ -48,6 +48,7 @@
 		<description>
 			<ul>
 				<li>Implement player sprite animation<li>
+				<li>Fix crash due to Discord integration crashing<li>
 				<li>Display build version on title screen</li>
 				<li>Update game icon</li>
 			</ul>
