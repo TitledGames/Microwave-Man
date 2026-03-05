@@ -29,6 +29,9 @@ func show_game_over():
 func update_score(score):
 	$ScoreLabel.text = str(score)
 
+func update_coins(coins):
+	$CoinLabel.text = "Coins: " + str(coins)
+
 
 
 func _on_start_button_pressed() -> void:

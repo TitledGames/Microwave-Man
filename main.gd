@@ -4,6 +4,7 @@ var score
 
 func _ready():
 	GameState.restart_game.connect(new_game)
+	GameState.coin_collected.connect(_on_coin_collected)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -16,6 +17,7 @@ func game_over() -> void:
 
 func new_game():
 	score = 0
+	GameState.coins = 0
 	
 	var player = get_node("Player")
 	if player:
@@ -23,6 +25,7 @@ func new_game():
 
 	$StartTimer.start()
 	$HUD.update_score(score)
+	$HUD.update_coins(0)
 	$HUD.show_message("Get Ready")
 
 
@@ -34,4 +37,7 @@ func _on_score_timer_timeout() -> void:
 
 func _on_start_timer_timeout() -> void:
 	$ScoreTimer.start()
-	
+
+func _on_coin_collected() -> void:
+	$HUD.update_coins(GameState.coins)
+
