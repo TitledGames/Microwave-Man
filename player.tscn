@@ -1,25 +1,57 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkc7x625ufmje"]
+[gd_scene format=3 uid="uid://bkc7x625ufmje"]
 
 [ext_resource type="Script" uid="uid://b8t1ohm482x12" path="res://player.gd" id="1_wkcja"]
+[ext_resource type="Texture2D" uid="uid://dvetfapwkmjq7" path="res://assets/PlayerFrame3.png" id="2_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://cvrryijrsmoxj" path="res://assets/PlayerFrame1.png" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://ci8e20rlndg03" path="res://assets/PlayerFrame4.png" id="3_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://hqvsmmqkn6u2" path="res://assets/PlayerFrame2.png" id="3_hqtel"]
 [ext_resource type="AudioStream" uid="uid://cpr0rd0jjsgqe" path="res://assets/sounds/jump.ogg" id="3_i3pqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3pqv"]
 size = Vector2(369, 515)
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[sub_resource type="SpriteFrames" id="SpriteFrames_i3pqv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2hs0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1jxqw")
+}],
+"loop": false,
+"name": &"coin",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i3pqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hqtel")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1996965184 groups=["player"]]
 slide_on_ceiling = false
 floor_constant_speed = true
 script = ExtResource("1_wkcja")
 
-[node name="PlayerHitbox" type="CollisionShape2D" parent="."]
+[node name="PlayerHitbox" type="CollisionShape2D" parent="." unique_id=501429539]
 position = Vector2(-1.5, 34.5)
 shape = SubResource("RectangleShape2D_i3pqv")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, 0)
-scale = Vector2(20.774807, 22.940521)
-texture = ExtResource("2_i3pqv")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2032814317]
+position = Vector2(-0.9999924, 35.00002)
+scale = Vector2(20.444445, 19.769232)
+sprite_frames = SubResource("SpriteFrames_i3pqv")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1405140980]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=879088804]
 stream = ExtResource("3_i3pqv")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
