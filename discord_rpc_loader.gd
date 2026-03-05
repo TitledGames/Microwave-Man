@@ -3,10 +3,12 @@ extends Node
 var _discord_rpc_available: bool = false
 
 func _ready() -> void:
-	_discord_rpc_available = (not OS.has_feature("web") and ClassDB.class_exists("DiscordRPC"))
+	_discord_rpc_available = Engine.has_singleton("DiscordRPC")
 	if not _discord_rpc_available:
 		set_process(false)
 
 func _process(_delta) -> void:
 	if _discord_rpc_available:
-		DiscordRPC.run_callbacks()
+		var discord_rpc = Engine.get_singleton("DiscordRPC")
+		if discord_rpc:
+			discord_rpc.call("run_callbacks")
