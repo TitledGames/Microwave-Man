@@ -1,6 +1,10 @@
 extends Node2D
 
 func _ready() -> void:
+  var version = ProjectSettings.get_setting("application/config/version", "")
+	if version != "":
+		$BuildLabel.text = version
+    
 	if not OS.has_feature("web") and Engine.has_singleton("DiscordRPC"):
 		var discord_rpc = Engine.get_singleton("DiscordRPC")
 		discord_rpc.set("app_id", 1465471267183263922)
