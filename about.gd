@@ -1,10 +1,9 @@
 extends Node2D
 
-
 func _ready() -> void:
 	var version = ProjectSettings.get_setting("application/config/version", "")
 	if version != "":
-		$BuildLabel.text = "v" + version
+		$BuildLabel.text = version
 
 
 func _on_button_pressed() -> void:

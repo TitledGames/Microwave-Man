@@ -3,6 +3,10 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var version = ProjectSettings.get_setting("application/config/version", "")
+	if version != "":
+		$BuildLabel.text = version
+	
 	DiscordRPC.app_id = 1465471267183263922
 	DiscordRPC.details = "Play as a microwave!"
 	DiscordRPC.state = "Playing the game!"
