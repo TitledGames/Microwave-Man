@@ -24,6 +24,16 @@ text = "               You Win!!!
 
 Thanks for playing our game!"
 
+[node name="CoinCount" type="Label" parent="."]
+offset_left = 280.0
+offset_top = 145.0
+offset_right = 739.0
+offset_bottom = 185.0
+theme_override_fonts/font = ExtResource("3_nqmyh")
+theme_override_font_sizes/font_size = 28
+text = "Coins collected: 0 / 6"
+horizontal_alignment = 1
+
 [node name="play again" type="Button" parent="Label"]
 layout_mode = 0
 offset_left = 151.0
