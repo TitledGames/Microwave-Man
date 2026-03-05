@@ -22,7 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameState="*res://game_state.gd"
-DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
+DiscordRPCWrapper="*res://discord_rpc_loader.gd"
 
 [display]
 
