@@ -28,15 +28,15 @@
   
   <screenshots>
 	<screenshot type="default">
-	  <image type="source">https://raw.githubusercontent.com/TitledGames/Microwave-Man/6262f44d45977a7d5b196055fd56659a511c646e/screenshots/level.png</image>
+	  <image type="source">https://raw.githubusercontent.com/TitledGames/Microwave-Man/152cc57c4e36e52f8921d717df46cf7f48b2ae26/screenshots/level.png</image>
 	  <caption>Microwave-Man must make it to the top!</caption>
 	</screenshot>
 	<screenshot>
-	  <image type="source">https://raw.githubusercontent.com/TitledGames/Microwave-Man/6262f44d45977a7d5b196055fd56659a511c646e/screenshots/ground.png</image>
+	  <image type="source">https://raw.githubusercontent.com/TitledGames/Microwave-Man/152cc57c4e36e52f8921d717df46cf7f48b2ae26/screenshots/ground.png</image>
 	  <caption>The player must climb from the bottom</caption>
 	</screenshot>
 	<screenshot>
-	  <image type="source">https://raw.githubusercontent.com/TitledGames/Microwave-Man/6262f44d45977a7d5b196055fd56659a511c646e/screenshots/titlescreen.png</image>
+	  <image type="source">https://raw.githubusercontent.com/TitledGames/Microwave-Man/152cc57c4e36e52f8921d717df46cf7f48b2ae26/screenshots/titlescreen.png</image>
 	  <caption>Title Screen</caption>
 	</screenshot>
   </screenshots>
