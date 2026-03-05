@@ -1,18 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbp8q3co8hcfr"]
+[gd_scene format=3 uid="uid://cbp8q3co8hcfr"]
 
 [ext_resource type="FontFile" uid="uid://y8i37mbuxiro" path="res://assets/fonts/Xolonium-Regular.ttf" id="1_4q2eq"]
 [ext_resource type="Script" uid="uid://okq42uj7a1is" path="res://about.gd" id="1_pp48r"]
 [ext_resource type="Texture2D" uid="uid://ctqd07ry8i37o" path="res://assets/icon.png" id="2_k56y8"]
 
-[node name="Extras" type="Node2D"]
+[node name="Extras" type="Node2D" unique_id=1293147872]
 script = ExtResource("1_pp48r")
 
-[node name="Icon" type="Sprite2D" parent="."]
+[node name="Icon" type="Sprite2D" parent="." unique_id=122024380]
 position = Vector2(553.00006, 383)
 scale = Vector2(49.437496, 49.437496)
 texture = ExtResource("2_k56y8")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=819941313]
 offset_left = 169.0
 offset_top = 76.0
 offset_right = 1206.0
@@ -31,7 +31,7 @@ experience for us. In the future, we aspire to
 create better higher quality games, and we 
 hope to join more game jams!"
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=1554066245]
 top_level = true
 offset_left = 40.0
 offset_top = 24.0
@@ -42,5 +42,13 @@ theme_override_fonts/font = ExtResource("1_4q2eq")
 theme_override_font_sizes/font_size = 36
 text = "Back"
 flat = true
+
+[node name="BuildLabel" type="Label" parent="." unique_id=1086229892]
+offset_left = 962.0
+offset_right = 1152.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("1_4q2eq")
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 2
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

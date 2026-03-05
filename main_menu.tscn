@@ -1,18 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://r4ytomf7hl16"]
+[gd_scene format=3 uid="uid://r4ytomf7hl16"]
 
 [ext_resource type="FontFile" uid="uid://y8i37mbuxiro" path="res://assets/fonts/Xolonium-Regular.ttf" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://ckxckman8wf65" path="res://main_menu.gd" id="1_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://ctqd07ry8i37o" path="res://assets/icon.png" id="2_fu7sn"]
 
-[node name="main menu" type="Node2D"]
+[node name="main menu" type="Node2D" unique_id=432237393]
 script = ExtResource("1_7vrkn")
 
-[node name="Icon" type="Sprite2D" parent="."]
+[node name="Icon" type="Sprite2D" parent="." unique_id=193098593]
 position = Vector2(553.00006, 383)
 scale = Vector2(49.437496, 49.437496)
 texture = ExtResource("2_fu7sn")
 
-[node name="playgame" type="Button" parent="."]
+[node name="playgame" type="Button" parent="." unique_id=2013493479]
 top_level = true
 offset_left = 458.0
 offset_top = 245.0
@@ -25,7 +25,7 @@ theme_override_font_sizes/font_size = 25
 text = "Play Game"
 flat = true
 
-[node name="extras" type="Button" parent="."]
+[node name="extras" type="Button" parent="." unique_id=1643779603]
 offset_left = 461.0
 offset_top = 318.0
 offset_right = 625.0
@@ -38,7 +38,7 @@ text = "About
 "
 flat = true
 
-[node name="quit" type="Button" parent="."]
+[node name="quit" type="Button" parent="." unique_id=944257350]
 offset_left = 460.0
 offset_top = 400.0
 offset_right = 624.0
@@ -49,7 +49,7 @@ theme_override_font_sizes/font_size = 25
 text = "Quit"
 flat = true
 
-[node name="title" type="Label" parent="."]
+[node name="title" type="Label" parent="." unique_id=1958687737]
 offset_left = 312.0
 offset_top = 146.0
 offset_right = 788.0
@@ -59,6 +59,14 @@ theme_override_fonts/font = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 36
 text = "Microwave-Man!"
 horizontal_alignment = 1
+
+[node name="BuildLabel" type="Label" parent="." unique_id=504746542]
+offset_left = 1023.0
+offset_right = 1152.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 2
 
 [connection signal="pressed" from="playgame" to="." method="_on_playgame_pressed"]
 [connection signal="pressed" from="extras" to="." method="_on_extras_pressed"]
