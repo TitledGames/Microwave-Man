@@ -15,6 +15,9 @@ func _on_body_entered(body):
 	# Check if the body overlapping the coin is actually the player
 	if body.is_in_group("player"):
 		
+		if body.has_method("play_collect_animation"):
+			body.play_collect_animation()
+		
 		var sound_instance = COIN_SOUND_SCENE.instantiate()
 		
 		# Add it to the main tree (it starts playing immediately due to Autoplay)
