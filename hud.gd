@@ -6,7 +6,6 @@ signal start_game
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -20,22 +19,16 @@ func show_game_over():
 	show_message("Game Over")
 	await $MessageTimer.timeout
 	
-	$Message.text = "place holder text"
-	$Message.show()
-	
 	await get_tree().create_timer(1.0).timeout
 	$StartButton.show()
 	
-func update_score(score):
-	$ScoreLabel.text = str(score)
-
-
+func update_coins(coins):
+	$CoinLabel.text = "Coins: " + str(coins)
 
 func _on_start_button_pressed() -> void:
 	$StartButton.hide()
 	start_game.emit()
 	pass # Replace with function body.
-
 
 func _on_message_timer_timeout() -> void:
 	$Message.hide()
