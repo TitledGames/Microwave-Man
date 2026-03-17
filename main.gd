@@ -14,8 +14,10 @@ func _ready():
 
 func _process(delta: float) -> void:
 	if GameState.is_level_running:
+		var prev_second = int(GameState.elapsed_time)
 		GameState.elapsed_time += delta
-		$HUD.update_timer(GameState.elapsed_time)
+		if int(GameState.elapsed_time) != prev_second:
+			$HUD.update_timer(GameState.elapsed_time)
 
 func new_game():
 	GameState.coins = 0

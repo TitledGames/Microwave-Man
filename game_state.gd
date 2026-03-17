@@ -12,8 +12,9 @@ const HIGHSCORE_PATH = "user://highscores.json"
 const MAX_HIGHSCORES = 10
 
 func format_time(seconds: float) -> String:
-	var mins = int(seconds) / 60
-	var secs = int(seconds) % 60
+	var total_seconds: int = int(seconds)
+	var mins: int = total_seconds / 60
+	var secs: int = total_seconds % 60
 	return "%02d:%02d" % [mins, secs]
 
 func get_highscores() -> Array:
@@ -24,9 +25,20 @@ func get_highscores() -> Array:
 		return []
 	var data = JSON.parse_string(file.get_as_text())
 	file.close()
-	if data is Array:
-		return data
-	return []
+	if not data is Array:
+		return []
+	var valid: Array = []
+	for entry in data:
+		if entry is Dictionary \
+				and entry.has("name") and entry["name"] is String \
+				and entry.has("time") and (entry["time"] is float or entry["time"] is int) \
+				and entry.has("coins") and (entry["coins"] is float or entry["coins"] is int):
+			valid.append({
+				"name": entry["name"],
+				"time": float(entry["time"]),
+				"coins": int(entry["coins"])
+			})
+	return valid
 
 func save_highscore(player_name: String) -> void:
 	var scores = get_highscores()
