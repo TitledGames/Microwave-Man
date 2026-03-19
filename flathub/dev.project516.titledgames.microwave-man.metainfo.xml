@@ -4,7 +4,7 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>MIT</project_license>
   <name>Microwave Man</name>
-  <summary>Play as an appliance.</summary>
+  <summary>Play as an appliance</summary>
   
   <description>
 	<p>
@@ -17,8 +17,7 @@
   <color type="primary" scheme_preference="dark">#605c60</color>
 </branding>
   
-  <developer_name>Titled Games</developer_name>
-  <developer id="dev.project516.TitledGames">
+  <developer id="dev.project516.titledgames">
 	<name>Titled Games</name>
   </developer>
   
@@ -28,15 +27,15 @@
   
   <screenshots>
 	<screenshot type="default">
-	  <image type="source">https://raw.githubusercontent.com/TitledGames/Microwave-Man/6262f44d45977a7d5b196055fd56659a511c646e/screenshots/level.png</image>
+	  <image type="source">https://raw.githubusercontent.com/TitledGames/Microwave-Man/152cc57c4e36e52f8921d717df46cf7f48b2ae26/screenshots/level.png</image>
 	  <caption>Microwave-Man must make it to the top!</caption>
 	</screenshot>
 	<screenshot>
-	  <image type="source">https://raw.githubusercontent.com/TitledGames/Microwave-Man/6262f44d45977a7d5b196055fd56659a511c646e/screenshots/ground.png</image>
+	  <image type="source">https://raw.githubusercontent.com/TitledGames/Microwave-Man/152cc57c4e36e52f8921d717df46cf7f48b2ae26/screenshots/ground.png</image>
 	  <caption>The player must climb from the bottom</caption>
 	</screenshot>
 	<screenshot>
-	  <image type="source">https://raw.githubusercontent.com/TitledGames/Microwave-Man/6262f44d45977a7d5b196055fd56659a511c646e/screenshots/titlescreen.png</image>
+	  <image type="source">https://raw.githubusercontent.com/TitledGames/Microwave-Man/152cc57c4e36e52f8921d717df46cf7f48b2ae26/screenshots/titlescreen.png</image>
 	  <caption>Title Screen</caption>
 	</screenshot>
   </screenshots>
@@ -44,6 +43,16 @@
   <content_rating type="oars-1.1" />
 
   <releases>
+	<release version="1.3.0" date="2026-03-05">
+		<description>
+			<ul>
+				<li>Implement player sprite animation</li>
+				<li>Fix crash due to Discord integration crashing</li>
+				<li>Display build version on title screen</li>
+				<li>Update game icon</li>
+			</ul>
+		</description>
+  	</release>
 	<release version="1.2.0" date="2026-01-27">
 		<description>
 			<ul>
