@@ -102,9 +102,8 @@ theme_override_font_sizes/font_size = 22
 text = "Enter your name:"
 
 [node name="NameInput" type="LineEdit" parent="." unique_id=1871208323]
-offset_left = 2.0
 offset_top = 288.0
-offset_right = 292.0
+offset_right = 146.0
 offset_bottom = 323.0
 theme_override_fonts/font = ExtResource("3_nqmyh")
 theme_override_font_sizes/font_size = 22
@@ -112,10 +111,10 @@ placeholder_text = "Your name..."
 max_length = 20
 
 [node name="SaveScoreButton" type="Button" parent="." unique_id=545406893]
-offset_left = 297.0
-offset_top = 289.0
-offset_right = 382.0
-offset_bottom = 324.0
+offset_left = 146.0
+offset_top = 288.0
+offset_right = 207.0
+offset_bottom = 323.0
 theme_override_fonts/font = ExtResource("3_nqmyh")
 theme_override_font_sizes/font_size = 20
 text = "Save"
