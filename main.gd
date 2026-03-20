@@ -1,5 +1,7 @@
 extends Node
 
+const SPAWN_POSITION = Vector2(-589, 471.99997)
+
 func _ready():
 	GameState.restart_game.connect(new_game)
 	GameState.coin_collected.connect(_on_coin_collected)
@@ -8,6 +10,7 @@ func _ready():
 	GameState.total_coins = get_tree().get_nodes_in_group("coins").size()
 	GameState.coins = 0
 	GameState.elapsed_time = 0.0
+	GameState.is_level_running = false
 	$HUD.update_coins(0)
 	$HUD.update_timer(0.0)
 	$StartTimer.start()
@@ -26,7 +29,7 @@ func new_game():
 
 	var player = get_node("Player")
 	if player:
-		player.start(Vector2(-589, 471.99997))
+		player.start(SPAWN_POSITION)
 
 	$HUD.update_coins(0)
 	$HUD.update_timer(0.0)
