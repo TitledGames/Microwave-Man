@@ -5,10 +5,6 @@ const COIN_SOUND_SCENE = preload("res://coin_sfx.tscn")
 func _ready() -> void:
 	add_to_group("coins")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _on_body_entered(body):
 	# Check if the body overlapping the coin is actually the player
 	if body.is_in_group("player"):

@@ -41,6 +41,9 @@ func get_highscores() -> Array:
 	return valid
 
 func save_highscore(player_name: String) -> void:
+	player_name = player_name.strip_edges()
+	if player_name.is_empty():
+		player_name = "Anonymous"
 	var scores = get_highscores()
 	scores.append({
 		"name": player_name,
