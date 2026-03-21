@@ -24,6 +24,12 @@ jobs:
         uses: actions/checkout@v6
         with:
           lfs: true
+      - name: Set Version from Tag
+        run: |
+          TAG_NAME="${GITHUB_REF#refs/tags/}"
+          VERSION="${TAG_NAME#v}"
+          echo "Setting version to: $VERSION"
+          sed -i "s/config\/version=\"[^\"]*\"/config\/version=\"$VERSION\"/" project.godot
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/export_templates/
@@ -57,6 +63,12 @@ jobs:
         uses: actions/checkout@v6
         with:
           lfs: true
+      - name: Set Version from Tag
+        run: |
+          TAG_NAME="${GITHUB_REF#refs/tags/}"
+          VERSION="${TAG_NAME#v}"
+          echo "Setting version to: $VERSION"
+          sed -i "s/config\/version=\"[^\"]*\"/config\/version=\"$VERSION\"/" project.godot
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/export_templates/
@@ -88,6 +100,12 @@ jobs:
         uses: actions/checkout@v6
         with:
           lfs: true
+      - name: Set Version from Tag
+        run: |
+          TAG_NAME="${GITHUB_REF#refs/tags/}"
+          VERSION="${TAG_NAME#v}"
+          echo "Setting version to: $VERSION"
+          sed -i "s/config\/version=\"[^\"]*\"/config\/version=\"$VERSION\"/" project.godot
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/export_templates/
@@ -121,6 +139,12 @@ jobs:
         uses: actions/checkout@v6
         with:
           lfs: true
+      - name: Set Version from Tag
+        run: |
+          TAG_NAME="${GITHUB_REF#refs/tags/}"
+          VERSION="${TAG_NAME#v}"
+          echo "Setting version to: $VERSION"
+          sed -i "s/config\/version=\"[^\"]*\"/config\/version=\"$VERSION\"/" project.godot
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/export_templates/
@@ -147,6 +171,12 @@ jobs:
         uses: actions/checkout@v6
         with:
           lfs: true
+      - name: Set Version from Tag
+        run: |
+          TAG_NAME="${GITHUB_REF#refs/tags/}"
+          VERSION="${TAG_NAME#v}"
+          echo "Setting version to: $VERSION"
+          sed -i "s/config\/version=\"[^\"]*\"/config\/version=\"$VERSION\"/" project.godot
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/export_templates/
