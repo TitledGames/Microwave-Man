@@ -25,12 +25,7 @@ jobs:
         with:
           lfs: true
       - name: Set Version from Tag
-        run: |
-          TAG_NAME="${GITHUB_REF#refs/tags/}"
-          VERSION="${TAG_NAME#v}"
-          echo "Setting version to: $VERSION"
-          ESCAPED_VERSION="$(printf '%s' "$VERSION" | sed 's/[&/]/\\&/g')"
-          sed -i "s/config\/version=\"[^\"]*\"/config\/version=\"$ESCAPED_VERSION\"/" project.godot
+        uses: ./.github/actions/set-version
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/export_templates/
@@ -65,12 +60,7 @@ jobs:
         with:
           lfs: true
       - name: Set Version from Tag
-        run: |
-          TAG_NAME="${GITHUB_REF#refs/tags/}"
-          VERSION="${TAG_NAME#v}"
-          echo "Setting version to: $VERSION"
-          ESCAPED_VERSION="$(printf '%s' "$VERSION" | sed 's/[&/]/\\&/g')"
-          sed -i "s/config\/version=\"[^\"]*\"/config\/version=\"$ESCAPED_VERSION\"/" project.godot
+        uses: ./.github/actions/set-version
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/export_templates/
@@ -103,12 +93,7 @@ jobs:
         with:
           lfs: true
       - name: Set Version from Tag
-        run: |
-          TAG_NAME="${GITHUB_REF#refs/tags/}"
-          VERSION="${TAG_NAME#v}"
-          echo "Setting version to: $VERSION"
-          ESCAPED_VERSION="$(printf '%s' "$VERSION" | sed 's/[&/]/\\&/g')"
-          sed -i "s/config\/version=\"[^\"]*\"/config\/version=\"$ESCAPED_VERSION\"/" project.godot
+        uses: ./.github/actions/set-version
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/export_templates/
@@ -143,12 +128,7 @@ jobs:
         with:
           lfs: true
       - name: Set Version from Tag
-        run: |
-          TAG_NAME="${GITHUB_REF#refs/tags/}"
-          VERSION="${TAG_NAME#v}"
-          echo "Setting version to: $VERSION"
-          ESCAPED_VERSION="$(printf '%s' "$VERSION" | sed 's/[&/]/\\&/g')"
-          sed -i "s/config\/version=\"[^\"]*\"/config\/version=\"$ESCAPED_VERSION\"/" project.godot
+        uses: ./.github/actions/set-version
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/export_templates/
@@ -176,12 +156,7 @@ jobs:
         with:
           lfs: true
       - name: Set Version from Tag
-        run: |
-          TAG_NAME="${GITHUB_REF#refs/tags/}"
-          VERSION="${TAG_NAME#v}"
-          echo "Setting version to: $VERSION"
-          ESCAPED_VERSION="$(printf '%s' "$VERSION" | sed 's/[&/]/\\&/g')"
-          sed -i "s/config\/version=\"[^\"]*\"/config\/version=\"$ESCAPED_VERSION\"/" project.godot
+        uses: ./.github/actions/set-version
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/export_templates/
