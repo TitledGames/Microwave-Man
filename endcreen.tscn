@@ -1,18 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://l52iri7r63oq"]
+[gd_scene format=3 uid="uid://l52iri7r63oq"]
 
 [ext_resource type="Script" uid="uid://du6xb37mqo0oh" path="res://endcreen.gd" id="1_53urq"]
 [ext_resource type="Texture2D" uid="uid://ctqd07ry8i37o" path="res://assets/icon.png" id="2_fjcxv"]
 [ext_resource type="FontFile" uid="uid://y8i37mbuxiro" path="res://assets/fonts/Xolonium-Regular.ttf" id="3_nqmyh"]
 
-[node name="endcreen" type="Node2D"]
+[node name="endcreen" type="Node2D" unique_id=150504928]
 script = ExtResource("1_53urq")
 
-[node name="Icon" type="Sprite2D" parent="."]
+[node name="Icon" type="Sprite2D" parent="." unique_id=1949703431]
 position = Vector2(553.00006, 383)
 scale = Vector2(49.437496, 49.437496)
 texture = ExtResource("2_fjcxv")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1772358920]
 offset_left = 280.0
 offset_top = 19.0
 offset_right = 739.0
@@ -24,7 +24,7 @@ text = "               You Win!!!
 
 Thanks for playing our game!"
 
-[node name="play again" type="Button" parent="Label"]
+[node name="play again" type="Button" parent="Label" unique_id=931274831]
 layout_mode = 0
 offset_left = 151.0
 offset_top = 185.0
@@ -34,7 +34,7 @@ theme_override_fonts/font = ExtResource("3_nqmyh")
 theme_override_font_sizes/font_size = 31
 text = "Play again"
 
-[node name="back to main menu" type="Button" parent="Label"]
+[node name="back to main menu" type="Button" parent="Label" unique_id=314348178]
 layout_mode = 0
 offset_left = 148.0
 offset_top = 245.0
@@ -44,7 +44,7 @@ theme_override_fonts/font = ExtResource("3_nqmyh")
 theme_override_font_sizes/font_size = 31
 text = "Main Menu"
 
-[node name="quit" type="Button" parent="Label"]
+[node name="quit" type="Button" parent="Label" unique_id=1472748856]
 layout_mode = 0
 offset_left = 148.0
 offset_top = 299.0
@@ -54,6 +54,72 @@ theme_override_fonts/font = ExtResource("3_nqmyh")
 theme_override_font_sizes/font_size = 31
 text = "Quit"
 
+[node name="CoinCount" type="Label" parent="." unique_id=1647851829]
+offset_left = 763.0
+offset_top = -1.0
+offset_right = 1222.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("3_nqmyh")
+theme_override_font_sizes/font_size = 28
+text = "Coins collected: 0 / 6"
+horizontal_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="." unique_id=1055199732]
+offset_left = 829.0
+offset_top = 33.0
+offset_right = 1288.0
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("3_nqmyh")
+theme_override_font_sizes/font_size = 28
+text = "Time: 00:00"
+horizontal_alignment = 1
+
+[node name="HighScoresTitle" type="Label" parent="." unique_id=1893800148]
+offset_left = -57.0
+offset_right = 323.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("3_nqmyh")
+theme_override_font_sizes/font_size = 26
+text = "─── High Scores ───"
+horizontal_alignment = 1
+
+[node name="HighScoresList" type="Label" parent="." unique_id=298655524]
+offset_left = 2.0
+offset_top = 29.0
+offset_right = 382.0
+offset_bottom = 249.0
+theme_override_fonts/font = ExtResource("3_nqmyh")
+theme_override_font_sizes/font_size = 20
+text = "No scores yet!"
+autowrap_mode = 3
+
+[node name="NameEntryLabel" type="Label" parent="." unique_id=801782557]
+offset_top = 259.0
+offset_right = 380.0
+offset_bottom = 294.0
+theme_override_fonts/font = ExtResource("3_nqmyh")
+theme_override_font_sizes/font_size = 22
+text = "Enter your name:"
+
+[node name="NameInput" type="LineEdit" parent="." unique_id=1871208323]
+offset_top = 288.0
+offset_right = 146.0
+offset_bottom = 323.0
+theme_override_fonts/font = ExtResource("3_nqmyh")
+theme_override_font_sizes/font_size = 22
+placeholder_text = "Your name..."
+max_length = 20
+
+[node name="SaveScoreButton" type="Button" parent="." unique_id=545406893]
+offset_left = 146.0
+offset_top = 288.0
+offset_right = 207.0
+offset_bottom = 323.0
+theme_override_fonts/font = ExtResource("3_nqmyh")
+theme_override_font_sizes/font_size = 20
+text = "Save"
+
 [connection signal="pressed" from="Label/play again" to="." method="_on_play_again_pressed"]
 [connection signal="pressed" from="Label/back to main menu" to="." method="_on_back_to_main_menu_pressed"]
 [connection signal="pressed" from="Label/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="SaveScoreButton" to="." method="_on_save_score_pressed"]
