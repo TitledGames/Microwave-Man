@@ -4,8 +4,6 @@ func _ready() -> void:
 	var version = ProjectSettings.get_setting("application/config/version", "")
 	if version != "":
 		$BuildLabel.text = version
-		_reposition_build_label()
-		get_viewport().size_changed.connect(_reposition_build_label)
 
 	if not OS.has_feature("web") and Engine.has_singleton("DiscordRPC"):
 		var discord_rpc = Engine.get_singleton("DiscordRPC")
@@ -27,12 +25,3 @@ func _on_playgame_pressed() -> void:
 
 func _on_extras_pressed() -> void:
 	get_tree().change_scene_to_file("res://about.tscn")
-
-func _reposition_build_label() -> void:
-	var viewport_size := get_viewport_rect().size
-	var label_min_size := $BuildLabel.get_minimum_size()
-	var margin := 5.0
-	$BuildLabel.offset_right = viewport_size.x - margin
-	$BuildLabel.offset_left = $BuildLabel.offset_right - label_min_size.x
-	$BuildLabel.offset_top = margin
-	$BuildLabel.offset_bottom = margin + label_min_size.y
