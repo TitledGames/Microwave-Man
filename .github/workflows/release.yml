@@ -16,7 +16,7 @@ permissions:
 jobs:
   export-windows:
     name: Windows Export
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:4.6
     steps:
@@ -49,7 +49,7 @@ jobs:
 
   export-linux:
     name: Linux Export
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:4.6
     steps:
@@ -80,7 +80,7 @@ jobs:
 
   export-web:
     name: Web Export
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:4.6
     steps:
@@ -113,7 +113,7 @@ jobs:
 
   export-mac:
     name: Mac Export
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:4.6
     steps:
@@ -139,7 +139,7 @@ jobs:
 
   export-pck:
     name: PCK Export
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:4.6
     steps:
