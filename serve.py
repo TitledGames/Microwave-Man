@@ -1,5 +1,4 @@
 from http.server import HTTPServer, SimpleHTTPRequestHandler
-import sys
 import os
 
 # Ensure we serve from the build directory
