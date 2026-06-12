@@ -51,7 +51,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		if velocity.length() > 0:
 			sprite.play("default")
 		else:
-			sprite.play("default") 
 			sprite.stop() 
 		
 func start(pos):
