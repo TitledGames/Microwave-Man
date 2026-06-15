@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdfo2ktxggpi6"]
+[gd_scene load_steps=9 format=3 uid="uid://bdfo2ktxggpi6"]
 
-[ext_resource type="Script" uid="uid://d37db3lg3je53" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://bdlqk7qpnoqx8" path="res://level.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bkc7x625ufmje" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dqrnqy70uj08i" path="res://hud.tscn" id="4_1bvp3"]
 [ext_resource type="FontFile" uid="uid://y8i37mbuxiro" path="res://assets/fonts/Xolonium-Regular.ttf" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://ldtlmewixafp" path="res://coin.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dmxjnwyy4j0us" path="res://end.tscn" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://c0s6k3qcbdy3j" path="res://tilemap.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://baw7pb75cl1bp" path="res://enemy.tscn" id="8_enemy"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0xm2m")
@@ -22,12 +23,6 @@ offset_bottom = 1117.248
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.5, 0.7, 1, 1)
-
-[node name="ScoreTimer" type="Timer" parent="."]
-
-[node name="StartTimer" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
 
 [node name="HUD" parent="." instance=ExtResource("4_1bvp3")]
 
@@ -71,6 +66,5 @@ zoom = Vector2(3, 3)
 [node name="end" parent="." instance=ExtResource("7_5vw27")]
 position = Vector2(-267, -745)
 
-[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
-[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
-[connection signal="start_game" from="HUD" to="." method="new_game"]
+[node name="Enemy" parent="." instance=ExtResource("8_enemy")]
+position = Vector2(-400, 450)

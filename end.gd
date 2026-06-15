@@ -11,6 +11,6 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_body_entered(body):
-	# Check if the body overlapping the coin is actually the player
+	# Check if the body reaching the goal is actually the player
 	if body.is_in_group("player"):
-		get_tree().change_scene_to_file("res://endcreen.tscn")
+		GameState.advance_level()

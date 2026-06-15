@@ -21,7 +21,8 @@ func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 func _on_playgame_pressed() -> void:
-	get_tree().change_scene_to_file("res://main.tscn")
+	GameState.start_new_game()
+	get_tree().change_scene_to_file(GameState.LEVELS[0])
 
 func _on_extras_pressed() -> void:
 	get_tree().change_scene_to_file("res://about.tscn")
