@@ -1,14 +1,35 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	var version = ProjectSettings.get_setting("application/config/version", "")
+	if version != "":
+		$BuildLabel.text = version
+	$Title.text = "You Win!!!" if GameState.won else "Game Over"
+	$CoinCount.text = "Coins collected: %d / %d" % [GameState.coins, GameState.total_coins]
+	$TimeLabel.text = "Time: " + GameState.format_time(GameState.elapsed_time)
+	_refresh_highscores()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _refresh_highscores() -> void:
+	var scores = GameState.get_highscores()
+	if scores.is_empty():
+		$HighScoresList.text = "No scores yet!"
+		return
+	var text = ""
+	for i in range(scores.size()):
+		var s = scores[i]
+		text += "%d. %s  %d coins  %s\n" % [i + 1, s["name"], s["coins"], GameState.format_time(s["time"])]
+	$HighScoresList.text = text.strip_edges()
+
+
+func _on_save_score_pressed() -> void:
+	var player_name = $NameInput.text.strip_edges()
+	if player_name.is_empty():
+		player_name = "Anonymous"
+	GameState.save_highscore(player_name)
+	$NameInput.text = ""
+	$SaveScoreButton.disabled = true
+	_refresh_highscores()
 
 
 func _on_play_again_pressed() -> void:

@@ -5,6 +5,7 @@ const COIN_SOUND_SCENE = preload("res://coin_sfx.tscn")
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
+	add_to_group("coins")
 	_animate()
 
 func _animate() -> void:
@@ -27,6 +28,10 @@ func _on_body_entered(body):
 
 		if body.has_method("play_collect_animation"):
 			body.play_collect_animation()
+
+		# Track the collected coin in the global game state
+		GameState.coins += 1
+		GameState.coin_collected.emit()
 
 		var sound_instance = COIN_SOUND_SCENE.instantiate()
 

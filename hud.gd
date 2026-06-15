@@ -6,11 +6,14 @@ func update_lives(lives):
 	for i in life_icons.size():
 		life_icons[i].visible = i < lives
 
-func show_message(text):
-	$Message.text = text
-	$Message.show()
-	$MessageTimer.start()
+func update_coins(coins):
+	$CoinLabel.text = "Coins: " + str(coins)
 
+func update_timer(seconds):
+	$TimerLabel.text = GameState.format_time(seconds)
 
-func _on_message_timer_timeout() -> void:
-	$Message.hide()
+func play_hit():
+	$HitSound.play()
+
+func play_game_over():
+	$GameOverSound.play()
