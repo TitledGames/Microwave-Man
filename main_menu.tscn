@@ -1,69 +1,145 @@
-[gd_scene format=3 uid="uid://r4ytomf7hl16"]
+[gd_scene load_steps=10 format=3 uid="uid://r4ytomf7hl16"]
 
-[ext_resource type="FontFile" uid="uid://y8i37mbuxiro" path="res://assets/fonts/Xolonium-Regular.ttf" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://ckxckman8wf65" path="res://main_menu.gd" id="1_7vrkn"]
-[ext_resource type="Texture2D" uid="uid://ctqd07ry8i37o" path="res://assets/icon.png" id="2_fu7sn"]
+[ext_resource type="FontFile" uid="uid://y8i37mbuxiro" path="res://assets/fonts/Xolonium-Regular.ttf" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://cvrryijrsmoxj" path="res://assets/PlayerFrame1.png" id="3_mw1"]
+[ext_resource type="Texture2D" uid="uid://hqvsmmqkn6u2" path="res://assets/PlayerFrame2.png" id="4_mw2"]
+[ext_resource type="Texture2D" uid="uid://t26fb0bbimvv" path="res://assets/ToasterFrame1.png" id="5_ts1"]
+[ext_resource type="Texture2D" uid="uid://c425fnvd6110x" path="res://assets/ToasterFrame2.png" id="6_ts2"]
+[ext_resource type="Texture2D" uid="uid://drbyvdwxeew01" path="res://assets/coin.png" id="7_coin"]
 
-[node name="main menu" type="Node2D" unique_id=432237393]
+[sub_resource type="SpriteFrames" id="SpriteFrames_mw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mw2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ts"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ts1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ts2")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="main menu" type="Node2D"]
 script = ExtResource("1_7vrkn")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=193098593]
-position = Vector2(553.00006, 383)
-scale = Vector2(49.437496, 49.437496)
-texture = ExtResource("2_fu7sn")
+[node name="Sky" type="ColorRect" parent="."]
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 1212.0
+offset_bottom = 708.0
+color = Color(0.5, 0.7, 1, 1)
 
-[node name="playgame" type="Button" parent="." unique_id=2013493479]
-top_level = true
-offset_left = 458.0
-offset_top = 245.0
-offset_right = 622.0
-offset_bottom = 301.0
+[node name="Dirt" type="ColorRect" parent="."]
+offset_left = -60.0
+offset_top = 540.0
+offset_right = 1212.0
+offset_bottom = 708.0
+color = Color(0.388, 0.263, 0.145, 1)
+
+[node name="Grass" type="ColorRect" parent="."]
+offset_left = -60.0
+offset_top = 520.0
+offset_right = 1212.0
+offset_bottom = 542.0
+color = Color(0.125, 0.565, 0.255, 1)
+
+[node name="Microwave" type="AnimatedSprite2D" parent="."]
+position = Vector2(300, 474)
+scale = Vector2(3.5, 3.5)
+sprite_frames = SubResource("SpriteFrames_mw")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Toaster" type="AnimatedSprite2D" parent="."]
+position = Vector2(850, 482)
+scale = Vector2(3.5, 3.5)
+sprite_frames = SubResource("SpriteFrames_ts")
+animation = &"walk"
+autoplay = "walk"
+flip_h = true
+
+[node name="Coin" type="Sprite2D" parent="."]
+position = Vector2(225, 455)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("7_coin")
+
+[node name="Coin2" type="Sprite2D" parent="."]
+position = Vector2(730, 455)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("7_coin")
+
+[node name="title" type="Label" parent="."]
+offset_left = 176.0
+offset_top = 44.0
+offset_right = 976.0
+offset_bottom = 160.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 32
-theme_override_fonts/font = ExtResource("1_06t4h")
-theme_override_font_sizes/font_size = 25
-text = "Play Game"
-flat = true
-
-[node name="extras" type="Button" parent="." unique_id=1643779603]
-offset_left = 461.0
-offset_top = 318.0
-offset_right = 625.0
-offset_bottom = 374.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("1_06t4h")
-theme_override_font_sizes/font_size = 25
-text = "About
-"
-flat = true
-
-[node name="quit" type="Button" parent="." unique_id=944257350]
-offset_left = 460.0
-offset_top = 400.0
-offset_right = 624.0
-offset_bottom = 456.0
-theme_override_constants/outline_size = 30
-theme_override_fonts/font = ExtResource("1_06t4h")
-theme_override_font_sizes/font_size = 25
-text = "Quit"
-flat = true
-
-[node name="title" type="Label" parent="." unique_id=1958687737]
-offset_left = 312.0
-offset_top = 146.0
-offset_right = 788.0
-offset_bottom = 190.0
-theme_override_constants/outline_size = 30
-theme_override_fonts/font = ExtResource("1_06t4h")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 72
 text = "Microwave-Man!"
 horizontal_alignment = 1
 
-[node name="BuildLabel" type="Label" parent="." unique_id=504746542]
-offset_left = 1023.0
-offset_right = 1152.0
-offset_bottom = 31.0
+[node name="playgame" type="Button" parent="."]
+offset_left = 486.0
+offset_top = 214.0
+offset_right = 666.0
+offset_bottom = 274.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 28
+text = "Play Game"
+flat = true
+
+[node name="extras" type="Button" parent="."]
+offset_left = 486.0
+offset_top = 304.0
+offset_right = 666.0
+offset_bottom = 364.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 28
+text = "About"
+flat = true
+
+[node name="quit" type="Button" parent="."]
+offset_left = 486.0
+offset_top = 394.0
+offset_right = 666.0
+offset_bottom = 454.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 28
+text = "Quit"
+flat = true
+
+[node name="BuildLabel" type="Label" parent="."]
+offset_left = 1000.0
+offset_top = 610.0
+offset_right = 1140.0
+offset_bottom = 641.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 18
 horizontal_alignment = 2
