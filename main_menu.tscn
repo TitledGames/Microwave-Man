@@ -134,10 +134,15 @@ text = "Quit"
 flat = true
 
 [node name="BuildLabel" type="Label" parent="."]
-offset_left = 1000.0
-offset_top = 610.0
-offset_right = 1140.0
-offset_bottom = 641.0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -420.0
+offset_top = -34.0
+offset_right = -14.0
+offset_bottom = -8.0
+grow_horizontal = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1_06t4h")
