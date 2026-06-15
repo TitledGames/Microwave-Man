@@ -1,0 +1,108 @@
+[gd_scene format=4]
+
+[ext_resource type="Script" path="res://level.gd" id="1_yl73a"]
+[ext_resource type="PackedScene" path="res://hud.tscn" id="2_xbcdb"]
+[ext_resource type="Script" path="res://hud.gd" id="3_s77qv"]
+[ext_resource type="TileSet" path="res://level_tileset.tres" id="4_5hnhx"]
+[ext_resource type="PackedScene" path="res://coin.tscn" id="5_78pok"]
+[ext_resource type="Script" path="res://coin.gd" id="6_lvfll"]
+[ext_resource type="PackedScene" path="res://enemy.tscn" id="7_jcnlr"]
+[ext_resource type="Script" path="res://enemy.gd" id="8_5kfcu"]
+[ext_resource type="PackedScene" path="res://player.tscn" id="9_i558w"]
+[ext_resource type="Script" path="res://player.gd" id="10_cuxq2"]
+[ext_resource type="PackedScene" path="res://end.tscn" id="11_wvr33"]
+[ext_resource type="Script" path="res://end.gd" id="12_sgm4o"]
+
+[node name="Level2" type="Node" unique_id=1527615614]
+script = ExtResource("1_yl73a")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2109281598]
+offset_left = -1000.0
+offset_top = -1000.0
+offset_right = 1448.0
+offset_bottom = 1352.0
+color = Color(0.5, 0.7, 1, 1)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=951455934 instance=ExtResource("2_xbcdb")]
+script = ExtResource("3_s77qv")
+
+[node name="Tiles" type="TileMapLayer" parent="." unique_id=319970137]
+tile_map_data = PackedByteArray("AAAAABIAAAAAAAAAAAAAABMAAAABAAAAAAAAABQAAAABAAAAAAABABIAAAAAAAAAAAABABMAAAABAAAAAAABABQAAAABAAAAAAACABIAAAAAAAAAAAACABMAAAABAAAAAAACABQAAAABAAAAAAADABIAAAAAAAAAAAADABMAAAABAAAAAAADABQAAAABAAAAAAAEABIAAAAAAAAAAAAEABMAAAABAAAAAAAEABQAAAABAAAAAAAFABIAAAAAAAAAAAAFABMAAAABAAAAAAAFABQAAAABAAAAAAAGABIAAAAAAAAAAAAGABMAAAABAAAAAAAGABQAAAABAAAAAAAHABIAAAAAAAAAAAAHABMAAAABAAAAAAAHABQAAAABAAAAAAAIABIAAAAAAAAAAAAIABMAAAABAAAAAAAIABQAAAABAAAAAAAJABIAAAAAAAAAAAAJABMAAAABAAAAAAAJABQAAAABAAAAAAAKABIAAAAAAAAAAAAKABMAAAABAAAAAAAKABQAAAABAAAAAAALABIAAAAAAAAAAAALABMAAAABAAAAAAALABQAAAABAAAAAAAMABIAAAAAAAAAAAAMABMAAAABAAAAAAAMABQAAAABAAAAAAANABIAAAAAAAAAAAANABMAAAABAAAAAAANABQAAAABAAAAAAAOABIAAAAAAAAAAAAOABMAAAABAAAAAAAOABQAAAABAAAAAAAPABIAAAAAAAAAAAAPABMAAAABAAAAAAAPABQAAAABAAAAAAAQABIAAAAAAAAAAAAQABMAAAABAAAAAAAQABQAAAABAAAAAAARABIAAAAAAAAAAAARABMAAAABAAAAAAARABQAAAABAAAAAAASABIAAAAAAAAAAAASABMAAAABAAAAAAASABQAAAABAAAAAAATABIAAAAAAAAAAAATABMAAAABAAAAAAATABQAAAABAAAAAAAUABIAAAAAAAAAAAAUABMAAAABAAAAAAAUABQAAAABAAAAAAAVABIAAAAAAAAAAAAVABMAAAABAAAAAAAVABQAAAABAAAAAAAWABIAAAAAAAAAAAAWABMAAAABAAAAAAAWABQAAAABAAAAAAAXABIAAAAAAAAAAAAXABMAAAABAAAAAAAXABQAAAABAAAAAAAYABIAAAAAAAAAAAAYABMAAAABAAAAAAAYABQAAAABAAAAAAAZABIAAAAAAAAAAAAZABMAAAABAAAAAAAZABQAAAABAAAAAAAaABIAAAAAAAAAAAAaABMAAAABAAAAAAAaABQAAAABAAAAAAAbABIAAAAAAAAAAAAbABMAAAABAAAAAAAbABQAAAABAAAAAAADAA8AAAAAAAAAAAAEAA8AAAAAAAAAAAAFAA8AAAAAAAAAAAAGAA8AAAAAAAAAAAAHAA8AAAAAAAAAAAAIAA8AAAAAAAAAAAAMAA0AAAAAAAAAAAANAA0AAAAAAAAAAAAOAA0AAAAAAAAAAAAPAA0AAAAAAAAAAAAQAA0AAAAAAAAAAAARAA0AAAAAAAAAAAASAA0AAAAAAAAAAAAUAAsAAAAAAAAAAAAVAAsAAAAAAAAAAAAWAAsAAAAAAAAAAAAXAAsAAAAAAAAAAAAYAAsAAAAAAAAAAAAZAAsAAAAAAAAAAAAJAAkAAAAAAAAAAAAKAAkAAAAAAAAAAAALAAkAAAAAAAAAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAOAAkAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAOAAUAAAAAAAAAAAAPAAUAAAAAAAAAAAAQAAUAAAAAAAAAAAARAAUAAAAAAAAAAAASAAUAAAAAAAAAAAATAAUAAAAAAAAAAAAUAAUAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAAMAAMAAAAAAAAAAAANAAMAAAAAAAAAAAA=")
+tile_set = ExtResource("4_5hnhx")
+
+[node name="Coin1" type="Area2D" parent="." unique_id=1900748560 instance=ExtResource("5_78pok")]
+position = Vector2(88, 258)
+script = ExtResource("6_lvfll")
+
+[node name="Coin2" type="Area2D" parent="." unique_id=1421909909 instance=ExtResource("5_78pok")]
+position = Vector2(168, 258)
+script = ExtResource("6_lvfll")
+
+[node name="Coin3" type="Area2D" parent="." unique_id=1802533097 instance=ExtResource("5_78pok")]
+position = Vector2(88, 210)
+script = ExtResource("6_lvfll")
+
+[node name="Coin4" type="Area2D" parent="." unique_id=1873269021 instance=ExtResource("5_78pok")]
+position = Vector2(248, 178)
+script = ExtResource("6_lvfll")
+
+[node name="Coin5" type="Area2D" parent="." unique_id=1786730654 instance=ExtResource("5_78pok")]
+position = Vector2(360, 146)
+script = ExtResource("6_lvfll")
+
+[node name="Coin6" type="Area2D" parent="." unique_id=1583732694 instance=ExtResource("5_78pok")]
+position = Vector2(184, 114)
+script = ExtResource("6_lvfll")
+
+[node name="Coin7" type="Area2D" parent="." unique_id=1618295215 instance=ExtResource("5_78pok")]
+position = Vector2(72, 82)
+script = ExtResource("6_lvfll")
+
+[node name="Coin8" type="Area2D" parent="." unique_id=21611990 instance=ExtResource("5_78pok")]
+position = Vector2(280, 50)
+script = ExtResource("6_lvfll")
+
+[node name="Coin9" type="Area2D" parent="." unique_id=1009217126 instance=ExtResource("5_78pok")]
+position = Vector2(168, 18)
+script = ExtResource("6_lvfll")
+
+[node name="Enemy1" type="CharacterBody2D" parent="." unique_id=992957181 groups=["enemies"] instance=ExtResource("7_jcnlr")]
+position = Vector2(328, 264)
+collision_layer = 4
+script = ExtResource("8_5kfcu")
+
+[node name="Enemy2" type="CharacterBody2D" parent="." unique_id=1241347853 groups=["enemies"] instance=ExtResource("7_jcnlr")]
+position = Vector2(232, 184)
+collision_layer = 4
+script = ExtResource("8_5kfcu")
+
+[node name="Enemy3" type="CharacterBody2D" parent="." unique_id=1426561275 groups=["enemies"] instance=ExtResource("7_jcnlr")]
+position = Vector2(360, 152)
+collision_layer = 4
+script = ExtResource("8_5kfcu")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1996965184 groups=["player"] instance=ExtResource("9_i558w")]
+position = Vector2(24, 264)
+scale = Vector2(0.05, 0.05)
+slide_on_ceiling = false
+floor_constant_speed = true
+script = ExtResource("10_cuxq2")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1603137367]
+position = Vector2(0, -1020)
+zoom = Vector2(3, 3)
+
+[node name="end" type="Area2D" parent="." unique_id=60856704 instance=ExtResource("11_wvr33")]
+position = Vector2(108, -8)
+script = ExtResource("12_sgm4o")
+
+[connection signal="body_entered" from="Coin1" to="Coin1" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin2" to="Coin2" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin3" to="Coin3" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin4" to="Coin4" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin5" to="Coin5" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin6" to="Coin6" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin7" to="Coin7" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin8" to="Coin8" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin9" to="Coin9" method="_on_body_entered"]
+[connection signal="body_entered" from="end" to="end" method="_on_body_entered"]

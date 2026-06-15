@@ -5,6 +5,8 @@ signal restart_game
 const MAX_LIVES = 3
 const LEVELS = [
 	"res://main.tscn",
+	"res://level_2.tscn",
+	"res://level_3.tscn",
 ]
 
 var lives = MAX_LIVES
