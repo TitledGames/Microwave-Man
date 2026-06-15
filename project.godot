@@ -24,6 +24,7 @@ config/icon="uid://cgxd32xyysfjh"
 
 GameState="*res://game_state.gd"
 DiscordRPCWrapper="*res://discord_rpc_loader.gd"
+Music="*res://music.gd"
 
 [display]
 
