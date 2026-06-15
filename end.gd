@@ -1,14 +1,13 @@
 extends Area2D
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	_sway()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _sway() -> void:
+	# Let the flag wave gently in the wind.
+	var tween = create_tween().set_loops()
+	tween.tween_property($Flag, "rotation", 0.04, 1.0).set_trans(Tween.TRANS_SINE)
+	tween.tween_property($Flag, "rotation", -0.04, 1.0).set_trans(Tween.TRANS_SINE)
 
 func _on_body_entered(body):
 	# Check if the body reaching the goal is actually the player
