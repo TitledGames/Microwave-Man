@@ -1,11 +1,14 @@
 extends Node
 
+const AREA_TRACKS = ["overworld", "sky", "castle"]
+
 @onready var player = $Player
 @onready var hud = $HUD
 
 var spawn_point = Vector2.ZERO
 
 func _ready() -> void:
+	Music.play(AREA_TRACKS[clampi(GameState.current_level, 0, AREA_TRACKS.size() - 1)])
 	spawn_point = player.position
 	player.hit.connect(_on_player_hit)
 	GameState.coin_collected.connect(_on_coin_collected)

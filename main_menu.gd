@@ -5,6 +5,7 @@ func _ready() -> void:
 	if version != "":
 		$BuildLabel.text = version
 
+	Music.play("overworld")
 	_animate_menu()
 
 	if not OS.has_feature("web") and Engine.has_singleton("DiscordRPC"):

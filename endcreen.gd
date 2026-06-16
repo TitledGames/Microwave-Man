@@ -4,6 +4,7 @@ func _ready() -> void:
 	var version = ProjectSettings.get_setting("application/config/version", "")
 	if version != "":
 		$BuildLabel.text = version
+	Music.play("overworld")
 	$Title.text = "You Win!!!" if GameState.won else "Game Over"
 	$CoinCount.text = "Coins collected: %d / %d" % [GameState.coins, GameState.total_coins]
 	$TimeLabel.text = "Time: " + GameState.format_time(GameState.elapsed_time)
