@@ -1,20 +1,14 @@
-[gd_scene format=4]
+[gd_scene format=4 uid="uid://b0p33qv5xv862"]
 
-[ext_resource type="Script" path="res://level.gd" id="1_5hnhx"]
-[ext_resource type="PackedScene" path="res://hud.tscn" id="2_78pok"]
-[ext_resource type="Script" path="res://hud.gd" id="3_lvfll"]
+[ext_resource type="Script" uid="uid://bdlqk7qpnoqx8" path="res://level.gd" id="1_5hnhx"]
+[ext_resource type="PackedScene" uid="uid://dqrnqy70uj08i" path="res://hud.tscn" id="2_78pok"]
 [ext_resource type="TileSet" path="res://level_tileset.tres" id="4_jcnlr"]
-[ext_resource type="Texture2D" path="res://assets/extra_tiles.png" id="5_5kfcu"]
-[ext_resource type="PackedScene" path="res://coin.tscn" id="6_i558w"]
-[ext_resource type="Script" path="res://coin.gd" id="7_cuxq2"]
-[ext_resource type="PackedScene" path="res://enemy.tscn" id="8_wvr33"]
-[ext_resource type="Script" path="res://enemy.gd" id="9_sgm4o"]
-[ext_resource type="PackedScene" path="res://moving_platform.tscn" id="10_6r3eb"]
-[ext_resource type="Script" path="res://moving_platform.gd" id="11_2pufk"]
-[ext_resource type="PackedScene" path="res://player.tscn" id="12_btc8u"]
-[ext_resource type="Script" path="res://player.gd" id="13_ikghu"]
-[ext_resource type="PackedScene" path="res://end.tscn" id="14_i6smf"]
-[ext_resource type="Script" path="res://end.gd" id="15_d4rhq"]
+[ext_resource type="Texture2D" uid="uid://d1ewvjwoqmybn" path="res://assets/extra_tiles.png" id="5_5kfcu"]
+[ext_resource type="PackedScene" uid="uid://ldtlmewixafp" path="res://coin.tscn" id="6_i558w"]
+[ext_resource type="PackedScene" uid="uid://baw7pb75cl1bp" path="res://enemy.tscn" id="8_wvr33"]
+[ext_resource type="PackedScene" uid="uid://bt8q3t4cmeqcw" path="res://moving_platform.tscn" id="10_6r3eb"]
+[ext_resource type="PackedScene" uid="uid://bkc7x625ufmje" path="res://player.tscn" id="12_btc8u"]
+[ext_resource type="PackedScene" uid="uid://dmxjnwyy4j0us" path="res://end.tscn" id="14_i6smf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ldfcd"]
 atlas = ExtResource("5_5kfcu")
@@ -40,14 +34,13 @@ region = Rect2(0, 0, 16, 16)
 script = ExtResource("1_5hnhx")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=276335149]
-offset_left = -1200.0
-offset_top = -1200.0
-offset_right = 3120.0
-offset_bottom = 1680.0
+offset_left = -1622.0
+offset_top = -1124.0
+offset_right = 2698.0
+offset_bottom = 1756.0
 color = Color(0.55, 0.74, 1, 1)
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=1210846902 instance=ExtResource("2_78pok")]
-script = ExtResource("3_lvfll")
+[node name="HUD" parent="." unique_id=1210846902 instance=ExtResource("2_78pok")]
 
 [node name="Tiles" type="TileMapLayer" parent="." unique_id=211673318]
 tile_map_data = PackedByteArray("AAAAABUAAAAAAAAAAAAAABYAAAABAAAAAAAAABcAAAABAAAAAAAAABgAAAABAAAAAAABABUAAAAAAAAAAAABABYAAAABAAAAAAABABcAAAABAAAAAAABABgAAAABAAAAAAACABUAAAAAAAAAAAACABYAAAABAAAAAAACABcAAAABAAAAAAACABgAAAABAAAAAAADABUAAAAAAAAAAAADABYAAAABAAAAAAADABcAAAABAAAAAAADABgAAAABAAAAAAAEABUAAAAAAAAAAAAEABYAAAABAAAAAAAEABcAAAABAAAAAAAEABgAAAABAAAAAAAFABUAAAAAAAAAAAAFABYAAAABAAAAAAAFABcAAAABAAAAAAAFABgAAAABAAAAAAAGABUAAAAAAAAAAAAGABYAAAABAAAAAAAGABcAAAABAAAAAAAGABgAAAABAAAAAAAHABUAAAAAAAAAAAAHABYAAAABAAAAAAAHABcAAAABAAAAAAAHABgAAAABAAAAAAAIABUAAAAAAAAAAAAIABYAAAABAAAAAAAIABcAAAABAAAAAAAIABgAAAABAAAAAAAJABUAAAAAAAAAAAAJABYAAAABAAAAAAAJABcAAAABAAAAAAAJABgAAAABAAAAAAAOABUAAAAAAAAAAAAOABYAAAABAAAAAAAOABcAAAABAAAAAAAOABgAAAABAAAAAAAPABUAAAAAAAAAAAAPABYAAAABAAAAAAAPABcAAAABAAAAAAAPABgAAAABAAAAAAAQABUAAAAAAAAAAAAQABYAAAABAAAAAAAQABcAAAABAAAAAAAQABgAAAABAAAAAAARABUAAAAAAAAAAAARABYAAAABAAAAAAARABcAAAABAAAAAAARABgAAAABAAAAAAASABUAAAAAAAAAAAASABYAAAABAAAAAAASABcAAAABAAAAAAASABgAAAABAAAAAAATABUAAAAAAAAAAAATABYAAAABAAAAAAATABcAAAABAAAAAAATABgAAAABAAAAAAAYABMAAAAAAAAAAAAYABQAAAABAAAAAAAYABUAAAABAAAAAAAZABMAAAAAAAAAAAAZABQAAAABAAAAAAAZABUAAAABAAAAAAAaABMAAAAAAAAAAAAaABQAAAABAAAAAAAaABUAAAABAAAAAAAbABMAAAAAAAAAAAAbABQAAAABAAAAAAAbABUAAAABAAAAAAAcABMAAAAAAAAAAAAcABQAAAABAAAAAAAcABUAAAABAAAAAAAdABMAAAAAAAAAAAAdABQAAAABAAAAAAAdABUAAAABAAAAAAAeABMAAAAAAAAAAAAeABQAAAABAAAAAAAeABUAAAABAAAAAAAoABMAAAAAAAAAAAAoABQAAAABAAAAAAAoABUAAAABAAAAAAApABMAAAAAAAAAAAApABQAAAABAAAAAAApABUAAAABAAAAAAAqABMAAAAAAAAAAAAqABQAAAABAAAAAAAqABUAAAABAAAAAAArABMAAAAAAAAAAAArABQAAAABAAAAAAArABUAAAABAAAAAAAsABMAAAAAAAAAAAAsABQAAAABAAAAAAAsABUAAAABAAAAAAAtABMAAAAAAAAAAAAtABQAAAABAAAAAAAtABUAAAABAAAAAAAuABMAAAAAAAAAAAAuABQAAAABAAAAAAAuABUAAAABAAAAAAAyABEAAAAAAAAAAAAyABIAAAABAAAAAAAyABMAAAABAAAAAAAzABEAAAAAAAAAAAAzABIAAAABAAAAAAAzABMAAAABAAAAAAA0ABEAAAAAAAAAAAA0ABIAAAABAAAAAAA0ABMAAAABAAAAAAA1ABEAAAAAAAAAAAA1ABIAAAABAAAAAAA1ABMAAAABAAAAAAA2ABEAAAAAAAAAAAA2ABIAAAABAAAAAAA2ABMAAAABAAAAAAA5ABEAAAAAAAAAAAA6ABEAAAAAAAAAAAA9ABAAAAAAAAAAAAA+ABAAAAAAAAAAAABGAA8AAAAAAAAAAABGABAAAAABAAAAAABGABEAAAABAAAAAABHAA8AAAAAAAAAAABHABAAAAABAAAAAABHABEAAAABAAAAAABIAA8AAAAAAAAAAABIABAAAAABAAAAAABIABEAAAABAAAAAABJAA8AAAAAAAAAAABJABAAAAABAAAAAABJABEAAAABAAAAAABKAA8AAAAAAAAAAABKABAAAAABAAAAAABKABEAAAABAAAAAABLAA8AAAAAAAAAAABLABAAAAABAAAAAABLABEAAAABAAAAAABMAA8AAAAAAAAAAABMABAAAAABAAAAAABMABEAAAABAAAAAABQABAAAAAAAAAAAABRABAAAAAAAAAAAABUAA8AAAAAAAAAAABVAA8AAAAAAAAAAABYABAAAAAAAAAAAABYABEAAAABAAAAAABYABIAAAABAAAAAABZABAAAAAAAAAAAABZABEAAAABAAAAAABZABIAAAABAAAAAABaABAAAAAAAAAAAABaABEAAAABAAAAAABaABIAAAABAAAAAABbABAAAAAAAAAAAABbABEAAAABAAAAAABbABIAAAABAAAAAABcABAAAAAAAAAAAABcABEAAAABAAAAAABcABIAAAABAAAAAABdABAAAAAAAAAAAABdABEAAAABAAAAAABdABIAAAABAAAAAABeABAAAAAAAAAAAABeABEAAAABAAAAAABeABIAAAABAAAAAABhABIAAAAAAAAAAABiABEAAAAAAAAAAABiABIAAAABAAAAAABjABAAAAAAAAAAAABjABEAAAABAAAAAABjABIAAAABAAAAAABkAA8AAAAAAAAAAABkABAAAAABAAAAAABkABEAAAABAAAAAABkABIAAAABAAAAAABlAA4AAAAAAAAAAABlAA8AAAABAAAAAABlABAAAAABAAAAAABlABEAAAABAAAAAABlABIAAAABAAAAAABmAA0AAAAAAAAAAABmAA4AAAABAAAAAABmAA8AAAABAAAAAABmABAAAAABAAAAAABmABEAAAABAAAAAABmABIAAAABAAAAAABnAAwAAAAAAAAAAABnAA0AAAABAAAAAABnAA4AAAABAAAAAABnAA8AAAABAAAAAABnABAAAAABAAAAAABoAAwAAAAAAAAAAABoAA0AAAABAAAAAABoAA4AAAABAAAAAABoAA8AAAABAAAAAABoABAAAAABAAAAAABpAAwAAAAAAAAAAABpAA0AAAABAAAAAABpAA4AAAABAAAAAABpAA8AAAABAAAAAABpABAAAAABAAAAAABqAAwAAAAAAAAAAABqAA0AAAABAAAAAABqAA4AAAABAAAAAABqAA8AAAABAAAAAABqABAAAAABAAAAAABrAAwAAAAAAAAAAABrAA0AAAABAAAAAABrAA4AAAABAAAAAABrAA8AAAABAAAAAABrABAAAAABAAAAAABsAAwAAAAAAAAAAABsAA0AAAABAAAAAABsAA4AAAABAAAAAABsAA8AAAABAAAAAABsABAAAAABAAAAAABtAAwAAAAAAAAAAABtAA0AAAABAAAAAABtAA4AAAABAAAAAABtAA8AAAABAAAAAABtABAAAAABAAAAAABuAAwAAAAAAAAAAABuAA0AAAABAAAAAABuAA4AAAABAAAAAABuAA8AAAABAAAAAABuABAAAAABAAAAAABvAAwAAAAAAAAAAABvAA0AAAABAAAAAABvAA4AAAABAAAAAABvAA8AAAABAAAAAABvABAAAAABAAAAAABwAAwAAAAAAAAAAABwAA0AAAABAAAAAABwAA4AAAABAAAAAABwAA8AAAABAAAAAABwABAAAAABAAAAAABxAAwAAAAAAAAAAABxAA0AAAABAAAAAABxAA4AAAABAAAAAABxAA8AAAABAAAAAABxABAAAAABAAAAAAA=")
@@ -88,190 +81,140 @@ position = Vector2(1728, 64)
 scale = Vector2(6, 6)
 texture = SubResource("AtlasTexture_e6ygx")
 
-[node name="Coin1" type="Area2D" parent="." unique_id=313487739 instance=ExtResource("6_i558w")]
+[node name="Coin1" parent="." unique_id=313487739 instance=ExtResource("6_i558w")]
 position = Vector2(120, 306)
-script = ExtResource("7_cuxq2")
 
-[node name="Enemy1" type="CharacterBody2D" parent="." unique_id=1808015832 groups=["enemies"] instance=ExtResource("8_wvr33")]
+[node name="Enemy1" parent="." unique_id=1808015832 instance=ExtResource("8_wvr33")]
 position = Vector2(264, 312)
-collision_layer = 4
-script = ExtResource("9_sgm4o")
 
-[node name="Coin2" type="Area2D" parent="." unique_id=389169523 instance=ExtResource("6_i558w")]
+[node name="Coin2" parent="." unique_id=389169523 instance=ExtResource("6_i558w")]
 position = Vector2(248, 306)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin3" type="Area2D" parent="." unique_id=566197705 instance=ExtResource("6_i558w")]
+[node name="Coin3" parent="." unique_id=566197705 instance=ExtResource("6_i558w")]
 position = Vector2(264, 306)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin4" type="Area2D" parent="." unique_id=765147165 instance=ExtResource("6_i558w")]
+[node name="Coin4" parent="." unique_id=765147165 instance=ExtResource("6_i558w")]
 position = Vector2(280, 306)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin5" type="Area2D" parent="." unique_id=426414086 instance=ExtResource("6_i558w")]
+[node name="Coin5" parent="." unique_id=426414086 instance=ExtResource("6_i558w")]
 position = Vector2(408, 274)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin6" type="Area2D" parent="." unique_id=192513532 instance=ExtResource("6_i558w")]
+[node name="Coin6" parent="." unique_id=192513532 instance=ExtResource("6_i558w")]
 position = Vector2(424, 274)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin7" type="Area2D" parent="." unique_id=2105773985 instance=ExtResource("6_i558w")]
+[node name="Coin7" parent="." unique_id=2105773985 instance=ExtResource("6_i558w")]
 position = Vector2(440, 274)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin8" type="Area2D" parent="." unique_id=2145505712 instance=ExtResource("6_i558w")]
+[node name="Coin8" parent="." unique_id=2145505712 instance=ExtResource("6_i558w")]
 position = Vector2(456, 274)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin9" type="Area2D" parent="." unique_id=1838929940 instance=ExtResource("6_i558w")]
+[node name="Coin9" parent="." unique_id=1838929940 instance=ExtResource("6_i558w")]
 position = Vector2(360, 244)
-script = ExtResource("7_cuxq2")
 
-[node name="Lift1" type="AnimatableBody2D" parent="." unique_id=1472548119 instance=ExtResource("10_6r3eb")]
+[node name="Lift1" parent="." unique_id=1472548119 instance=ExtResource("10_6r3eb")]
 position = Vector2(568, 304)
-collision_mask = 0
-script = ExtResource("11_2pufk")
 travel = Vector2(40, 0)
 speed = 1.0
 
-[node name="Coin10" type="Area2D" parent="." unique_id=1807950522 instance=ExtResource("6_i558w")]
+[node name="Coin10" parent="." unique_id=1807950522 instance=ExtResource("6_i558w")]
 position = Vector2(536, 240)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin11" type="Area2D" parent="." unique_id=1062290005 instance=ExtResource("6_i558w")]
+[node name="Coin11" parent="." unique_id=1062290005 instance=ExtResource("6_i558w")]
 position = Vector2(552, 240)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin12" type="Area2D" parent="." unique_id=656025103 instance=ExtResource("6_i558w")]
+[node name="Coin12" parent="." unique_id=656025103 instance=ExtResource("6_i558w")]
 position = Vector2(568, 240)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin13" type="Area2D" parent="." unique_id=2070881103 instance=ExtResource("6_i558w")]
+[node name="Coin13" parent="." unique_id=2070881103 instance=ExtResource("6_i558w")]
 position = Vector2(584, 240)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin14" type="Area2D" parent="." unique_id=2075100800 instance=ExtResource("6_i558w")]
+[node name="Coin14" parent="." unique_id=2075100800 instance=ExtResource("6_i558w")]
 position = Vector2(600, 240)
-script = ExtResource("7_cuxq2")
 
-[node name="Enemy2" type="CharacterBody2D" parent="." unique_id=1866492365 groups=["enemies"] instance=ExtResource("8_wvr33")]
+[node name="Enemy2" parent="." unique_id=1866492365 instance=ExtResource("8_wvr33")]
 position = Vector2(696, 280)
-collision_layer = 4
-script = ExtResource("9_sgm4o")
 
-[node name="Coin15" type="Area2D" parent="." unique_id=469019048 instance=ExtResource("6_i558w")]
+[node name="Coin15" parent="." unique_id=469019048 instance=ExtResource("6_i558w")]
 position = Vector2(664, 274)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin16" type="Area2D" parent="." unique_id=1920874213 instance=ExtResource("6_i558w")]
+[node name="Coin16" parent="." unique_id=1920874213 instance=ExtResource("6_i558w")]
 position = Vector2(680, 274)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin17" type="Area2D" parent="." unique_id=1011357151 instance=ExtResource("6_i558w")]
+[node name="Coin17" parent="." unique_id=1011357151 instance=ExtResource("6_i558w")]
 position = Vector2(696, 274)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin18" type="Area2D" parent="." unique_id=277586863 instance=ExtResource("6_i558w")]
+[node name="Coin18" parent="." unique_id=277586863 instance=ExtResource("6_i558w")]
 position = Vector2(712, 274)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin19" type="Area2D" parent="." unique_id=2026253603 instance=ExtResource("6_i558w")]
+[node name="Coin19" parent="." unique_id=2026253603 instance=ExtResource("6_i558w")]
 position = Vector2(728, 274)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin20" type="Area2D" parent="." unique_id=1780303151 instance=ExtResource("6_i558w")]
+[node name="Coin20" parent="." unique_id=1780303151 instance=ExtResource("6_i558w")]
 position = Vector2(824, 242)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin21" type="Area2D" parent="." unique_id=1591276155 instance=ExtResource("6_i558w")]
+[node name="Coin21" parent="." unique_id=1591276155 instance=ExtResource("6_i558w")]
 position = Vector2(840, 242)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin22" type="Area2D" parent="." unique_id=1632386338 instance=ExtResource("6_i558w")]
+[node name="Coin22" parent="." unique_id=1632386338 instance=ExtResource("6_i558w")]
 position = Vector2(856, 242)
-script = ExtResource("7_cuxq2")
 
-[node name="Lift2" type="AnimatableBody2D" parent="." unique_id=607616463 instance=ExtResource("10_6r3eb")]
+[node name="Lift2" parent="." unique_id=607616463 instance=ExtResource("10_6r3eb")]
 position = Vector2(1064, 256)
-collision_mask = 0
-script = ExtResource("11_2pufk")
 travel = Vector2(0, -44)
 speed = 0.9
 
-[node name="Coin23" type="Area2D" parent="." unique_id=923459427 instance=ExtResource("6_i558w")]
+[node name="Coin23" parent="." unique_id=923459427 instance=ExtResource("6_i558w")]
 position = Vector2(1064, 162)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin24" type="Area2D" parent="." unique_id=1698372440 instance=ExtResource("6_i558w")]
+[node name="Coin24" parent="." unique_id=1698372440 instance=ExtResource("6_i558w")]
 position = Vector2(1064, 146)
-script = ExtResource("7_cuxq2")
 
-[node name="Enemy3" type="CharacterBody2D" parent="." unique_id=1116175434 groups=["enemies"] instance=ExtResource("8_wvr33")]
+[node name="Enemy3" parent="." unique_id=1116175434 instance=ExtResource("8_wvr33")]
 position = Vector2(1176, 216)
-collision_layer = 4
-script = ExtResource("9_sgm4o")
 
-[node name="Coin25" type="Area2D" parent="." unique_id=1652980560 instance=ExtResource("6_i558w")]
+[node name="Coin25" parent="." unique_id=1652980560 instance=ExtResource("6_i558w")]
 position = Vector2(1144, 210)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin26" type="Area2D" parent="." unique_id=1116804139 instance=ExtResource("6_i558w")]
+[node name="Coin26" parent="." unique_id=1116804139 instance=ExtResource("6_i558w")]
 position = Vector2(1160, 210)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin27" type="Area2D" parent="." unique_id=1749247169 instance=ExtResource("6_i558w")]
+[node name="Coin27" parent="." unique_id=1749247169 instance=ExtResource("6_i558w")]
 position = Vector2(1176, 210)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin28" type="Area2D" parent="." unique_id=750823531 instance=ExtResource("6_i558w")]
+[node name="Coin28" parent="." unique_id=750823531 instance=ExtResource("6_i558w")]
 position = Vector2(1192, 210)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin29" type="Area2D" parent="." unique_id=43879280 instance=ExtResource("6_i558w")]
+[node name="Coin29" parent="." unique_id=43879280 instance=ExtResource("6_i558w")]
 position = Vector2(1208, 210)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin30" type="Area2D" parent="." unique_id=418101534 instance=ExtResource("6_i558w")]
+[node name="Coin30" parent="." unique_id=418101534 instance=ExtResource("6_i558w")]
 position = Vector2(1432, 226)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin31" type="Area2D" parent="." unique_id=1489099691 instance=ExtResource("6_i558w")]
+[node name="Coin31" parent="." unique_id=1489099691 instance=ExtResource("6_i558w")]
 position = Vector2(1448, 226)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin32" type="Area2D" parent="." unique_id=914986060 instance=ExtResource("6_i558w")]
+[node name="Coin32" parent="." unique_id=914986060 instance=ExtResource("6_i558w")]
 position = Vector2(1464, 226)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin33" type="Area2D" parent="." unique_id=842174645 instance=ExtResource("6_i558w")]
+[node name="Coin33" parent="." unique_id=842174645 instance=ExtResource("6_i558w")]
 position = Vector2(1480, 226)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin34" type="Area2D" parent="." unique_id=1400990819 instance=ExtResource("6_i558w")]
+[node name="Coin34" parent="." unique_id=1400990819 instance=ExtResource("6_i558w")]
 position = Vector2(1496, 226)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin35" type="Area2D" parent="." unique_id=261648721 instance=ExtResource("6_i558w")]
+[node name="Coin35" parent="." unique_id=261648721 instance=ExtResource("6_i558w")]
 position = Vector2(1704, 162)
-script = ExtResource("7_cuxq2")
 
-[node name="Coin36" type="Area2D" parent="." unique_id=1229268251 instance=ExtResource("6_i558w")]
+[node name="Coin36" parent="." unique_id=1229268251 instance=ExtResource("6_i558w")]
 position = Vector2(1736, 162)
-script = ExtResource("7_cuxq2")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1996965184 groups=["player"] instance=ExtResource("12_btc8u")]
+[node name="Player" parent="." unique_id=1996965184 instance=ExtResource("12_btc8u")]
 position = Vector2(40, 312)
 scale = Vector2(0.05, 0.05)
-slide_on_ceiling = false
-floor_constant_speed = true
-script = ExtResource("13_ikghu")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=268527942]
 position = Vector2(0, -1020)
 zoom = Vector2(3, 3)
 
-[node name="end" type="Area2D" parent="." unique_id=1418120491 instance=ExtResource("14_i6smf")]
+[node name="end" parent="." unique_id=1418120491 instance=ExtResource("14_i6smf")]
 position = Vector2(1752, 192)
-script = ExtResource("15_d4rhq")
