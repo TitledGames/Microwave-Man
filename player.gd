@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED = 200.0
 const JUMP_VELOCITY = -350.0
 const GRAVITY = 980
+const DECELERATION = 1200.0
 
 @onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -26,7 +27,7 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, DECELERATION * delta)
 	
 	move_and_slide()
 
@@ -39,7 +40,7 @@ func _physics_process(delta: float) -> void:
 		update_animation()
 
 func update_animation() -> void:
-	if velocity.length_squared() > 0:
+	if abs(velocity.x) > 0:
 		sprite.play("default")
 	else:
 		sprite.stop()
@@ -58,6 +59,6 @@ func start(pos: Vector2) -> void:
 	show()
 	player_hitbox.set_deferred("disabled", false)
 
-func hide_player():
+func disable_player() -> void:
 	hide()
 	player_hitbox.set_deferred("disabled", true)
