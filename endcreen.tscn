@@ -155,15 +155,10 @@ theme_override_font_sizes/font_size = 20
 text = "Save"
 
 [node name="BuildLabel" type="Label" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -420.0
-offset_top = -34.0
-offset_right = -14.0
-offset_bottom = -8.0
-grow_horizontal = 0
+offset_left = 732.0
+offset_top = 614.0
+offset_right = 1138.0
+offset_bottom = 640.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("3_nqmyh")
