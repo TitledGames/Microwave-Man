@@ -1,7 +1,8 @@
 extends Area2D
 
-func _on_body_entered(body):
-	# Check if the body overlapping the level end trigger is actually the player
+func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		GameState.is_level_running = false
-		get_tree().change_scene_to_file("res://endcreen.tscn")
+		var err = get_tree().change_scene_to_file("res://endcreen.tscn")
+		if err != OK:
+			push_error("Failed to load endcreen.tscn (error code: %s)" % err)

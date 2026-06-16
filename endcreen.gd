@@ -37,10 +37,14 @@ func _on_save_score_pressed() -> void:
 
 func _on_play_again_pressed() -> void:
 	GameState.restart_game.emit()
-	get_tree().change_scene_to_file("res://main.tscn")
+	var err = get_tree().change_scene_to_file("res://main.tscn")
+	if err != OK:
+		push_error("Failed to load main.tscn (error code: %s)" % err)
 
 func _on_back_to_main_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://main_menu.tscn")
+	var err = get_tree().change_scene_to_file("res://main_menu.tscn")
+	if err != OK:
+		push_error("Failed to load main_menu.tscn (error code: %s)" % err)
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
