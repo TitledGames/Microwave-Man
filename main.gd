@@ -1,6 +1,12 @@
 extends Node
 
 const SPAWN_POSITION = Vector2(-589, 471.99997)
+const DISCORD_STATE_KEY = "state"
+const DISCORD_DETAILS_KEY = "details"
+const DISCORD_LARGE_IMAGE_KEY = "large_image"
+const DISCORD_LARGE_IMAGE_TEXT_KEY = "large_image_text"
+const DISCORD_SMALL_IMAGE_KEY = "small_image"
+const DISCORD_SMALL_IMAGE_TEXT_KEY = "small_image_text"
 
 func _ready():
 	GameState.restart_game.connect(new_game)
@@ -19,7 +25,8 @@ func _process(delta: float) -> void:
 	if GameState.is_level_running:
 		var prev_second = int(GameState.elapsed_time)
 		GameState.elapsed_time += delta
-		if int(GameState.elapsed_time) != prev_second:
+		var current_second = int(GameState.elapsed_time)
+		if current_second != prev_second:
 			$HUD.update_timer(GameState.elapsed_time)
 
 func new_game():
@@ -42,13 +49,14 @@ func _on_start_timer_timeout() -> void:
 func _update_discord_state() -> void:
 	if not OS.has_feature("web") and Engine.has_singleton("DiscordRPC"):
 		var discord_rpc = Engine.get_singleton("DiscordRPC")
-		discord_rpc.set("state", "In Game")
-		discord_rpc.set("details", "Collecting coins!")
-		discord_rpc.set("large_image", "ground")
-		discord_rpc.set("large_image_text", "Play now!")
-		discord_rpc.set("small_image", "coin")
-		discord_rpc.set("small_image_text", "Coins collected: " + str(GameState.coins))
-		discord_rpc.call("refresh")
+		discord_rpc.set(DISCORD_STATE_KEY, "In Game")
+		discord_rpc.set(DISCORD_DETAILS_KEY, "Collecting coins!")
+		discord_rpc.set(DISCORD_LARGE_IMAGE_KEY, "ground")
+		discord_rpc.set(DISCORD_LARGE_IMAGE_TEXT_KEY, "Play now!")
+		discord_rpc.set(DISCORD_SMALL_IMAGE_KEY, "coin")
+		discord_rpc.set(DISCORD_SMALL_IMAGE_TEXT_KEY, "Coins collected: " + str(GameState.coins))
+		discord_rpc.refresh()
 
 func _on_coin_collected() -> void:
 	$HUD.update_coins(GameState.coins)
+	_update_discord_state()

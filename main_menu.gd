@@ -27,7 +27,7 @@ func _on_playgame_pressed() -> void:
 	if err != OK:
 		push_error("Failed to change scene to res://main.tscn (error code: %s)" % err)
 
-func _on_extras_pressed() -> void:
+func _on_about_pressed() -> void:
 	var err = get_tree().change_scene_to_file("res://about.tscn")
 	if err != OK:
 		push_error("Failed to change scene to res://about.tscn (error code: %s)" % err)

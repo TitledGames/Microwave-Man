@@ -35,10 +35,13 @@ func _physics_process(delta: float) -> void:
 		sprite.flip_h = true
 		
 	if not is_playing_special:
-		if velocity.length() > 0:
-			sprite.play("default")
-		else:
-			sprite.stop()
+		update_animation()
+
+func update_animation() -> void:
+	if velocity.length() > 0:
+		sprite.play("default")
+	else:
+		sprite.stop()
 
 func play_collect_animation():
 	is_playing_special = true
@@ -47,11 +50,7 @@ func play_collect_animation():
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "coin":
 		is_playing_special = false
-		
-		if velocity.length() > 0:
-			sprite.play("default")
-		else:
-			sprite.stop() 
+		update_animation()
 		
 func start(pos: Vector2) -> void:
 	position = pos
