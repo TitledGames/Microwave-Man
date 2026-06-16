@@ -34,9 +34,8 @@ func _on_body_entered(body: Node2D) -> void:
 		# Add it to the main tree (it starts playing immediately due to Autoplay)
 		get_tree().current_scene.add_child(sound_instance)
 
-		# Track the collected coin in the global game state
-		GameState.coins += 1
-		GameState.coin_collected.emit()
+		# Track the collected coin in the global game state via a centralized method
+		GameState.collect_coin()
 
 		# This deletes the coin from the world
 		queue_free()
