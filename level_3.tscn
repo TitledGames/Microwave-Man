@@ -1,17 +1,12 @@
-[gd_scene format=4]
+[gd_scene format=4 uid="uid://d33hrgswxjhmm"]
 
-[ext_resource type="Script" path="res://level.gd" id="1_833wy"]
-[ext_resource type="PackedScene" path="res://hud.tscn" id="2_ghrvs"]
-[ext_resource type="Script" path="res://hud.gd" id="3_jvy75"]
-[ext_resource type="TileSet" path="res://brick_tileset.tres" id="4_g0tlw"]
-[ext_resource type="PackedScene" path="res://coin.tscn" id="5_keufu"]
-[ext_resource type="Script" path="res://coin.gd" id="6_joegk"]
-[ext_resource type="PackedScene" path="res://enemy.tscn" id="7_m8gss"]
-[ext_resource type="Script" path="res://enemy.gd" id="8_wnq0t"]
-[ext_resource type="PackedScene" path="res://player.tscn" id="9_ra6nl"]
-[ext_resource type="Script" path="res://player.gd" id="10_gxey3"]
-[ext_resource type="PackedScene" path="res://end.tscn" id="11_4hpui"]
-[ext_resource type="Script" path="res://end.gd" id="12_g005c"]
+[ext_resource type="Script" uid="uid://bdlqk7qpnoqx8" path="res://level.gd" id="1_833wy"]
+[ext_resource type="PackedScene" uid="uid://dqrnqy70uj08i" path="res://hud.tscn" id="2_ghrvs"]
+[ext_resource type="TileSet" uid="uid://ctorcc4jcb213" path="res://brick_tileset.tres" id="4_g0tlw"]
+[ext_resource type="PackedScene" uid="uid://ldtlmewixafp" path="res://coin.tscn" id="5_keufu"]
+[ext_resource type="PackedScene" uid="uid://baw7pb75cl1bp" path="res://enemy.tscn" id="7_m8gss"]
+[ext_resource type="PackedScene" uid="uid://bkc7x625ufmje" path="res://player.tscn" id="9_ra6nl"]
+[ext_resource type="PackedScene" uid="uid://dmxjnwyy4j0us" path="res://end.tscn" id="11_4hpui"]
 
 [node name="Level3" type="Node" unique_id=1697775902]
 script = ExtResource("1_833wy")
@@ -23,138 +18,97 @@ offset_right = 1480.0
 offset_bottom = 1736.0
 color = Color(0.3, 0.31, 0.5, 1)
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=171452542 instance=ExtResource("2_ghrvs")]
-script = ExtResource("3_jvy75")
+[node name="HUD" parent="." unique_id=171452542 instance=ExtResource("2_ghrvs")]
 
 [node name="Tiles" type="TileMapLayer" parent="." unique_id=1554372270]
 tile_map_data = PackedByteArray("AAAAACsAAAAAAAAAAAAAACwAAAAAAAAAAAAAAC0AAAAAAAAAAAABACsAAAAAAAAAAAABACwAAAAAAAAAAAABAC0AAAAAAAAAAAACACsAAAAAAAAAAAACACwAAAAAAAAAAAACAC0AAAAAAAAAAAADACsAAAAAAAAAAAADACwAAAAAAAAAAAADAC0AAAAAAAAAAAAEACsAAAAAAAAAAAAEACwAAAAAAAAAAAAEAC0AAAAAAAAAAAAFACsAAAAAAAAAAAAFACwAAAAAAAAAAAAFAC0AAAAAAAAAAAAGACsAAAAAAAAAAAAGACwAAAAAAAAAAAAGAC0AAAAAAAAAAAAHACsAAAAAAAAAAAAHACwAAAAAAAAAAAAHAC0AAAAAAAAAAAAIACsAAAAAAAAAAAAIACwAAAAAAAAAAAAIAC0AAAAAAAAAAAAJACsAAAAAAAAAAAAJACwAAAAAAAAAAAAJAC0AAAAAAAAAAAAKACsAAAAAAAAAAAAKACwAAAAAAAAAAAAKAC0AAAAAAAAAAAALACsAAAAAAAAAAAALACwAAAAAAAAAAAALAC0AAAAAAAAAAAAMACsAAAAAAAAAAAAMACwAAAAAAAAAAAAMAC0AAAAAAAAAAAANACsAAAAAAAAAAAANACwAAAAAAAAAAAANAC0AAAAAAAAAAAAOACsAAAAAAAAAAAAOACwAAAAAAAAAAAAOAC0AAAAAAAAAAAAPACsAAAAAAAAAAAAPACwAAAAAAAAAAAAPAC0AAAAAAAAAAAAQACsAAAAAAAAAAAAQACwAAAAAAAAAAAAQAC0AAAAAAAAAAAARACsAAAAAAAAAAAARACwAAAAAAAAAAAARAC0AAAAAAAAAAAASACsAAAAAAAAAAAASACwAAAAAAAAAAAASAC0AAAAAAAAAAAATACsAAAAAAAAAAAATACwAAAAAAAAAAAATAC0AAAAAAAAAAAAUACsAAAAAAAAAAAAUACwAAAAAAAAAAAAUAC0AAAAAAAAAAAAVACsAAAAAAAAAAAAVACwAAAAAAAAAAAAVAC0AAAAAAAAAAAAWACsAAAAAAAAAAAAWACwAAAAAAAAAAAAWAC0AAAAAAAAAAAAXACsAAAAAAAAAAAAXACwAAAAAAAAAAAAXAC0AAAAAAAAAAAAYACsAAAAAAAAAAAAYACwAAAAAAAAAAAAYAC0AAAAAAAAAAAAZACsAAAAAAAAAAAAZACwAAAAAAAAAAAAZAC0AAAAAAAAAAAAaACsAAAAAAAAAAAAaACwAAAAAAAAAAAAaAC0AAAAAAAAAAAAbACsAAAAAAAAAAAAbACwAAAAAAAAAAAAbAC0AAAAAAAAAAAAcACsAAAAAAAAAAAAcACwAAAAAAAAAAAAcAC0AAAAAAAAAAAAdACsAAAAAAAAAAAAdACwAAAAAAAAAAAAdAC0AAAAAAAAAAAASACgAAAAAAAAAAAASACkAAAAAAAAAAAATACgAAAAAAAAAAAATACkAAAAAAAAAAAAUACgAAAAAAAAAAAAUACkAAAAAAAAAAAAVACgAAAAAAAAAAAAVACkAAAAAAAAAAAAWACgAAAAAAAAAAAAWACkAAAAAAAAAAAAXACgAAAAAAAAAAAAXACkAAAAAAAAAAAAYACgAAAAAAAAAAAAYACkAAAAAAAAAAAAZACgAAAAAAAAAAAAZACkAAAAAAAAAAAAIACUAAAAAAAAAAAAIACYAAAAAAAAAAAAJACUAAAAAAAAAAAAJACYAAAAAAAAAAAAKACUAAAAAAAAAAAAKACYAAAAAAAAAAAALACUAAAAAAAAAAAALACYAAAAAAAAAAAAMACUAAAAAAAAAAAAMACYAAAAAAAAAAAANACUAAAAAAAAAAAANACYAAAAAAAAAAAAOACUAAAAAAAAAAAAOACYAAAAAAAAAAAAQACIAAAAAAAAAAAAQACMAAAAAAAAAAAARACIAAAAAAAAAAAARACMAAAAAAAAAAAASACIAAAAAAAAAAAASACMAAAAAAAAAAAATACIAAAAAAAAAAAATACMAAAAAAAAAAAAUACIAAAAAAAAAAAAUACMAAAAAAAAAAAAVACIAAAAAAAAAAAAVACMAAAAAAAAAAAAWACIAAAAAAAAAAAAWACMAAAAAAAAAAAAXAB8AAAAAAAAAAAAXACAAAAAAAAAAAAAYAB8AAAAAAAAAAAAYACAAAAAAAAAAAAAZAB8AAAAAAAAAAAAZACAAAAAAAAAAAAAaAB8AAAAAAAAAAAAaACAAAAAAAAAAAAAbAB8AAAAAAAAAAAAbACAAAAAAAAAAAAAcAB8AAAAAAAAAAAAcACAAAAAAAAAAAAANABwAAAAAAAAAAAANAB0AAAAAAAAAAAAOABwAAAAAAAAAAAAOAB0AAAAAAAAAAAAPABwAAAAAAAAAAAAPAB0AAAAAAAAAAAAQABwAAAAAAAAAAAAQAB0AAAAAAAAAAAARABwAAAAAAAAAAAARAB0AAAAAAAAAAAASABwAAAAAAAAAAAASAB0AAAAAAAAAAAATABwAAAAAAAAAAAATAB0AAAAAAAAAAAADABkAAAAAAAAAAAADABoAAAAAAAAAAAAEABkAAAAAAAAAAAAEABoAAAAAAAAAAAAFABkAAAAAAAAAAAAFABoAAAAAAAAAAAAGABkAAAAAAAAAAAAGABoAAAAAAAAAAAAHABkAAAAAAAAAAAAHABoAAAAAAAAAAAAIABkAAAAAAAAAAAAIABoAAAAAAAAAAAAJABkAAAAAAAAAAAAJABoAAAAAAAAAAAALABYAAAAAAAAAAAALABcAAAAAAAAAAAAMABYAAAAAAAAAAAAMABcAAAAAAAAAAAANABYAAAAAAAAAAAANABcAAAAAAAAAAAAOABYAAAAAAAAAAAAOABcAAAAAAAAAAAAPABYAAAAAAAAAAAAPABcAAAAAAAAAAAAQABYAAAAAAAAAAAAQABcAAAAAAAAAAAARABYAAAAAAAAAAAARABcAAAAAAAAAAAATABMAAAAAAAAAAAATABQAAAAAAAAAAAAUABMAAAAAAAAAAAAUABQAAAAAAAAAAAAVABMAAAAAAAAAAAAVABQAAAAAAAAAAAAWABMAAAAAAAAAAAAWABQAAAAAAAAAAAAXABMAAAAAAAAAAAAXABQAAAAAAAAAAAAYABMAAAAAAAAAAAAYABQAAAAAAAAAAAAZABMAAAAAAAAAAAAZABQAAAAAAAAAAAAJABAAAAAAAAAAAAAJABEAAAAAAAAAAAAKABAAAAAAAAAAAAAKABEAAAAAAAAAAAALABAAAAAAAAAAAAALABEAAAAAAAAAAAAMABAAAAAAAAAAAAAMABEAAAAAAAAAAAANABAAAAAAAAAAAAANABEAAAAAAAAAAAAOABAAAAAAAAAAAAAOABEAAAAAAAAAAAAPABAAAAAAAAAAAAAPABEAAAAAAAAAAAACAA0AAAAAAAAAAAACAA4AAAAAAAAAAAADAA0AAAAAAAAAAAADAA4AAAAAAAAAAAAEAA0AAAAAAAAAAAAEAA4AAAAAAAAAAAAFAA0AAAAAAAAAAAAFAA4AAAAAAAAAAAAGAA0AAAAAAAAAAAAGAA4AAAAAAAAAAAAHAA0AAAAAAAAAAAAHAA4AAAAAAAAAAAALAAoAAAAAAAAAAAALAAsAAAAAAAAAAAAMAAoAAAAAAAAAAAAMAAsAAAAAAAAAAAANAAoAAAAAAAAAAAANAAsAAAAAAAAAAAAOAAoAAAAAAAAAAAAOAAsAAAAAAAAAAAAPAAoAAAAAAAAAAAAPAAsAAAAAAAAAAAAQAAoAAAAAAAAAAAAQAAsAAAAAAAAAAAARAAoAAAAAAAAAAAARAAsAAAAAAAAAAAATAAcAAAAAAAAAAAATAAgAAAAAAAAAAAAUAAcAAAAAAAAAAAAUAAgAAAAAAAAAAAAVAAcAAAAAAAAAAAAVAAgAAAAAAAAAAAAWAAcAAAAAAAAAAAAWAAgAAAAAAAAAAAAXAAcAAAAAAAAAAAAXAAgAAAAAAAAAAAAYAAcAAAAAAAAAAAAYAAgAAAAAAAAAAAAZAAcAAAAAAAAAAAAZAAgAAAAAAAAAAAALAAQAAAAAAAAAAAALAAUAAAAAAAAAAAAMAAQAAAAAAAAAAAAMAAUAAAAAAAAAAAANAAQAAAAAAAAAAAANAAUAAAAAAAAAAAAOAAQAAAAAAAAAAAAOAAUAAAAAAAAAAAAPAAQAAAAAAAAAAAAPAAUAAAAAAAAAAAAQAAQAAAAAAAAAAAAQAAUAAAAAAAAAAAARAAQAAAAAAAAAAAARAAUAAAAAAAAAAAASAAQAAAAAAAAAAAASAAUAAAAAAAAAAAA=")
 tile_set = ExtResource("4_g0tlw")
 
-[node name="Coin1" type="Area2D" parent="." unique_id=453624699 instance=ExtResource("5_keufu")]
+[node name="Coin1" parent="." unique_id=453624699 instance=ExtResource("5_keufu")]
 position = Vector2(104, 652)
-script = ExtResource("6_joegk")
 
-[node name="Coin2" type="Area2D" parent="." unique_id=1952379018 instance=ExtResource("5_keufu")]
+[node name="Coin2" parent="." unique_id=1952379018 instance=ExtResource("5_keufu")]
 position = Vector2(264, 652)
-script = ExtResource("6_joegk")
 
-[node name="Coin3" type="Area2D" parent="." unique_id=1353008287 instance=ExtResource("5_keufu")]
+[node name="Coin3" parent="." unique_id=1353008287 instance=ExtResource("5_keufu")]
 position = Vector2(424, 652)
-script = ExtResource("6_joegk")
 
-[node name="Coin4" type="Area2D" parent="." unique_id=35074707 instance=ExtResource("5_keufu")]
+[node name="Coin4" parent="." unique_id=35074707 instance=ExtResource("5_keufu")]
 position = Vector2(344, 604)
-script = ExtResource("6_joegk")
 
-[node name="Coin5" type="Area2D" parent="." unique_id=297187809 instance=ExtResource("5_keufu")]
+[node name="Coin5" parent="." unique_id=297187809 instance=ExtResource("5_keufu")]
 position = Vector2(184, 556)
-script = ExtResource("6_joegk")
 
-[node name="Coin6" type="Area2D" parent="." unique_id=1324743408 instance=ExtResource("5_keufu")]
+[node name="Coin6" parent="." unique_id=1324743408 instance=ExtResource("5_keufu")]
 position = Vector2(312, 508)
-script = ExtResource("6_joegk")
 
-[node name="Coin7" type="Area2D" parent="." unique_id=1142012308 instance=ExtResource("5_keufu")]
+[node name="Coin7" parent="." unique_id=1142012308 instance=ExtResource("5_keufu")]
 position = Vector2(408, 460)
-script = ExtResource("6_joegk")
 
-[node name="Coin8" type="Area2D" parent="." unique_id=1426199301 instance=ExtResource("5_keufu")]
+[node name="Coin8" parent="." unique_id=1426199301 instance=ExtResource("5_keufu")]
 position = Vector2(264, 412)
-script = ExtResource("6_joegk")
 
-[node name="Coin9" type="Area2D" parent="." unique_id=564342643 instance=ExtResource("5_keufu")]
+[node name="Coin9" parent="." unique_id=564342643 instance=ExtResource("5_keufu")]
 position = Vector2(104, 364)
-script = ExtResource("6_joegk")
 
-[node name="Coin10" type="Area2D" parent="." unique_id=622738690 instance=ExtResource("5_keufu")]
+[node name="Coin10" parent="." unique_id=622738690 instance=ExtResource("5_keufu")]
 position = Vector2(232, 316)
-script = ExtResource("6_joegk")
 
-[node name="Coin11" type="Area2D" parent="." unique_id=1751202622 instance=ExtResource("5_keufu")]
+[node name="Coin11" parent="." unique_id=1751202622 instance=ExtResource("5_keufu")]
 position = Vector2(360, 268)
-script = ExtResource("6_joegk")
 
-[node name="Coin12" type="Area2D" parent="." unique_id=1707417245 instance=ExtResource("5_keufu")]
+[node name="Coin12" parent="." unique_id=1707417245 instance=ExtResource("5_keufu")]
 position = Vector2(200, 220)
-script = ExtResource("6_joegk")
 
-[node name="Coin13" type="Area2D" parent="." unique_id=436285269 instance=ExtResource("5_keufu")]
+[node name="Coin13" parent="." unique_id=436285269 instance=ExtResource("5_keufu")]
 position = Vector2(72, 172)
-script = ExtResource("6_joegk")
 
-[node name="Coin14" type="Area2D" parent="." unique_id=2006679766 instance=ExtResource("5_keufu")]
+[node name="Coin14" parent="." unique_id=2006679766 instance=ExtResource("5_keufu")]
 position = Vector2(232, 124)
-script = ExtResource("6_joegk")
 
-[node name="Coin15" type="Area2D" parent="." unique_id=1510169438 instance=ExtResource("5_keufu")]
+[node name="Coin15" parent="." unique_id=1510169438 instance=ExtResource("5_keufu")]
 position = Vector2(360, 76)
-script = ExtResource("6_joegk")
 
-[node name="Coin16" type="Area2D" parent="." unique_id=806295334 instance=ExtResource("5_keufu")]
+[node name="Coin16" parent="." unique_id=806295334 instance=ExtResource("5_keufu")]
 position = Vector2(232, 28)
-script = ExtResource("6_joegk")
 
-[node name="Enemy1" type="CharacterBody2D" parent="." unique_id=1375628650 groups=["enemies"] instance=ExtResource("7_m8gss")]
+[node name="Enemy1" parent="." unique_id=1375628650 instance=ExtResource("7_m8gss")]
 position = Vector2(392, 664)
-collision_layer = 4
-script = ExtResource("8_wnq0t")
 
-[node name="Enemy2" type="CharacterBody2D" parent="." unique_id=59949644 groups=["enemies"] instance=ExtResource("7_m8gss")]
+[node name="Enemy2" parent="." unique_id=59949644 instance=ExtResource("7_m8gss")]
 position = Vector2(200, 664)
-collision_layer = 4
-script = ExtResource("8_wnq0t")
 
-[node name="Enemy3" type="CharacterBody2D" parent="." unique_id=1069384140 groups=["enemies"] instance=ExtResource("7_m8gss")]
+[node name="Enemy3" parent="." unique_id=1069384140 instance=ExtResource("7_m8gss")]
 position = Vector2(184, 568)
-collision_layer = 4
-script = ExtResource("8_wnq0t")
 
-[node name="Enemy4" type="CharacterBody2D" parent="." unique_id=362024490 groups=["enemies"] instance=ExtResource("7_m8gss")]
+[node name="Enemy4" parent="." unique_id=362024490 instance=ExtResource("7_m8gss")]
 position = Vector2(312, 520)
-collision_layer = 4
-script = ExtResource("8_wnq0t")
 
-[node name="Enemy5" type="CharacterBody2D" parent="." unique_id=1565955508 groups=["enemies"] instance=ExtResource("7_m8gss")]
+[node name="Enemy5" parent="." unique_id=1565955508 instance=ExtResource("7_m8gss")]
 position = Vector2(264, 424)
-collision_layer = 4
-script = ExtResource("8_wnq0t")
 
-[node name="Enemy6" type="CharacterBody2D" parent="." unique_id=515782472 groups=["enemies"] instance=ExtResource("7_m8gss")]
+[node name="Enemy6" parent="." unique_id=515782472 instance=ExtResource("7_m8gss")]
 position = Vector2(104, 376)
-collision_layer = 4
-script = ExtResource("8_wnq0t")
 
-[node name="Enemy7" type="CharacterBody2D" parent="." unique_id=1618976279 groups=["enemies"] instance=ExtResource("7_m8gss")]
+[node name="Enemy7" parent="." unique_id=1618976279 instance=ExtResource("7_m8gss")]
 position = Vector2(360, 280)
-collision_layer = 4
-script = ExtResource("8_wnq0t")
 
-[node name="Enemy8" type="CharacterBody2D" parent="." unique_id=288489229 groups=["enemies"] instance=ExtResource("7_m8gss")]
+[node name="Enemy8" parent="." unique_id=288489229 instance=ExtResource("7_m8gss")]
 position = Vector2(216, 232)
-collision_layer = 4
-script = ExtResource("8_wnq0t")
 
-[node name="Enemy9" type="CharacterBody2D" parent="." unique_id=543614706 groups=["enemies"] instance=ExtResource("7_m8gss")]
+[node name="Enemy9" parent="." unique_id=543614706 instance=ExtResource("7_m8gss")]
 position = Vector2(232, 136)
-collision_layer = 4
-script = ExtResource("8_wnq0t")
 
-[node name="Enemy10" type="CharacterBody2D" parent="." unique_id=235131358 groups=["enemies"] instance=ExtResource("7_m8gss")]
+[node name="Enemy10" parent="." unique_id=235131358 instance=ExtResource("7_m8gss")]
 position = Vector2(360, 88)
-collision_layer = 4
-script = ExtResource("8_wnq0t")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1996965184 groups=["player"] instance=ExtResource("9_ra6nl")]
+[node name="Player" parent="." unique_id=1996965184 instance=ExtResource("9_ra6nl")]
 position = Vector2(40, 664)
 scale = Vector2(0.05, 0.05)
-slide_on_ceiling = false
-floor_constant_speed = true
-script = ExtResource("10_gxey3")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=769840782]
 position = Vector2(0, -1020)
 zoom = Vector2(3, 3)
 
-[node name="end" type="Area2D" parent="." unique_id=741099548 instance=ExtResource("11_4hpui")]
+[node name="end" parent="." unique_id=741099548 instance=ExtResource("11_4hpui")]
 position = Vector2(232, 64)
-script = ExtResource("12_g005c")

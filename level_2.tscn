@@ -1,18 +1,13 @@
-[gd_scene format=4]
+[gd_scene format=4 uid="uid://d0h4ba3txkie1"]
 
-[ext_resource type="Script" path="res://level.gd" id="1_xbcdb"]
-[ext_resource type="Texture2D" path="res://assets/cloud.png" id="2_s77qv"]
-[ext_resource type="PackedScene" path="res://hud.tscn" id="3_5hnhx"]
-[ext_resource type="Script" path="res://hud.gd" id="4_78pok"]
+[ext_resource type="Script" uid="uid://bdlqk7qpnoqx8" path="res://level.gd" id="1_xbcdb"]
+[ext_resource type="Texture2D" uid="uid://3xp5lr7fe1br" path="res://assets/cloud.png" id="2_s77qv"]
+[ext_resource type="PackedScene" uid="uid://dqrnqy70uj08i" path="res://hud.tscn" id="3_5hnhx"]
 [ext_resource type="TileSet" path="res://cloud_tileset.tres" id="5_lvfll"]
-[ext_resource type="PackedScene" path="res://coin.tscn" id="6_jcnlr"]
-[ext_resource type="Script" path="res://coin.gd" id="7_5kfcu"]
-[ext_resource type="PackedScene" path="res://enemy.tscn" id="8_i558w"]
-[ext_resource type="Script" path="res://enemy.gd" id="9_cuxq2"]
-[ext_resource type="PackedScene" path="res://player.tscn" id="10_wvr33"]
-[ext_resource type="Script" path="res://player.gd" id="11_sgm4o"]
-[ext_resource type="PackedScene" path="res://end.tscn" id="12_6r3eb"]
-[ext_resource type="Script" path="res://end.gd" id="13_2pufk"]
+[ext_resource type="PackedScene" uid="uid://ldtlmewixafp" path="res://coin.tscn" id="6_jcnlr"]
+[ext_resource type="PackedScene" uid="uid://baw7pb75cl1bp" path="res://enemy.tscn" id="8_i558w"]
+[ext_resource type="PackedScene" uid="uid://bkc7x625ufmje" path="res://player.tscn" id="10_wvr33"]
+[ext_resource type="PackedScene" uid="uid://dmxjnwyy4j0us" path="res://end.tscn" id="12_6r3eb"]
 
 [node name="Level2" type="Node" unique_id=1024957105]
 script = ExtResource("1_xbcdb")
@@ -59,124 +54,88 @@ position = Vector2(64, 576)
 scale = Vector2(5, 5)
 texture = ExtResource("2_s77qv")
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=1817813833 instance=ExtResource("3_5hnhx")]
-script = ExtResource("4_78pok")
+[node name="HUD" parent="." unique_id=1817813833 instance=ExtResource("3_5hnhx")]
 
 [node name="Tiles" type="TileMapLayer" parent="." unique_id=405268420]
 tile_map_data = PackedByteArray("AAAAACsAAAAAAAAAAAAAACwAAAAAAAAAAAABACsAAAAAAAAAAAABACwAAAAAAAAAAAACACsAAAAAAAAAAAACACwAAAAAAAAAAAADACsAAAAAAAAAAAADACwAAAAAAAAAAAAEACsAAAAAAAAAAAAEACwAAAAAAAAAAAAFACsAAAAAAAAAAAAFACwAAAAAAAAAAAAGACsAAAAAAAAAAAAGACwAAAAAAAAAAAAHACsAAAAAAAAAAAAHACwAAAAAAAAAAAAIACsAAAAAAAAAAAAIACwAAAAAAAAAAAAJACsAAAAAAAAAAAAJACwAAAAAAAAAAAAKACsAAAAAAAAAAAAKACwAAAAAAAAAAAALACsAAAAAAAAAAAALACwAAAAAAAAAAAAMACsAAAAAAAAAAAAMACwAAAAAAAAAAAANACsAAAAAAAAAAAANACwAAAAAAAAAAAAOACsAAAAAAAAAAAAOACwAAAAAAAAAAAAPACsAAAAAAAAAAAAPACwAAAAAAAAAAAAQACsAAAAAAAAAAAAQACwAAAAAAAAAAAARACsAAAAAAAAAAAARACwAAAAAAAAAAAASACsAAAAAAAAAAAASACwAAAAAAAAAAAATACsAAAAAAAAAAAATACwAAAAAAAAAAAAUACsAAAAAAAAAAAAUACwAAAAAAAAAAAAVACsAAAAAAAAAAAAVACwAAAAAAAAAAAAWACsAAAAAAAAAAAAWACwAAAAAAAAAAAAXACsAAAAAAAAAAAAXACwAAAAAAAAAAAAYACsAAAAAAAAAAAAYACwAAAAAAAAAAAAZACsAAAAAAAAAAAAZACwAAAAAAAAAAAAaACsAAAAAAAAAAAAaACwAAAAAAAAAAAAbACsAAAAAAAAAAAAbACwAAAAAAAAAAAAcACsAAAAAAAAAAAAcACwAAAAAAAAAAAAdACsAAAAAAAAAAAAdACwAAAAAAAAAAAAEACgAAAAAAAAAAAAFACgAAAAAAAAAAAAGACgAAAAAAAAAAAAHACgAAAAAAAAAAAAIACgAAAAAAAAAAAAJACgAAAAAAAAAAAAKACgAAAAAAAAAAAAOACUAAAAAAAAAAAAPACUAAAAAAAAAAAAQACUAAAAAAAAAAAARACUAAAAAAAAAAAASACUAAAAAAAAAAAATACUAAAAAAAAAAAAUACUAAAAAAAAAAAAWACIAAAAAAAAAAAAXACIAAAAAAAAAAAAYACIAAAAAAAAAAAAZACIAAAAAAAAAAAAaACIAAAAAAAAAAAAbACIAAAAAAAAAAAAcACIAAAAAAAAAAAAOAB8AAAAAAAAAAAAPAB8AAAAAAAAAAAAQAB8AAAAAAAAAAAARAB8AAAAAAAAAAAASAB8AAAAAAAAAAAATAB8AAAAAAAAAAAAFABwAAAAAAAAAAAAGABwAAAAAAAAAAAAHABwAAAAAAAAAAAAIABwAAAAAAAAAAAAJABwAAAAAAAAAAAAKABwAAAAAAAAAAAALABwAAAAAAAAAAAABABkAAAAAAAAAAAACABkAAAAAAAAAAAADABkAAAAAAAAAAAAEABkAAAAAAAAAAAAFABkAAAAAAAAAAAAGABkAAAAAAAAAAAALABYAAAAAAAAAAAAMABYAAAAAAAAAAAANABYAAAAAAAAAAAAOABYAAAAAAAAAAAAPABYAAAAAAAAAAAAQABYAAAAAAAAAAAARABYAAAAAAAAAAAAUABMAAAAAAAAAAAAVABMAAAAAAAAAAAAWABMAAAAAAAAAAAAXABMAAAAAAAAAAAAYABMAAAAAAAAAAAAZABMAAAAAAAAAAAAaABMAAAAAAAAAAAANABAAAAAAAAAAAAAOABAAAAAAAAAAAAAPABAAAAAAAAAAAAAQABAAAAAAAAAAAAARABAAAAAAAAAAAAASABAAAAAAAAAAAAATABAAAAAAAAAAAAAEAA0AAAAAAAAAAAAFAA0AAAAAAAAAAAAGAA0AAAAAAAAAAAAHAA0AAAAAAAAAAAAIAA0AAAAAAAAAAAAJAA0AAAAAAAAAAAAKAA0AAAAAAAAAAAAMAAoAAAAAAAAAAAANAAoAAAAAAAAAAAAOAAoAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAAoAAAAAAAAAAAARAAoAAAAAAAAAAAASAAoAAAAAAAAAAAAUAAcAAAAAAAAAAAAVAAcAAAAAAAAAAAAWAAcAAAAAAAAAAAAXAAcAAAAAAAAAAAAYAAcAAAAAAAAAAAAZAAcAAAAAAAAAAAAaAAcAAAAAAAAAAAALAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAANAAQAAAAAAAAAAAAOAAQAAAAAAAAAAAAPAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAARAAQAAAAAAAAAAAASAAQAAAAAAAAAAAATAAQAAAAAAAAAAAA=")
 tile_set = ExtResource("5_lvfll")
 
-[node name="Coin1" type="Area2D" parent="." unique_id=1889029521 instance=ExtResource("6_jcnlr")]
+[node name="Coin1" parent="." unique_id=1889029521 instance=ExtResource("6_jcnlr")]
 position = Vector2(120, 604)
-script = ExtResource("7_5kfcu")
 
-[node name="Coin2" type="Area2D" parent="." unique_id=875551795 instance=ExtResource("6_jcnlr")]
+[node name="Coin2" parent="." unique_id=875551795 instance=ExtResource("6_jcnlr")]
 position = Vector2(280, 556)
-script = ExtResource("7_5kfcu")
 
-[node name="Coin3" type="Area2D" parent="." unique_id=901607589 instance=ExtResource("6_jcnlr")]
+[node name="Coin3" parent="." unique_id=901607589 instance=ExtResource("6_jcnlr")]
 position = Vector2(408, 508)
-script = ExtResource("7_5kfcu")
 
-[node name="Coin4" type="Area2D" parent="." unique_id=570139686 instance=ExtResource("6_jcnlr")]
+[node name="Coin4" parent="." unique_id=570139686 instance=ExtResource("6_jcnlr")]
 position = Vector2(264, 460)
-script = ExtResource("7_5kfcu")
 
-[node name="Coin5" type="Area2D" parent="." unique_id=1949993377 instance=ExtResource("6_jcnlr")]
+[node name="Coin5" parent="." unique_id=1949993377 instance=ExtResource("6_jcnlr")]
 position = Vector2(136, 412)
-script = ExtResource("7_5kfcu")
 
-[node name="Coin6" type="Area2D" parent="." unique_id=1108458378 instance=ExtResource("6_jcnlr")]
+[node name="Coin6" parent="." unique_id=1108458378 instance=ExtResource("6_jcnlr")]
 position = Vector2(56, 364)
-script = ExtResource("7_5kfcu")
 
-[node name="Coin7" type="Area2D" parent="." unique_id=1793952775 instance=ExtResource("6_jcnlr")]
+[node name="Coin7" parent="." unique_id=1793952775 instance=ExtResource("6_jcnlr")]
 position = Vector2(232, 316)
-script = ExtResource("7_5kfcu")
 
-[node name="Coin8" type="Area2D" parent="." unique_id=1462614416 instance=ExtResource("6_jcnlr")]
+[node name="Coin8" parent="." unique_id=1462614416 instance=ExtResource("6_jcnlr")]
 position = Vector2(376, 268)
-script = ExtResource("7_5kfcu")
 
-[node name="Coin9" type="Area2D" parent="." unique_id=426648776 instance=ExtResource("6_jcnlr")]
+[node name="Coin9" parent="." unique_id=426648776 instance=ExtResource("6_jcnlr")]
 position = Vector2(264, 220)
-script = ExtResource("7_5kfcu")
 
-[node name="Coin10" type="Area2D" parent="." unique_id=1247389611 instance=ExtResource("6_jcnlr")]
+[node name="Coin10" parent="." unique_id=1247389611 instance=ExtResource("6_jcnlr")]
 position = Vector2(120, 172)
-script = ExtResource("7_5kfcu")
 
-[node name="Coin11" type="Area2D" parent="." unique_id=77410834 instance=ExtResource("6_jcnlr")]
+[node name="Coin11" parent="." unique_id=77410834 instance=ExtResource("6_jcnlr")]
 position = Vector2(248, 124)
-script = ExtResource("7_5kfcu")
 
-[node name="Coin12" type="Area2D" parent="." unique_id=1959035818 instance=ExtResource("6_jcnlr")]
+[node name="Coin12" parent="." unique_id=1959035818 instance=ExtResource("6_jcnlr")]
 position = Vector2(376, 76)
-script = ExtResource("7_5kfcu")
 
-[node name="Coin13" type="Area2D" parent="." unique_id=301013872 instance=ExtResource("6_jcnlr")]
+[node name="Coin13" parent="." unique_id=301013872 instance=ExtResource("6_jcnlr")]
 position = Vector2(248, 28)
-script = ExtResource("7_5kfcu")
 
-[node name="Coin14" type="Area2D" parent="." unique_id=1830324118 instance=ExtResource("6_jcnlr")]
+[node name="Coin14" parent="." unique_id=1830324118 instance=ExtResource("6_jcnlr")]
 position = Vector2(168, 652)
-script = ExtResource("7_5kfcu")
 
-[node name="Coin15" type="Area2D" parent="." unique_id=624666937 instance=ExtResource("6_jcnlr")]
+[node name="Coin15" parent="." unique_id=624666937 instance=ExtResource("6_jcnlr")]
 position = Vector2(440, 652)
-script = ExtResource("7_5kfcu")
 
-[node name="Enemy1" type="CharacterBody2D" parent="." unique_id=831091941 groups=["enemies"] instance=ExtResource("8_i558w")]
+[node name="Enemy1" parent="." unique_id=831091941 instance=ExtResource("8_i558w")]
 position = Vector2(360, 664)
-collision_layer = 4
-script = ExtResource("9_cuxq2")
 
-[node name="Enemy2" type="CharacterBody2D" parent="." unique_id=21450916 groups=["enemies"] instance=ExtResource("8_i558w")]
+[node name="Enemy2" parent="." unique_id=21450916 instance=ExtResource("8_i558w")]
 position = Vector2(264, 568)
-collision_layer = 4
-script = ExtResource("9_cuxq2")
 
-[node name="Enemy3" type="CharacterBody2D" parent="." unique_id=1513898890 groups=["enemies"] instance=ExtResource("8_i558w")]
+[node name="Enemy3" parent="." unique_id=1513898890 instance=ExtResource("8_i558w")]
 position = Vector2(392, 520)
-collision_layer = 4
-script = ExtResource("9_cuxq2")
 
-[node name="Enemy4" type="CharacterBody2D" parent="." unique_id=1286889411 groups=["enemies"] instance=ExtResource("8_i558w")]
+[node name="Enemy4" parent="." unique_id=1286889411 instance=ExtResource("8_i558w")]
 position = Vector2(120, 424)
-collision_layer = 4
-script = ExtResource("9_cuxq2")
 
-[node name="Enemy5" type="CharacterBody2D" parent="." unique_id=767094385 groups=["enemies"] instance=ExtResource("8_i558w")]
+[node name="Enemy5" parent="." unique_id=767094385 instance=ExtResource("8_i558w")]
 position = Vector2(216, 328)
-collision_layer = 4
-script = ExtResource("9_cuxq2")
 
-[node name="Enemy6" type="CharacterBody2D" parent="." unique_id=1866123108 groups=["enemies"] instance=ExtResource("8_i558w")]
+[node name="Enemy6" parent="." unique_id=1866123108 instance=ExtResource("8_i558w")]
 position = Vector2(360, 280)
-collision_layer = 4
-script = ExtResource("9_cuxq2")
 
-[node name="Enemy7" type="CharacterBody2D" parent="." unique_id=1545616750 groups=["enemies"] instance=ExtResource("8_i558w")]
+[node name="Enemy7" parent="." unique_id=1545616750 instance=ExtResource("8_i558w")]
 position = Vector2(104, 184)
-collision_layer = 4
-script = ExtResource("9_cuxq2")
 
-[node name="Enemy8" type="CharacterBody2D" parent="." unique_id=1081863457 groups=["enemies"] instance=ExtResource("8_i558w")]
+[node name="Enemy8" parent="." unique_id=1081863457 instance=ExtResource("8_i558w")]
 position = Vector2(360, 88)
-collision_layer = 4
-script = ExtResource("9_cuxq2")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1996965184 groups=["player"] instance=ExtResource("10_wvr33")]
+[node name="Player" parent="." unique_id=1996965184 instance=ExtResource("10_wvr33")]
 position = Vector2(40, 664)
 scale = Vector2(0.05, 0.05)
-slide_on_ceiling = false
-floor_constant_speed = true
-script = ExtResource("11_sgm4o")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1962490122]
 position = Vector2(0, -1020)
 zoom = Vector2(3, 3)
 
-[node name="end" type="Area2D" parent="." unique_id=64031087 instance=ExtResource("12_6r3eb")]
+[node name="end" parent="." unique_id=64031087 instance=ExtResource("12_6r3eb")]
 position = Vector2(248, 64)
-script = ExtResource("13_2pufk")
