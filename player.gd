@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 		
 	if not is_playing_special:
 		if velocity.length() > 0:
-			$AnimatedSprite2D.play("default")
+			sprite.play("default")
 		else:
 			sprite.stop()
 
