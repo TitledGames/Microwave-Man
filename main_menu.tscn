@@ -19,13 +19,13 @@ offset_top = 245.0
 offset_right = 622.0
 offset_bottom = 301.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 32
+theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 25
 text = "Play Game"
 flat = true
 
-[node name="extras" type="Button" parent="." unique_id=1643779603]
+[node name="about" type="Button" parent="." unique_id=1643779603]
 offset_left = 461.0
 offset_top = 318.0
 offset_right = 625.0
@@ -70,5 +70,5 @@ theme_override_font_sizes/font_size = 18
 horizontal_alignment = 2
 
 [connection signal="pressed" from="playgame" to="." method="_on_playgame_pressed"]
-[connection signal="pressed" from="extras" to="." method="_on_extras_pressed"]
+[connection signal="pressed" from="about" to="." method="_on_extras_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
