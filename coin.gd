@@ -22,7 +22,7 @@ func _animate() -> void:
 	bob.tween_property(sprite, "position:y", base_y, 0.9).set_trans(Tween.TRANS_SINE)
 
 
-func _on_body_entered(body):
+func _on_body_entered(body: Node2D) -> void:
 	# Check if the body overlapping the coin is actually the player
 	if body.is_in_group("player"):
 
