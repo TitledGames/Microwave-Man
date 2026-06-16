@@ -55,7 +55,7 @@ func _update_discord_state() -> void:
 		discord_rpc.set(DISCORD_LARGE_IMAGE_TEXT_KEY, "Play now!")
 		discord_rpc.set(DISCORD_SMALL_IMAGE_KEY, "coin")
 		discord_rpc.set(DISCORD_SMALL_IMAGE_TEXT_KEY, "Coins collected: " + str(GameState.coins))
-		discord_rpc.refresh()
+		discord_rpc.call("refresh")
 
 func _on_coin_collected() -> void:
 	$HUD.update_coins(GameState.coins)
