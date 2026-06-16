@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 		update_animation()
 
 func update_animation() -> void:
-	if abs(velocity.x) > 0:
+	if velocity.x != 0:
 		sprite.play("default")
 	else:
 		sprite.stop()
