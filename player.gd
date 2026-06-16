@@ -11,6 +11,11 @@ const DECELERATION = 1200.0
 
 var is_playing_special = false
 
+func _ready() -> void:
+	var animation_finished_handler := Callable(self, "_on_animated_sprite_2d_animation_finished")
+	if not sprite.animation_finished.is_connected(animation_finished_handler):
+		sprite.animation_finished.connect(animation_finished_handler)
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
