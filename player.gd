@@ -6,6 +6,7 @@ const GRAVITY = 980
 
 @onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var player_hitbox: CollisionShape2D = $PlayerHitbox
 
 var is_playing_special = false
 
@@ -43,7 +44,7 @@ func update_animation() -> void:
 	else:
 		sprite.stop()
 
-func play_collect_animation():
+func play_collect_animation() -> void:
 	is_playing_special = true
 	sprite.play("coin")
 
@@ -55,8 +56,8 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func start(pos: Vector2) -> void:
 	position = pos
 	show()
-	$PlayerHitbox.set_deferred("disabled", false)
+	player_hitbox.set_deferred("disabled", false)
 
 func hide_player():
 	hide()
-	$PlayerHitbox.set_deferred("disabled", true)
+	player_hitbox.set_deferred("disabled", true)
