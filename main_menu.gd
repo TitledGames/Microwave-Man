@@ -9,7 +9,7 @@ func _ready() -> void:
 		var discord_rpc = Engine.get_singleton("DiscordRPC")
 		discord_rpc.set("app_id", 1465471267183263922)
 		discord_rpc.set("details", "Play as a microwave!")
-		discord_rpc.set("state", "Playing the game!")
+		discord_rpc.set("state", "In Main Menu")
 		discord_rpc.set("large_image", "ground")
 		discord_rpc.set("large_image_text", "Play now!")
 		discord_rpc.set("small_image", "level")
