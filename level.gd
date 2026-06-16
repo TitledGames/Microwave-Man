@@ -6,10 +6,13 @@ const AREA_TRACKS = ["overworld", "sky", "castle"]
 @onready var hud = $HUD
 
 var spawn_point = Vector2.ZERO
+var fall_limit = 0.0
 
 func _ready() -> void:
 	Music.play(AREA_TRACKS[clampi(GameState.current_level, 0, AREA_TRACKS.size() - 1)])
 	spawn_point = player.position
+	# Falling well below the start (e.g. off a sky platform) costs a life.
+	fall_limit = spawn_point.y + 360.0
 	player.hit.connect(_on_player_hit)
 	GameState.coin_collected.connect(_on_coin_collected)
 	# Children are ready before the parent, so every coin is already in the
@@ -26,6 +29,8 @@ func _process(delta: float) -> void:
 		GameState.elapsed_time += delta
 		if int(GameState.elapsed_time) != prev_second:
 			hud.update_timer(GameState.elapsed_time)
+		if not player.invincible and player.position.y > fall_limit:
+			player.take_hit()
 
 func _on_coin_collected() -> void:
 	hud.update_coins(GameState.coins)
