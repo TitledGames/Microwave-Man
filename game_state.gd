@@ -1,6 +1,7 @@
 extends Node
 
-signal restart_game
+# Emitted from coin.gd and handled in level.gd (used across scripts).
+@warning_ignore("unused_signal")
 signal coin_collected
 
 const MAX_LIVES = 3
@@ -49,6 +50,7 @@ func game_over() -> void:
 
 func format_time(seconds: float) -> String:
 	var total_seconds: int = int(seconds)
+	@warning_ignore("integer_division")
 	var mins: int = total_seconds / 60
 	var secs: int = total_seconds % 60
 	return "%02d:%02d" % [mins, secs]
