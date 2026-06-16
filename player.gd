@@ -55,8 +55,8 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func start(pos: Vector2) -> void:
 	position = pos
 	show()
-	$PlayerHitbox.set_deferred("disabled", false)
+	$PlayerHitbox.disabled = false
 
 func hide_player():
 	hide()
-	$PlayerHitbox.set_deferred("disabled", true)
+	$PlayerHitbox.disabled = true
