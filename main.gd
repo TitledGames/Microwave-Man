@@ -40,6 +40,7 @@ func new_game():
 
 	$HUD.update_coins(0)
 	$HUD.update_timer(0.0)
+	_update_discord_state()
 	$StartTimer.start()
 
 func _on_start_timer_timeout() -> void:
