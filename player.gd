@@ -32,9 +32,11 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	if direction > 0:
-		sprite.flip_h = false 
+		if sprite.flip_h:
+			sprite.flip_h = false
 	elif direction < 0:
-		sprite.flip_h = true
+		if not sprite.flip_h:
+			sprite.flip_h = true
 		
 	if not is_playing_special:
 		update_animation()
