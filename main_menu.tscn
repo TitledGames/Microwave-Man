@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ckxckman8wf65" path="res://main_menu.gd" id="1_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://ctqd07ry8i37o" path="res://assets/icon.png" id="2_fu7sn"]
 
-[node name="main menu" type="Node2D" unique_id=432237393]
+[node name="main_menu" type="Node2D" unique_id=432237393]
 script = ExtResource("1_7vrkn")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=193098593]

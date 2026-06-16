@@ -11,6 +11,10 @@ var is_level_running: bool = false
 const HIGHSCORE_PATH = "user://highscores.json"
 const MAX_HIGHSCORES = 10
 
+func collect_coin() -> void:
+	coins += 1
+	coin_collected.emit()
+
 func format_time(seconds: float) -> String:
 	var total_seconds: int = int(seconds)
 	var mins: int = total_seconds / 60
