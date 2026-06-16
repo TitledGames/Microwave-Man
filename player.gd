@@ -53,7 +53,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		else:
 			sprite.stop() 
 		
-func start(pos):
+func start(pos: Vector2) -> void:
 	position = pos
 	show()
 	$PlayerHitbox.set_deferred("disabled", false)
