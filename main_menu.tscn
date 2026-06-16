@@ -34,8 +34,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 25
-text = "About
-"
+text = "About"
 flat = true
 
 [node name="quit" type="Button" parent="." unique_id=944257350]
@@ -43,6 +42,7 @@ offset_left = 460.0
 offset_top = 400.0
 offset_right = 624.0
 offset_bottom = 456.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 25
@@ -54,6 +54,7 @@ offset_left = 312.0
 offset_top = 146.0
 offset_right = 788.0
 offset_bottom = 190.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 36
