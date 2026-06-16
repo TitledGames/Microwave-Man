@@ -43,7 +43,7 @@ func update_animation() -> void:
 	else:
 		sprite.stop()
 
-func play_collect_animation():
+func play_collect_animation() -> void:
 	is_playing_special = true
 	sprite.play("coin")
 
