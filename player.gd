@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 		update_animation()
 
 func update_animation() -> void:
-	if velocity.length() > 0:
+	if velocity.length_squared() > 0:
 		sprite.play("default")
 	else:
 		sprite.stop()
@@ -55,8 +55,8 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func start(pos: Vector2) -> void:
 	position = pos
 	show()
-	$PlayerHitbox.call_deferred("set_disabled", false)
+	$PlayerHitbox.set_deferred("disabled", false)
 
 func hide_player():
 	hide()
-	$PlayerHitbox.call_deferred("set_disabled", true)
+	$PlayerHitbox.set_deferred("disabled", true)
