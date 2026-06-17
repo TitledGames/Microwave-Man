@@ -43,14 +43,13 @@
   <content_rating type="oars-1.1" />
 
   <releases>
-	<release version="1.4.0" date="2026-06-16">
+	<release version="1.4.0" date="2026-06-17">
 		<description>
 			<ul>
-				<li>Add coin spin and bob animation</li>
+				<li>Add coin animation</li>
 				<li>Add coin counter to HUD</li>
-				<li>Add Discord Rich Presence in-game state</li>
-				<li>Improve player code quality and type safety</li>
-				<li>Fix main menu UI inconsistencies</li>
+				<li>Improve Discord RPC support</li>
+				<li>Many bug fixes!</li>
 			</ul>
 		</description>
   	</release>
