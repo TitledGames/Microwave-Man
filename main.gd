@@ -16,10 +16,10 @@ func _ready():
 	GameState.total_coins = get_tree().get_nodes_in_group("coins").size()
 	GameState.coins = 0
 	GameState.elapsed_time = 0.0
-	GameState.is_level_running = false
+	GameState.is_level_running = true
 	$HUD.update_coins(0)
 	$HUD.update_timer(0.0)
-	$StartTimer.start()
+	_update_discord_state()
 
 func _process(delta: float) -> void:
 	if GameState.is_level_running:
@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 func new_game():
 	GameState.coins = 0
 	GameState.elapsed_time = 0.0
-	GameState.is_level_running = false
+	GameState.is_level_running = true
 
 	var player = get_node("Player")
 	if player:
@@ -40,11 +40,6 @@ func new_game():
 
 	$HUD.update_coins(0)
 	$HUD.update_timer(0.0)
-	_update_discord_state()
-	$StartTimer.start()
-
-func _on_start_timer_timeout() -> void:
-	GameState.is_level_running = true
 	_update_discord_state()
 
 func _update_discord_state() -> void:
