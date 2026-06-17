@@ -44,7 +44,6 @@ text = "Back"
 flat = true
 
 [node name="BuildLabel" type="Label" parent="." unique_id=1086229892]
-offset_left = 962.0
 offset_right = 1152.0
 offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("1_4q2eq")
