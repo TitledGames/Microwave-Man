@@ -308,5 +308,6 @@ jobs:
               fi
               git commit -m "Deploy ${GITHUB_REF#refs/tags/} to $DEPLOY_LOCATION"
             fi
+            git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
             git push origin gh-pages
           fi
