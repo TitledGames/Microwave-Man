@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ckxckman8wf65" path="res://main_menu.gd" id="1_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://ctqd07ry8i37o" path="res://assets/icon.png" id="2_fu7sn"]
 
-[node name="main menu" type="Node2D" unique_id=432237393]
+[node name="main_menu" type="Node2D" unique_id=432237393]
 script = ExtResource("1_7vrkn")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=193098593]
@@ -19,13 +19,13 @@ offset_top = 245.0
 offset_right = 622.0
 offset_bottom = 301.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 32
+theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 25
 text = "Play Game"
 flat = true
 
-[node name="extras" type="Button" parent="." unique_id=1643779603]
+[node name="about" type="Button" parent="." unique_id=1643779603]
 offset_left = 461.0
 offset_top = 318.0
 offset_right = 625.0
@@ -34,8 +34,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 25
-text = "About
-"
+text = "About"
 flat = true
 
 [node name="quit" type="Button" parent="." unique_id=944257350]
@@ -43,6 +42,7 @@ offset_left = 460.0
 offset_top = 400.0
 offset_right = 624.0
 offset_bottom = 456.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 25
@@ -54,6 +54,7 @@ offset_left = 312.0
 offset_top = 146.0
 offset_right = 788.0
 offset_bottom = 190.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 36
@@ -61,7 +62,6 @@ text = "Microwave-Man!"
 horizontal_alignment = 1
 
 [node name="BuildLabel" type="Label" parent="." unique_id=504746542]
-offset_left = 1023.0
 offset_right = 1152.0
 offset_bottom = 31.0
 theme_override_fonts/font = ExtResource("1_06t4h")
@@ -69,5 +69,5 @@ theme_override_font_sizes/font_size = 18
 horizontal_alignment = 2
 
 [connection signal="pressed" from="playgame" to="." method="_on_playgame_pressed"]
-[connection signal="pressed" from="extras" to="." method="_on_extras_pressed"]
+[connection signal="pressed" from="about" to="." method="_on_about_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

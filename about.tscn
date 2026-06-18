@@ -20,7 +20,7 @@ offset_bottom = 593.0
 theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("1_4q2eq")
 theme_override_font_sizes/font_size = 35
-text = "      Made for the Github Game Off 2025
+text = "      Made for the GitHub Game Off 2025
 
         Created by the Titled Games Team:
 project516  That0nehistoryguy   Goiber_litgan
@@ -44,7 +44,6 @@ text = "Back"
 flat = true
 
 [node name="BuildLabel" type="Label" parent="." unique_id=1086229892]
-offset_left = 962.0
 offset_right = 1152.0
 offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("1_4q2eq")
