@@ -43,6 +43,13 @@
   <content_rating type="oars-1.1" />
 
   <releases>
+	<release version="1.4.1" date="2026-06-18">
+		<description>
+			<ul>
+				<li>Fix deployment bug with GitHub Pages</li>
+			</ul>
+		</description>
+  	</release>
 	<release version="1.4.0" date="2026-06-18">
 		<description>
 			<ul>
