@@ -29,10 +29,10 @@ func _on_save_score_pressed() -> void:
 	var player_name = $NameInput.text.strip_edges()
 	if player_name.is_empty():
 		player_name = "Anonymous"
-	GameState.save_highscore(player_name)
-	$NameInput.text = ""
-	$SaveScoreButton.disabled = true
-	_refresh_highscores()
+	if GameState.save_highscore(player_name):
+		$NameInput.text = ""
+		$SaveScoreButton.disabled = true
+		_refresh_highscores()
 
 
 func _on_play_again_pressed() -> void:

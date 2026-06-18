@@ -56,6 +56,8 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		
 func start(pos: Vector2) -> void:
 	position = pos
+	velocity = Vector2.ZERO
+	is_playing_special = false
 	show()
 	player_hitbox.set_deferred("disabled", false)
 
