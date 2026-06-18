@@ -204,7 +204,6 @@ jobs:
         uses: actions/checkout@v6
         with:
           fetch-depth: 0  # Fetch all history to check for gh-pages branch
-          persist-credentials: false
           
       - name: Download Web Artifact
         uses: actions/download-artifact@v8
@@ -324,6 +323,5 @@ jobs:
               fi
               git commit -m "Deploy ${GITHUB_REF#refs/tags/} to $DEPLOY_LOCATION"
             fi
-            git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
             git push origin gh-pages
           fi
