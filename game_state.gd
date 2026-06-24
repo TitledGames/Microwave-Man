@@ -9,6 +9,7 @@ const LEVELS = [
 	"res://main.tscn",
 	"res://level_2.tscn",
 	"res://level_3.tscn",
+	"res://level_4.tscn",
 ]
 const HIGHSCORE_PATH = "user://highscores.json"
 const MAX_HIGHSCORES = 10

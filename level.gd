@@ -1,6 +1,8 @@
 extends Node
 
-const AREA_TRACKS = ["overworld", "sky", "castle"]
+# Indexed by GameState.current_level: level 4 (the grassy finale) loops back to
+# the overworld theme. clampi keeps any extra levels on the last track.
+const AREA_TRACKS = ["overworld", "sky", "castle", "overworld"]
 
 @onready var player = $Player
 @onready var hud = $HUD
