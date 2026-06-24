@@ -24,6 +24,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           lfs: true
+          persist-credentials: false
       - name: Set Version from Tag
         uses: ./.github/actions/set-version
       - name: Setup
@@ -59,6 +60,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           lfs: true
+          persist-credentials: false
       - name: Set Version from Tag
         uses: ./.github/actions/set-version
       - name: Setup
@@ -92,6 +94,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           lfs: true
+          persist-credentials: false
       - name: Set Version from Tag
         uses: ./.github/actions/set-version
       - name: Setup
@@ -127,6 +130,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           lfs: true
+          persist-credentials: false
       - name: Set Version from Tag
         uses: ./.github/actions/set-version
       - name: Setup
@@ -155,6 +159,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           lfs: true
+          persist-credentials: false
       - name: Set Version from Tag
         uses: ./.github/actions/set-version
       - name: Setup

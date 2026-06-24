@@ -22,6 +22,7 @@ func _ready() -> void:
 	hud.update_lives(GameState.lives)
 	hud.update_coins(GameState.coins)
 	hud.update_timer(GameState.elapsed_time)
+	_update_discord_presence()
 
 func _process(delta: float) -> void:
 	if GameState.is_level_running:
@@ -34,6 +35,18 @@ func _process(delta: float) -> void:
 
 func _on_coin_collected() -> void:
 	hud.update_coins(GameState.coins)
+	_update_discord_presence()
+
+func _update_discord_presence() -> void:
+	if not OS.has_feature("web") and Engine.has_singleton("DiscordRPC"):
+		var discord_rpc = Engine.get_singleton("DiscordRPC")
+		discord_rpc.set("state", "In Game")
+		discord_rpc.set("details", "Collecting coins!")
+		discord_rpc.set("large_image", "ground")
+		discord_rpc.set("large_image_text", "Play now!")
+		discord_rpc.set("small_image", "coin")
+		discord_rpc.set("small_image_text", "Coins collected: " + str(GameState.coins))
+		discord_rpc.call("refresh")
 
 func _on_player_hit() -> void:
 	var remaining = GameState.lose_life()
