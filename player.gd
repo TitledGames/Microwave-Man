@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED = 200.0
 const JUMP_VELOCITY = -350.0
 const GRAVITY = 980
+const DECELERATION = 12000.0
 
 signal hit
 
@@ -28,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, DECELERATION * delta)
 	
 	move_and_slide()
 

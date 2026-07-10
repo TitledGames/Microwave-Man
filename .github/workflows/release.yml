@@ -18,10 +18,10 @@ jobs:
     name: Windows Export
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:4.7
+      image: barichello/godot-ci:4.7@sha256:6ba1eecd033b6d102860e76b7b7753d6adf2f78222b8d01cde35bfaef80b9c47
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
           lfs: true
           persist-credentials: false
@@ -54,10 +54,10 @@ jobs:
     name: Linux Export
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:4.7
+      image: barichello/godot-ci:4.7@sha256:6ba1eecd033b6d102860e76b7b7753d6adf2f78222b8d01cde35bfaef80b9c47
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
           lfs: true
           persist-credentials: false
@@ -88,10 +88,10 @@ jobs:
     name: Web Export
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:4.7
+      image: barichello/godot-ci:4.7@sha256:6ba1eecd033b6d102860e76b7b7753d6adf2f78222b8d01cde35bfaef80b9c47
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
           lfs: true
           persist-credentials: false
@@ -124,10 +124,10 @@ jobs:
     name: Mac Export
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:4.7
+      image: barichello/godot-ci:4.7@sha256:6ba1eecd033b6d102860e76b7b7753d6adf2f78222b8d01cde35bfaef80b9c47
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
           lfs: true
           persist-credentials: false
@@ -153,10 +153,10 @@ jobs:
     name: PCK Export
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:4.7
+      image: barichello/godot-ci:4.7@sha256:6ba1eecd033b6d102860e76b7b7753d6adf2f78222b8d01cde35bfaef80b9c47
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
           lfs: true
           persist-credentials: false
@@ -201,7 +201,7 @@ jobs:
     needs: [export-web]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
           fetch-depth: 0  # Fetch all history to check for gh-pages branch
           

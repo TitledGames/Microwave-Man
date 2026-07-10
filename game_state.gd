@@ -79,7 +79,7 @@ func get_highscores() -> Array:
 			})
 	return valid
 
-func save_highscore(player_name: String) -> void:
+func save_highscore(player_name: String) -> bool:
 	player_name = player_name.strip_edges()
 	if player_name.is_empty():
 		player_name = "Anonymous"
@@ -98,6 +98,7 @@ func save_highscore(player_name: String) -> void:
 		scores.resize(MAX_HIGHSCORES)
 	var file = FileAccess.open(HIGHSCORE_PATH, FileAccess.WRITE)
 	if file == null:
-		return
+		return false
 	file.store_string(JSON.stringify(scores))
 	file.close()
+	return true

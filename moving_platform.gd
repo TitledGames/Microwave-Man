@@ -1,7 +1,8 @@
 extends AnimatableBody2D
 
-# Oscillates between start and start + travel; carries the player who stands
-# on it (sync_to_physics handles that).
+# Oscillates around start, between start - travel and start + travel; the
+# levels place lifts at the center of the span they cover. Carries the player
+# who stands on it (sync_to_physics handles that).
 @export var travel = Vector2(96, 0)
 @export var speed = 1.4
 

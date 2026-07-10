@@ -10,6 +10,7 @@ const GRAVITY = 980.0
 var start_position = Vector2.ZERO
 var direction = -1
 var defeated = false
+var defeat_tween: Tween
 
 func _ready() -> void:
 	start_position = position
@@ -54,13 +55,19 @@ func _defeat() -> void:
 	defeated = true
 	hitbox_shape.set_deferred("disabled", true)
 	velocity = Vector2.ZERO
-	var tween = create_tween()
-	tween.tween_property(sprite, "scale:y", 0.1, 0.12)
-	tween.parallel().tween_property(sprite, "modulate:a", 0.0, 0.18)
-	tween.tween_callback(hide)
+	if defeat_tween:
+		defeat_tween.kill()
+	defeat_tween = create_tween()
+	defeat_tween.tween_property(sprite, "scale:y", 0.1, 0.12)
+	defeat_tween.parallel().tween_property(sprite, "modulate:a", 0.0, 0.18)
+	defeat_tween.tween_callback(hide)
 
 func reset() -> void:
 	# Put the enemy back where it started when the player respawns.
+	# Kill a still-running defeat tween so its hide() cannot fire after this.
+	if defeat_tween:
+		defeat_tween.kill()
+		defeat_tween = null
 	position = start_position
 	direction = -1
 	defeated = false
