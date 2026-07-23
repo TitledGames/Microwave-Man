@@ -10,7 +10,7 @@ size = Vector2(44, 64)
 script = ExtResource("1_n735c")
 
 [node name="Flag" type="Sprite2D" parent="."]
-position = Vector2(0, -30)
+position = Vector2(0, -46)
 scale = Vector2(2, 2)
 texture = ExtResource("2_flag")
 

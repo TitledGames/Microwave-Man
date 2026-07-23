@@ -26,7 +26,10 @@ func _refresh_highscores() -> void:
 func _on_save_score_pressed() -> void:
 	var player_name = $NameInput.text.strip_edges()
 	if player_name.is_empty():
-		player_name = "Anonymous"
+		$NameWarning.show()
+		$NameInput.grab_focus()
+		return
+	$NameWarning.hide()
 	# Keep the name so the player can retry if the save failed.
 	if GameState.save_highscore(player_name):
 		$NameInput.text = ""

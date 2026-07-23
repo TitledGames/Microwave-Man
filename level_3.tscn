@@ -15,10 +15,10 @@ script = ExtResource("1_keufu")
 
 [node name="Sky" type="ColorRect" parent="." unique_id=1389146323]
 z_index = -20
-offset_left = -120.0
-offset_top = -360.0
-offset_right = 4344.0
-offset_bottom = 640.0
+offset_left = -600.0
+offset_top = -1000.0
+offset_right = 4900.0
+offset_bottom = 1100.0
 color = Color(0.1, 0.11, 0.2, 1)
 
 [node name="Tiles" type="TileMapLayer" parent="." unique_id=1803767558]
@@ -546,4 +546,4 @@ scale = Vector2(0.05, 0.05)
 
 [node name="@Camera2D@3" type="Camera2D" parent="Player" unique_id=905997936]
 position = Vector2(0, -1020)
-zoom = Vector2(3, 3)
+zoom = Vector2(2.4, 2.4)

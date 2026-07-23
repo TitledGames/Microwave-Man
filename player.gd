@@ -60,6 +60,8 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func start(pos):
 	position = pos
 	show()
+	# Drop any in-progress coin animation so respawn restores normal movement sprites.
+	is_playing_special = false
 	# Deferred so it is safe to call from inside a physics callback (e.g. an
 	# enemy hit triggering a respawn).
 	$PlayerHitbox.set_deferred("disabled", false)

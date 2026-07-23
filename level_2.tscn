@@ -20,10 +20,10 @@ script = ExtResource("1_s77qv")
 
 [node name="Sky" type="ColorRect" parent="." unique_id=662736341]
 z_index = -20
-offset_left = -120.0
-offset_top = -560.0
-offset_right = 4216.0
-offset_bottom = 640.0
+offset_left = -600.0
+offset_top = -1200.0
+offset_right = 4800.0
+offset_bottom = 1100.0
 color = Color(0.42, 0.71, 1, 1)
 
 [node name="Tiles" type="TileMapLayer" parent="." unique_id=52451774]
@@ -270,11 +270,11 @@ position = Vector2(392, 235.2)
 script = ExtResource("8_cuxq2")
 
 [node name="Coin34" type="Area2D" parent="." unique_id=522538342 instance=ExtResource("7_i558w")]
-position = Vector2(616, 186)
+position = Vector2(616, 161)
 script = ExtResource("8_cuxq2")
 
 [node name="Coin35" type="Area2D" parent="." unique_id=248687012 instance=ExtResource("7_i558w")]
-position = Vector2(664, 186)
+position = Vector2(664, 161)
 script = ExtResource("8_cuxq2")
 
 [node name="Coin36" type="Area2D" parent="." unique_id=613575089 instance=ExtResource("7_i558w")]
@@ -294,11 +294,11 @@ position = Vector2(1160, 225.44)
 script = ExtResource("8_cuxq2")
 
 [node name="Coin40" type="Area2D" parent="." unique_id=1832617989 instance=ExtResource("7_i558w")]
-position = Vector2(1640, 138)
+position = Vector2(1640, 113)
 script = ExtResource("8_cuxq2")
 
 [node name="Coin41" type="Area2D" parent="." unique_id=1890077550 instance=ExtResource("7_i558w")]
-position = Vector2(1688, 138)
+position = Vector2(1688, 113)
 script = ExtResource("8_cuxq2")
 
 [node name="Coin42" type="Area2D" parent="." unique_id=349953544 instance=ExtResource("7_i558w")]
@@ -314,23 +314,23 @@ position = Vector2(1992, 189)
 script = ExtResource("8_cuxq2")
 
 [node name="Coin45" type="Area2D" parent="." unique_id=234299704 instance=ExtResource("7_i558w")]
-position = Vector2(2136, 138)
+position = Vector2(2136, 113)
 script = ExtResource("8_cuxq2")
 
 [node name="Coin46" type="Area2D" parent="." unique_id=846519332 instance=ExtResource("7_i558w")]
-position = Vector2(2184, 138)
+position = Vector2(2184, 113)
 script = ExtResource("8_cuxq2")
 
 [node name="Coin47" type="Area2D" parent="." unique_id=1043461760 instance=ExtResource("7_i558w")]
-position = Vector2(2312, 186)
+position = Vector2(2312, 161)
 script = ExtResource("8_cuxq2")
 
 [node name="Coin48" type="Area2D" parent="." unique_id=1236908615 instance=ExtResource("7_i558w")]
-position = Vector2(2408, 154)
+position = Vector2(2408, 129)
 script = ExtResource("8_cuxq2")
 
 [node name="Coin49" type="Area2D" parent="." unique_id=2136659938 instance=ExtResource("7_i558w")]
-position = Vector2(2504, 186)
+position = Vector2(2504, 161)
 script = ExtResource("8_cuxq2")
 
 [node name="Coin50" type="Area2D" parent="." unique_id=1434528758 instance=ExtResource("7_i558w")]
@@ -354,11 +354,11 @@ position = Vector2(3064, 242)
 script = ExtResource("8_cuxq2")
 
 [node name="Coin55" type="Area2D" parent="." unique_id=1233098323 instance=ExtResource("7_i558w")]
-position = Vector2(3288, 186)
+position = Vector2(3288, 161)
 script = ExtResource("8_cuxq2")
 
 [node name="Coin56" type="Area2D" parent="." unique_id=1142421039 instance=ExtResource("7_i558w")]
-position = Vector2(3336, 186)
+position = Vector2(3336, 161)
 script = ExtResource("8_cuxq2")
 
 [node name="Coin57" type="Area2D" parent="." unique_id=778857589 instance=ExtResource("7_i558w")]
@@ -420,5 +420,5 @@ script = ExtResource("14_ikghu")
 
 [node name="@Camera2D@2" type="Camera2D" parent="Player" unique_id=1808335553]
 position = Vector2(0, -1020)
-zoom = Vector2(3, 3)
+zoom = Vector2(2.4, 2.4)
 

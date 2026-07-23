@@ -22,10 +22,10 @@ script = ExtResource("1_45t7y")
 
 [node name="Sky" type="ColorRect" parent="." unique_id=1091772468]
 z_index = -20
-offset_left = -120.0
-offset_top = -640.0
-offset_right = 4024.0
-offset_bottom = 640.0
+offset_left = -600.0
+offset_top = -1400.0
+offset_right = 4600.0
+offset_bottom = 1100.0
 color = Color(0.3, 0.06, 0.05, 1)
 
 [node name="Tiles" type="TileMapLayer" parent="." unique_id=2009425449]
@@ -208,7 +208,7 @@ position = Vector2(744, 202.52893)
 script = ExtResource("8_s4mws")
 
 [node name="Coin28" type="Area2D" parent="." unique_id=343747884 instance=ExtResource("7_pkey3")]
-position = Vector2(792, 213.48761)
+position = Vector2(792, 193)
 script = ExtResource("8_s4mws")
 
 [node name="Enemy29" type="CharacterBody2D" parent="." unique_id=498857220 groups=["enemies"] instance=ExtResource("5_j0u7p")]
@@ -261,11 +261,11 @@ collision_layer = 4
 script = ExtResource("6_at3ad")
 
 [node name="Coin38" type="Area2D" parent="." unique_id=1714691281 instance=ExtResource("7_pkey3")]
-position = Vector2(1256, 186)
+position = Vector2(1256, 161)
 script = ExtResource("8_s4mws")
 
 [node name="Coin39" type="Area2D" parent="." unique_id=303213074 instance=ExtResource("7_pkey3")]
-position = Vector2(1304, 186)
+position = Vector2(1304, 161)
 script = ExtResource("8_s4mws")
 
 [node name="Lift40" type="AnimatableBody2D" parent="." unique_id=2141678236 instance=ExtResource("11_6d0cq")]
@@ -283,11 +283,11 @@ travel = Vector2(0, -56)
 speed = 0.9
 
 [node name="Coin42" type="Area2D" parent="." unique_id=1392926649 instance=ExtResource("7_pkey3")]
-position = Vector2(1672, 74)
+position = Vector2(1672, 49)
 script = ExtResource("8_s4mws")
 
 [node name="Coin43" type="Area2D" parent="." unique_id=525207719 instance=ExtResource("7_pkey3")]
-position = Vector2(1720, 74)
+position = Vector2(1720, 49)
 script = ExtResource("8_s4mws")
 
 [node name="Lava44" type="ColorRect" parent="." unique_id=914297420]
@@ -447,7 +447,7 @@ position = Vector2(3128, 25.667297)
 script = ExtResource("8_s4mws")
 
 [node name="Coin77" type="Area2D" parent="." unique_id=588835820 instance=ExtResource("7_pkey3")]
-position = Vector2(3176, 34.37807)
+position = Vector2(3176, 17)
 script = ExtResource("8_s4mws")
 
 [node name="Spike78" type="Area2D" parent="." unique_id=2054655763 groups=["hazard"] instance=ExtResource("9_1umnx")]
@@ -505,5 +505,5 @@ script = ExtResource("16_d4r1o")
 
 [node name="@Camera2D@4" type="Camera2D" parent="Player" unique_id=2034568340]
 position = Vector2(0, -1020)
-zoom = Vector2(3, 3)
+zoom = Vector2(2.4, 2.4)
 

@@ -145,6 +145,19 @@ theme_override_font_sizes/font_size = 20
 placeholder_text = "Your name..."
 max_length = 20
 
+[node name="NameWarning" type="Label" parent="."]
+visible = false
+offset_left = 40.0
+offset_top = 552.0
+offset_right = 400.0
+offset_bottom = 578.0
+theme_override_colors/font_color = Color(1, 0.42, 0.42, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_nqmyh")
+theme_override_font_sizes/font_size = 18
+text = "Please enter a name to save your score."
+
 [node name="SaveScoreButton" type="Button" parent="."]
 offset_left = 268.0
 offset_top = 510.0
