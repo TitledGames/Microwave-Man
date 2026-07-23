@@ -22,10 +22,10 @@ class CORSRequestHandler(SimpleHTTPRequestHandler):
         self.send_header("Cross-Origin-Embedder-Policy", "require-corp")
 
         origin = self.headers.get("Origin")
+        if origin is not None:
+            self.send_header("Vary", "Origin")
         if origin in ALLOWED_ORIGINS:
             self.send_header("Access-Control-Allow-Origin", origin)
-            self.send_header("Vary", "Origin")
-
         SimpleHTTPRequestHandler.end_headers(self)
 
 if __name__ == '__main__':
