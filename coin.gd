@@ -35,8 +35,12 @@ func _on_body_entered(body):
 
 		var sound_instance = COIN_SOUND_SCENE.instantiate()
 
-		# Add it to the main tree (it starts playing immediately due to Autoplay)
-		get_tree().current_scene.add_child(sound_instance)
+		# Add it to the tree (it starts playing immediately due to Autoplay);
+		# current_scene can be null, so fall back to the root.
+		var parent = get_tree().current_scene
+		if parent == null:
+			parent = get_tree().root
+		parent.add_child(sound_instance)
 
 		# This deletes the coin from the world
 		queue_free()
