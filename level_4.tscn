@@ -236,7 +236,7 @@ color = Color(1, 0.66, 0.16, 1)
 position = Vector2(984, 216)
 collision_mask = 0
 script = ExtResource("12_4r1ct")
-travel = Vector2(72, 0)
+travel = Vector2(52, 0)
 speed = 1.0
 
 [node name="Coin33" type="Area2D" parent="." unique_id=1899225180 instance=ExtResource("7_pkey3")]
@@ -505,5 +505,5 @@ script = ExtResource("16_d4r1o")
 
 [node name="@Camera2D@4" type="Camera2D" parent="Player" unique_id=2034568340]
 position = Vector2(0, -1020)
-zoom = Vector2(2.4, 2.4)
+zoom = Vector2(3, 3)
 

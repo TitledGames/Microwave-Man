@@ -37,7 +37,7 @@ rm -rf templates templates.tpz
 # 9. Handle "nothreads" error
 # Some Godot versions/presets look for 'web_nothreads_debug.zip' specifically.
 # If it's missing, we copy the standard debug template to satisfy the builder.
-cd ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable/
+cd ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable/ || exit 1
 if [ ! -f web_nothreads_debug.zip ]; then
     echo "web_nothreads_debug.zip not found, creating fallback copy..."
     cp web_debug.zip web_nothreads_debug.zip
