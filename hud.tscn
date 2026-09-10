@@ -1,50 +1,70 @@
-[gd_scene format=3 uid="uid://dqrnqy70uj08i"]
+[gd_scene load_steps=6 format=3 uid="uid://dqrnqy70uj08i"]
 
 [ext_resource type="Script" uid="uid://cfxjr6wc488j8" path="res://hud.gd" id="1_64ctp"]
 [ext_resource type="FontFile" uid="uid://y8i37mbuxiro" path="res://assets/fonts/Xolonium-Regular.ttf" id="2_font"]
+[ext_resource type="Texture2D" uid="uid://cvrryijrsmoxj" path="res://assets/PlayerFrame1.png" id="3_life"]
+[ext_resource type="AudioStream" uid="uid://qj0ok158e1n1" path="res://assets/sounds/damage.ogg" id="4_hit"]
+[ext_resource type="AudioStream" uid="uid://c703oc771mbmd" path="res://assets/sounds/game_over.ogg" id="5_over"]
 
-[node name="HUD" type="CanvasLayer" unique_id=1781796870]
+[node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_64ctp")
 
-[node name="CoinLabel" type="Label" parent="." unique_id=300995958]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 200.0
-offset_bottom = 40.0
+[node name="Lives" type="HBoxContainer" parent="."]
+offset_left = 12.0
+offset_top = 10.0
+offset_right = 150.0
+offset_bottom = 50.0
+theme_override_constants/separation = 8
+
+[node name="Life1" type="TextureRect" parent="Lives"]
+custom_minimum_size = Vector2(26, 36)
+layout_mode = 2
+texture = ExtResource("3_life")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Life2" type="TextureRect" parent="Lives"]
+custom_minimum_size = Vector2(26, 36)
+layout_mode = 2
+texture = ExtResource("3_life")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Life3" type="TextureRect" parent="Lives"]
+custom_minimum_size = Vector2(26, 36)
+layout_mode = 2
+texture = ExtResource("3_life")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CoinLabel" type="Label" parent="."]
+offset_left = 12.0
+offset_top = 54.0
+offset_right = 260.0
+offset_bottom = 86.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 24
 text = "Coins: 0"
 
 [node name="TimerLabel" type="Label" parent="."]
-anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -130.0
-offset_top = 8.0
-offset_right = -8.0
-offset_bottom = 40.0
+offset_left = -180.0
+offset_top = 10.0
+offset_right = -12.0
+offset_bottom = 44.0
 grow_horizontal = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 24
 text = "00:00"
 horizontal_alignment = 2
 
-[node name="StartButton" type="Button" parent="." unique_id=1682084830]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = 40.0
-offset_right = 60.0
-offset_bottom = 80.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_font")
-theme_override_font_sizes/font_size = 24
-text = "Play Again"
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_hit")
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-
+[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_over")

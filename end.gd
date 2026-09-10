@@ -1,9 +1,15 @@
 extends Area2D
 
-func _on_body_entered(body: Node2D) -> void:
+func _ready() -> void:
+	_sway()
+
+func _sway() -> void:
+	# Let the flag wave gently in the wind.
+	var tween = create_tween().set_loops()
+	tween.tween_property($Flag, "rotation", 0.04, 1.0).set_trans(Tween.TRANS_SINE)
+	tween.tween_property($Flag, "rotation", -0.04, 1.0).set_trans(Tween.TRANS_SINE)
+
+func _on_body_entered(body):
+	# Check if the body reaching the goal is actually the player
 	if body.is_in_group("player"):
-		var err = get_tree().change_scene_to_file("res://endcreen.tscn")
-		if err != OK:
-			push_error("Failed to load endcreen.tscn (error code: %s)" % err)
-		else:
-			GameState.is_level_running = false
+		GameState.advance_level()
