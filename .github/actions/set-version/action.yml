@@ -14,7 +14,7 @@ runs:
         TAG_NAME="${GITHUB_REF#refs/tags/}"
         VERSION="${TAG_NAME#v}"
         if [ -z "$VERSION" ]; then
-          echo "::error::VERSION is empty – GITHUB_REF ('$GITHUB_REF') does not look like a tag ref."
+          echo "::error::VERSION is empty: GITHUB_REF ('$GITHUB_REF') does not look like a tag ref."
           exit 1
         fi
         echo "Setting version to: $VERSION"
@@ -22,7 +22,7 @@ runs:
         ESCAPED_VERSION="$(printf '%s' "$VERSION" | sed 's/\\/\\\\/g; s/[&/]/\\&/g')"
         sed -i "s/config\/version=\"[^\"]*\"/config\/version=\"$ESCAPED_VERSION\"/" "${{ inputs.project_file }}"
         if ! grep -qF "config/version=\"$VERSION\"" "${{ inputs.project_file }}"; then
-          echo "::error::Version substitution failed – expected config/version=\"$VERSION\" in ${{ inputs.project_file }}"
+          echo "::error::Version substitution failed: expected config/version=\"$VERSION\" in ${{ inputs.project_file }}"
           exit 1
         fi
         echo "Version successfully set to '$VERSION' in ${{ inputs.project_file }}"
