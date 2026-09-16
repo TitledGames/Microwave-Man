@@ -4,7 +4,7 @@
 sudo apt-get update && sudo apt-get install -y libfontconfig1 unzip wget
 
 # 2. Download Godot (Linux x86_64)
-GODOT_VERSION="4.7.1"
+GODOT_VERSION="4.7.2"
 GODOT_URL="https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip"
 wget -O godot.zip "$GODOT_URL"
 
