@@ -11,4 +11,4 @@ Alternatively, install from Flathub if you're on Linux:
 
 <a href='https://flathub.org/apps/dev.project516.titledgames.microwave-man'><img width='180' alt='Download on Flathub' src='https://dl.flathub.org/assets/badges/flathub-badge-en.png'/></a>
 
-We have an *experimental* [web build](https://titledgames.project516.dev) available too. It has many issues, like screensize, so prefer the desktop builds for the best experience!
+We have an *experimental* [web build](https://titledgames.github.io/Microwave-Man) available too. It has many issues, like screensize, so prefer the desktop builds for the best experience!
