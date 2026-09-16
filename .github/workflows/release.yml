@@ -230,7 +230,7 @@ jobs:
           TAG_NAME="${GITHUB_REF#refs/tags/}"
           echo "Tag name: $TAG_NAME"
           
-          # Count dots in tag name - more than 2 dots means prerelease
+          # Count dots in tag name: more than 2 dots means prerelease
           DOT_COUNT=$(echo "$TAG_NAME" | tr -cd '.' | wc -c)
           
           if [ "$DOT_COUNT" -gt 2 ]; then
