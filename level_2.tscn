@@ -421,5 +421,5 @@ script = ExtResource("14_ikghu")
 
 [node name="@Camera2D@2" type="Camera2D" parent="Player" unique_id=1808335553]
 position = Vector2(0, -1020)
-zoom = Vector2(3, 3)
+zoom = Vector2(2.4, 2.4)
 
