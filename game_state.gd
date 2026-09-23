@@ -1,22 +1,57 @@
 extends Node
 
-signal restart_game
+# Emitted from coin.gd and handled in level.gd (used across scripts).
+@warning_ignore("unused_signal")
 signal coin_collected
 
-var coins: int = 0
-var total_coins: int = 0
-var elapsed_time: float = 0.0
-var is_level_running: bool = false
-
+const MAX_LIVES = 3
+const LEVELS = [
+	"res://main.tscn",
+	"res://level_2.tscn",
+	"res://level_3.tscn",
+	"res://level_4.tscn",
+]
 const HIGHSCORE_PATH = "user://highscores.json"
 const MAX_HIGHSCORES = 10
 
-func collect_coin() -> void:
-	coins += 1
-	coin_collected.emit()
+var lives = MAX_LIVES
+var current_level = 0
+var coins = 0
+var total_coins = 0
+var elapsed_time = 0.0
+var is_level_running = false
+var won = false
+
+func start_new_game() -> void:
+	lives = MAX_LIVES
+	current_level = 0
+	coins = 0
+	total_coins = 0
+	elapsed_time = 0.0
+	is_level_running = false
+	won = false
+
+func lose_life() -> int:
+	lives = max(lives - 1, 0)
+	return lives
+
+func advance_level() -> void:
+	current_level += 1
+	if current_level < LEVELS.size():
+		get_tree().change_scene_to_file(LEVELS[current_level])
+	else:
+		won = true
+		is_level_running = false
+		get_tree().change_scene_to_file("res://endcreen.tscn")
+
+func game_over() -> void:
+	won = false
+	is_level_running = false
+	get_tree().change_scene_to_file("res://endcreen.tscn")
 
 func format_time(seconds: float) -> String:
 	var total_seconds: int = int(seconds)
+	@warning_ignore("integer_division")
 	var mins: int = total_seconds / 60
 	var secs: int = total_seconds % 60
 	return "%02d:%02d" % [mins, secs]
@@ -47,14 +82,18 @@ func get_highscores() -> Array:
 func save_highscore(player_name: String) -> bool:
 	player_name = player_name.strip_edges()
 	if player_name.is_empty():
-		player_name = "Anonymous"
+		return false
 	var scores = get_highscores()
 	scores.append({
 		"name": player_name,
 		"time": elapsed_time,
 		"coins": coins
 	})
-	scores.sort_custom(func(a, b): return a["time"] < b["time"])
+	# Best score is the most coins; ties broken by the faster time.
+	scores.sort_custom(func(a, b):
+		if a["coins"] == b["coins"]:
+			return a["time"] < b["time"]
+		return a["coins"] > b["coins"])
 	if scores.size() > MAX_HIGHSCORES:
 		scores.resize(MAX_HIGHSCORES)
 	var file = FileAccess.open(HIGHSCORE_PATH, FileAccess.WRITE)
