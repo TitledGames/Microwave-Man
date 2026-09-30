@@ -77,7 +77,14 @@ func get_highscores() -> Array:
 				"time": float(entry["time"]),
 				"coins": int(entry["coins"])
 			})
+	valid.sort_custom(_better_score)
 	return valid
+
+# Best score is the most coins; ties broken by the faster time.
+func _better_score(a: Dictionary, b: Dictionary) -> bool:
+	if a["coins"] == b["coins"]:
+		return a["time"] < b["time"]
+	return a["coins"] > b["coins"]
 
 func save_highscore(player_name: String) -> bool:
 	player_name = player_name.strip_edges()
@@ -89,11 +96,7 @@ func save_highscore(player_name: String) -> bool:
 		"time": elapsed_time,
 		"coins": coins
 	})
-	# Best score is the most coins; ties broken by the faster time.
-	scores.sort_custom(func(a, b):
-		if a["coins"] == b["coins"]:
-			return a["time"] < b["time"]
-		return a["coins"] > b["coins"])
+	scores.sort_custom(_better_score)
 	if scores.size() > MAX_HIGHSCORES:
 		scores.resize(MAX_HIGHSCORES)
 	var file = FileAccess.open(HIGHSCORE_PATH, FileAccess.WRITE)
