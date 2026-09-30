@@ -12,4 +12,4 @@ func _sway() -> void:
 func _on_body_entered(body):
 	# Check if the body reaching the goal is actually the player
 	if body.is_in_group("player"):
-		GameState.advance_level()
+		GameState.advance_level.call_deferred()

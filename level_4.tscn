@@ -493,7 +493,7 @@ position = Vector2(3784, -118)
 script = ExtResource("8_s4mws")
 
 [node name="end" type="Area2D" parent="." unique_id=1536262143 instance=ExtResource("13_hu802")]
-position = Vector2(3864, -30)
+position = Vector2(3864, -16)
 script = ExtResource("14_nogox")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1996965184 groups=["player"] instance=ExtResource("15_vmpu5")]
