@@ -22,26 +22,25 @@ func _animate() -> void:
 	bob.tween_property(sprite, "position:y", base_y, 0.9).set_trans(Tween.TRANS_SINE)
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body):
 	# Check if the body overlapping the coin is actually the player
 	if body.is_in_group("player"):
 
 		if body.has_method("play_collect_animation"):
 			body.play_collect_animation()
 
+		# Track the collected coin in the global game state
+		GameState.coins += 1
+		GameState.coin_collected.emit()
+
 		var sound_instance = COIN_SOUND_SCENE.instantiate()
 
-		# Add it to the main tree (it starts playing immediately due to Autoplay)
-		var scene_root = get_tree().current_scene
-		if scene_root != null:
-			scene_root.add_child(sound_instance)
-		elif get_parent() != null:
-			get_parent().add_child(sound_instance)
-		else:
-			sound_instance.queue_free()
-
-		# Track the collected coin in the global game state via a centralized method
-		GameState.collect_coin()
+		# Add it to the tree (it starts playing immediately due to Autoplay);
+		# current_scene can be null, so fall back to the root.
+		var parent = get_tree().current_scene
+		if parent == null:
+			parent = get_tree().root
+		parent.add_child(sound_instance)
 
 		# This deletes the coin from the world
 		queue_free()
