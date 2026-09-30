@@ -275,9 +275,6 @@ offset_right = 3488.0
 offset_bottom = 358.0
 color = Color(1, 0.66, 0.16, 1)
 
-[node name="Enemy32" parent="." unique_id=930492663 instance=ExtResource("5_ra6nl")]
-position = Vector2(184, 312)
-
 [node name="Coin33" parent="." unique_id=812807450 instance=ExtResource("7_4hpui")]
 position = Vector2(104, 298)
 

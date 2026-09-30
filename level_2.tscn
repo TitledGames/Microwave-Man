@@ -370,11 +370,6 @@ script = ExtResource("8_cuxq2")
 position = Vector2(3672, 250)
 script = ExtResource("8_cuxq2")
 
-[node name="Enemy59" type="CharacterBody2D" parent="." unique_id=111682650 groups=["enemies"] instance=ExtResource("9_wvr33")]
-position = Vector2(136, 280)
-collision_layer = 4
-script = ExtResource("10_sgm4o")
-
 [node name="Enemy60" type="CharacterBody2D" parent="." unique_id=1453429862 groups=["enemies"] instance=ExtResource("9_wvr33")]
 position = Vector2(1240, 232)
 collision_layer = 4

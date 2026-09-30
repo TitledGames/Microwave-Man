@@ -156,11 +156,6 @@ offset_right = 3678.0
 offset_bottom = 352.0
 color = Color(0.45, 0.14, 0.09, 0.45)
 
-[node name="Enemy16" type="CharacterBody2D" parent="." unique_id=1416354800 groups=["enemies"] instance=ExtResource("5_j0u7p")]
-position = Vector2(200, 312)
-collision_layer = 4
-script = ExtResource("6_at3ad")
-
 [node name="Coin17" type="Area2D" parent="." unique_id=812807450 instance=ExtResource("7_pkey3")]
 position = Vector2(88, 298)
 script = ExtResource("8_s4mws")
