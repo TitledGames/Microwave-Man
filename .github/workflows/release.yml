@@ -73,16 +73,22 @@ jobs:
           EXPORT_DIR="$(readlink -f build)"
           cd $PROJECT_PATH
           godot --headless --verbose --export-release "Linux/X11" "$EXPORT_DIR/linux/Microwave-Man-Linux.x86_64"
+          mkdir -v -p "$EXPORT_DIR/linux-arm64"
+          godot --headless --verbose --export-release "Linux ARM64" "$EXPORT_DIR/linux-arm64/Microwave-Man-Linux.arm64"
       - name: Zip Linux Export
         run: |
           apt-get update && apt-get install -y zip
           cd build/linux
           zip -r ../Microwave-Man-Linux.zip .
+          cd ../linux-arm64
+          zip -r ../Microwave-Man-Linux-arm64.zip .
       - name: Upload Artifact
         uses: actions/upload-artifact@v7
         with:
           name: linux-artifact
-          path: build/Microwave-Man-Linux.zip
+          path: |
+            build/Microwave-Man-Linux.zip
+            build/Microwave-Man-Linux-arm64.zip
 
   export-web:
     name: Web Export
@@ -173,6 +179,7 @@ jobs:
           cd $PROJECT_PATH
           # Using --export-pack instead of --export-release to generate standalone .pck file
           godot --headless --verbose --export-pack "Linux/X11" "$EXPORT_DIR/pck/Microwave-Man.pck"
+          godot --headless --verbose --export-pack "Linux ARM64" "$EXPORT_DIR/pck/Microwave-Man-arm64.pck"
       - name: Upload Artifact
         uses: actions/upload-artifact@v7
         with:
