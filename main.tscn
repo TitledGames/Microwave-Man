@@ -67,4 +67,4 @@ zoom = Vector2(3, 3)
 position = Vector2(-198, -686)
 
 [node name="Enemy" parent="." instance=ExtResource("8_enemy")]
-position = Vector2(-400, 450)
+position = Vector2(-93, 150)
