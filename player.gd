@@ -5,11 +5,13 @@ const JUMP_VELOCITY = -350.0
 const GRAVITY = 980
 const DECELERATION = 12000.0
 
+signal hit
+
 @onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var player_hitbox: CollisionShape2D = $PlayerHitbox
 
 var is_playing_special = false
+var invincible = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -37,30 +39,58 @@ func _physics_process(delta: float) -> void:
 		sprite.flip_h = true
 		
 	if not is_playing_special:
-		update_animation()
+		if velocity.length() > 0:
+			$AnimatedSprite2D.play("default")
+		else:
+			$AnimatedSprite2D.stop()
 
-func update_animation() -> void:
-	if abs(velocity.x) > 0:
-		sprite.play("default")
-	else:
-		sprite.stop()
-
-func play_collect_animation() -> void:
+func play_collect_animation():
 	is_playing_special = true
 	sprite.play("coin")
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "coin":
 		is_playing_special = false
-		update_animation()
 		
-func start(pos: Vector2) -> void:
+		if velocity.length() > 0:
+			sprite.play("default")
+		else:
+			sprite.stop()
+		
+func start(pos):
 	position = pos
-	velocity = Vector2.ZERO
-	is_playing_special = false
 	show()
-	player_hitbox.set_deferred("disabled", false)
+	# Drop any in-progress coin animation so respawn restores normal movement sprites.
+	is_playing_special = false
+	# Deferred so it is safe to call from inside a physics callback (e.g. an
+	# enemy hit triggering a respawn).
+	$PlayerHitbox.set_deferred("disabled", false)
 
-func disable_player() -> void:
+func hide_player():
 	hide()
-	player_hitbox.set_deferred("disabled", true)
+	$PlayerHitbox.set_deferred("disabled", true)
+
+func take_hit():
+	# Ignore hits while still flashing from the last respawn.
+	if invincible:
+		return
+	invincible = true
+	hit.emit()
+
+func respawn(pos):
+	start(pos)
+	velocity = Vector2.ZERO
+	_flash_invincible()
+
+func bounce():
+	# Pop back up after stomping an enemy.
+	velocity.y = JUMP_VELOCITY * 0.7
+	audio_player.play()
+
+func _flash_invincible():
+	var tween = create_tween().set_loops(6)
+	tween.tween_property(sprite, "modulate:a", 0.3, 0.15)
+	tween.tween_property(sprite, "modulate:a", 1.0, 0.15)
+	await tween.finished
+	sprite.modulate.a = 1.0
+	invincible = false

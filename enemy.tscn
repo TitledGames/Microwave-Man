@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://baw7pb75cl1bp"]
+
+[ext_resource type="Script" uid="uid://qoc3rxqix5sm" path="res://enemy.gd" id="1_enemy"]
+[ext_resource type="Texture2D" uid="uid://t26fb0bbimvv" path="res://assets/ToasterFrame1.png" id="2_frame1"]
+[ext_resource type="Texture2D" uid="uid://c425fnvd6110x" path="res://assets/ToasterFrame2.png" id="3_frame2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_enemy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_frame1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_frame2")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enemy"]
+size = Vector2(16, 20)
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1_enemy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_enemy")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_enemy")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_enemy")
+
+[node name="LedgeCheck" type="RayCast2D" parent="."]
+position = Vector2(-11, 0)
+target_position = Vector2(0, 22)
+collision_mask = 1
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
