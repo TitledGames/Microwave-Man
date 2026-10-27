@@ -1,12 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://btc7acnn0whr0"]
+[gd_scene load_steps=3 format=3 uid="uid://btc7acnn0whr0"]
 
 [ext_resource type="AudioStream" uid="uid://bs5ii6mdm2usc" path="res://assets/sounds/microwave.ogg" id="2_jj5mv"]
+[ext_resource type="Script" uid="uid://bh8uci0rsqypx" path="res://coin_sfx.gd" id="2_cnsfx"]
 
 [node name="coin_sfx" type="Node"]
+script = ExtResource("2_cnsfx")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_jj5mv")
 autoplay = true
-
-[node name="Microwave" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_jj5mv")
